@@ -55,5 +55,10 @@ will actually happen with the mod. But, I can tell you what I am planning to add
 
 - A lightning atraction rod. Put it on top of your castle, and watch as a small lightning vortex hovers over it! Will look awesome for all your evil needs. Probably will require some sort of fuel, though.
 
+- Different kinds of lasers! Mining lasers, defense laser, laser fenses, etc.
+
+- Explosives (enough said)
+
+- Time travel! Some really complicated stuff involved. You can travel to the past, where theres lot of magic and not very much technology. In the future, theres lots of tech, but they shun magic. Don't try to mess with their time paths, or else the big blob of timey wimey will come crashing down in a paradox!
 
 These are just a few of the things to come in this mod! Will hopefully be able to work on it and add all these things soon!
