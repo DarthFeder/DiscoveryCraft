@@ -31,9 +31,14 @@ to your minecraft world. This is broken down into four main sector of science:
 
 - Physics
 
+(In the future, I may also add Biology and Technology)
+
+
 Since things are still being worked out (by that I mean nothing good has been added yet), I cannot say what will actually happen with the mod. But, I can tell you some of the things that I am planning to add in the future:
 
 - A science notebook to store all of your findings. The first and main item of DiscoveryCraft.
+
+- A research method.
 
 - Tiers of teloscopes for star-gazing.
 
@@ -61,8 +66,10 @@ Since things are still being worked out (by that I mean nothing good has been ad
 
 - Different kinds of lasers! Mining lasers, defense lasers, laser fenses, laser turrets, laser etc.
 
-- Explosives (enough said)
+- Explosives (enough said).
 
 - Time travel! Some really complicated stuff involved, so it is a very end-game sort of deal. You can travel to the past, where there is lots of magic and not very much technology. In the future, theres lots of technology, but they shun magic. Don't try to mess with their time paths, or else the big blob of wibbely-wobbely, timey-wimey will come crashing down in a paradox!
+
+- Model rockets for flight testing experiments.
 
 These are just a few of the things to come in this mod! I will hopefully be able to work on it and add all these things soon!
