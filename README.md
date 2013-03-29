@@ -54,7 +54,9 @@ Since things are still being worked out (by that I mean nothing good has been ad
 
 - A sonic screwdriver for your all-around tool (unlike the RedPower one, this one will actually function :D).
 
-- The ability to add or change your own DNA. This could lead to strange powers, or consequences!
+- Lot's of other types of tools.
+
+- The ability to add or change your own DNA. This could lead to either strange powers or consequences!
 
 - Achievements, of course!
 
@@ -62,14 +64,26 @@ Since things are still being worked out (by that I mean nothing good has been ad
 
 - To go along witht he gentleman vs. mad scientist approach, a tracking system to see what side your science is leaning towards.
 
+- Two different armour sets: a gentleman one with a tophat, monacle, and a cloak; and a mad scientist one with a labcoat and goggles.
+
 - A lightning atraction rod. Put it on top of your castle, and watch as a small lightning vortex hovers over it! Will look awesome for all your evil needs. Probably will require some fuel source, though.
 
 - Different kinds of lasers! Mining lasers, defense lasers, laser fenses, laser turrets, laser etc.
+
+- Control blocks with your mi-y-in-y-ind!
+
+- Robot minions.
 
 - Explosives (enough said).
 
 - Time travel! Some really complicated stuff involved, so it is a very end-game sort of deal. You can travel to the past, where there is lots of magic and not very much technology. In the future, theres lots of technology, but they shun magic. Don't try to mess with their time paths, or else the big blob of wibbely-wobbely, timey-wimey will come crashing down in a paradox!
 
 - Model rockets for flight testing experiments.
+
+- Lot's of references!! (If you've ever seen anything else I've programmed, you know it's not made by Darth unless it has some.)
+
+- Many other things that the community is interested in having, for science!
+
+- Oh yeah... and SCIENCE!!!
 
 These are just a few of the things to come in this mod! I will hopefully be able to work on it and add all these things soon!
