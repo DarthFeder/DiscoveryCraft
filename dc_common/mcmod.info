@@ -1,0 +1,19 @@
+[
+{
+  "modid": "DC",
+  "name": "DiscoveryCraft",
+  "description": "Become a scientist, discovering every aspect of your Minecraft world and what lies within!",
+  "version": "pre1",
+  "url": "https://github.com/DarthFeder/DiscoveryCraft.git",
+  "updateUrl": "",
+  "authorList": ["Darth_Feder"],
+  "credits": "By Darth, with a bit of help from Pahimar's voice.",
+  "logoFile": "",
+  "screenshots": [],
+  "parent":"",
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
+
