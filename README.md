@@ -1,27 +1,29 @@
-DiscoveryCraft
+###DiscoveryCraft
 ==============
 
 DiscoveryCraft is a mod for Minecraft, a game made by Mojang AB.
 
 
 This mod is published under the GNU Lesser GLPv3 liscense. For more information, head to http://www.gnu.org/copyleft/lesser.html.
+It says basically you are allowed to see, download, use, and edit my source code, but you are NOT allowed to disribute my mod without my expresssed permission.
 
-This mod is made by Darth_Feder. It is open source and avaliable to see on github: https://github.com/DarthFeder/DiscoveryCraft.
+This mod is made by Darth_Feder. It is avaliable to see on github: https://github.com/DarthFeder/DiscoveryCraft.
 
 I have a YouTube channel where I will be posting updates and videos relating to my mod, as well as my usual stuff.
 Check it out here: http://www.youtube.com/user/MinecraftTechz.
 
-DC is currently in Pre-Alpha (I just started working on it). It is currently more a bunch of ideas curculating in my head than a functioning mod.
+DC is currently in a Pre-Stage (I just started working on it). It is currently more a bunch of ideas curculating in my head than a functioning mod.
 If you have any ideas, please feel free to message me. If you have something to fix or update, submit a pull request, and fix it! :D
+If you are a good artist (unlike me) and would like to help with wither my textures or my modeling, I am devoted to your help! Please contact me.
 I am frequently on IRC, on channels such as #direwolf20 and #minecraftforge, both on esper.net.
 
 Thanks to Pahimar for his Let's Mod series! It really helped to make this mod possible.
 
 =============================================================================================================
-WHAT IS DISCOVERYCRAFT?
+##WHAT IS DISCOVERYCRAFT?
 
 DiscoveryCraft is a mod for Minecraft currently in the works. Its main function is to add more scientific discovery
-to your minecraft world. This is broken down into four main sector of science:
+to your minecraft world. This is broken down into several main sector of science:
 
 - Astronomy
 
@@ -31,6 +33,8 @@ to your minecraft world. This is broken down into four main sector of science:
 
 - Physics
 
+- Archaeology
+
 (In the future, I may also add Biology and Technology)
 
 
@@ -39,6 +43,10 @@ Since things are still being worked out (by that I mean nothing good has been ad
 - A science notebook to store all of your findings. The first and main item of DiscoveryCraft.
 
 - A research method.
+
+- An unknown ore that can be found near and below bedrock... with enough research, you can unlock what this stuff can really do!
+
+- A way of liquidizing bedrock to get to the ore underneath.
 
 - Tiers of teloscopes for star-gazing.
 
@@ -62,7 +70,7 @@ Since things are still being worked out (by that I mean nothing good has been ad
 
 - An "internal science battle". There are two approaches to science - the calm, gentlemanly science, and the crazy, mad science! Which side will you choose?
 
-- To go along witht he gentleman vs. mad scientist approach, a tracking system to see what side your science is leaning towards.
+- To go along with the gentleman vs. mad scientist approach, a tracking system to see what side your science is leaning towards.
 
 - Two different armour sets: a gentleman one with a tophat, monacle, and a cloak; and a mad scientist one with a labcoat and goggles.
 
@@ -78,9 +86,11 @@ Since things are still being worked out (by that I mean nothing good has been ad
 
 - Time travel! Some really complicated stuff involved, so it is a very end-game sort of deal. You can travel to the past, where there is lots of magic and not very much technology. In the future, theres lots of technology, but they shun magic. Don't try to mess with their time paths, or else the big blob of wibbely-wobbely, timey-wimey will come crashing down in a paradox!
 
+- Close-proximity time travel, going back to different points in your world's history.
+
 - Model rockets for flight testing experiments.
 
-- Lot's of references!! (If you've ever seen anything else I've programmed, you know it's not made by Darth unless it has some.)
+- Lot's of references to random movies and such!! (If you've ever seen anything else I've programmed, you know it's not made by Darth unless it has some.)
 
 - Many other things that the community is interested in having, for science!
 
