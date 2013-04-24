@@ -20,7 +20,7 @@ I am frequently on IRC, on channels such as #direwolf20 and #minecraftforge, bot
 Thanks to Pahimar for his Let's Mod series! It really helped to make this mod possible.
 
 =============================================================================================================
-##WHAT IS DISCOVERYCRAFT?
+#WHAT IS DISCOVERYCRAFT?
 
 DiscoveryCraft is a mod for Minecraft currently in the works. Its main function is to add more scientific discovery
 to your minecraft world. This is broken down into several main sector of science:
