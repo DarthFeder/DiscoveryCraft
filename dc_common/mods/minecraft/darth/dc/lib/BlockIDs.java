@@ -4,10 +4,10 @@ public class BlockIDs
 {
 
     //Default block ids
-    public static int UKNOWN_ORE_DEFAULT = 6000;
+    public static int UNKNOWN_ORE_DEFAULT = 6000;
     
     
     //Current blocks ids
-    public static int UKNOWN_ORE;
+    public static int UNKNOWN_ORE = 6000; //temporary
     
 }
