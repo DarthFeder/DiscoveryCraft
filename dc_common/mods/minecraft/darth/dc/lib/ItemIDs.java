@@ -9,7 +9,7 @@ public class ItemIDs
     
     
     //Current item ids
-    public static int SCI_NOTEBOOK;
-    public static int UNKNOWN_DUST;
+    public static int SCI_NOTEBOOK = 32000;  // temp
+    public static int UNKNOWN_DUST = 32001; //temp
     
 }
