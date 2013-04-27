@@ -1,6 +1,16 @@
 package mods.minecraft.darth.dc.item;
 
-public class ItemSciNotebook
+import mods.minecraft.darth.dc.DiscoveryCraft;
+import mods.minecraft.darth.dc.lib.Strings;
+
+public class ItemSciNotebook extends ItemDC
 {
+
+    public ItemSciNotebook(int id)
+    {
+        super(id);
+        this.setUnlocalizedName(Strings.SCI_NOTEBOOK_NAME);
+        this.setCreativeTab(DiscoveryCraft.tabsDC);
+    }
 
 }

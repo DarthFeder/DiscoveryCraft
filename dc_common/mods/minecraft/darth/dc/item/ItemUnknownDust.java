@@ -1,6 +1,13 @@
 package mods.minecraft.darth.dc.item;
 
-public class ItemUnknownDust
+import cpw.mods.fml.common.Mod.Item;
+
+public class ItemUnknownDust extends ItemDC
 {
+
+    public ItemUnknownDust(int id)
+    {
+        super(id);
+    }
 
 }
