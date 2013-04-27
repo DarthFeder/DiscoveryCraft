@@ -8,7 +8,7 @@
   "updateUrl": "",
   "authorList": ["Darth_Feder"],
   "credits": "By Darth, with a bit of help from Pahimar's voice.",
-  "logoFile": "",
+  "logoFile": "/mods/dc/textures/logo/DCLogo.png",
   "screenshots": [],
   "parent":"",
   "dependencies": [
