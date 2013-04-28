@@ -19,7 +19,7 @@ import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
 
 
-/*
+/**
  * DiscoveryCraft
  * 
  * @author Darth_Feder
