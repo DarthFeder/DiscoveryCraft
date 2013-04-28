@@ -53,9 +53,9 @@ public class DiscoveryCraft
     
     
         @Init
-        public void init(FMLInitializationEvent event)
+        public void load(FMLInitializationEvent event)
         {
-            
+            System.out.println("TESTING");
             
         }
         
