@@ -1,6 +1,7 @@
 package mods.minecraft.darth.dc.item;
 
 import mods.minecraft.darth.dc.DiscoveryCraft;
+import mods.minecraft.darth.dc.lib.Strings;
 import cpw.mods.fml.common.Mod.Item;
 
 public class ItemUnknownDust extends ItemDC
@@ -10,6 +11,7 @@ public class ItemUnknownDust extends ItemDC
     {
         super(id);
         maxStackSize = 64;
+        this.setUnlocalizedName(Strings.UNKNOWN_DUST_NAME);
         this.setCreativeTab(DiscoveryCraft.tabsDC);
     }
 

@@ -27,6 +27,7 @@ import mods.minecraft.darth.dc.lib.Reference;
  * 
  */
 
+
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES, acceptedMinecraftVersions = Reference.MC_VERSIONS, modExclusionList = Reference.EXCLUSION_MODS)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class DiscoveryCraft
@@ -55,7 +56,7 @@ public class DiscoveryCraft
         @Init
         public void load(FMLInitializationEvent event)
         {
-            System.out.println("TESTING");
+
             
         }
         

@@ -25,13 +25,13 @@ public class BlockDC extends Block
         super(id, material);
     }
     
+    
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister iconRegister)
     {
         blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":" + this.getUnlocalizedName2());
     }
-
 
     
     //Sets the direction of the block when placed

@@ -5,13 +5,14 @@ public class Strings
 
     
     
-    //Blocks Names
+    //Blocks Internal Names
     public static final String UNKNOWN_ORE_NAME = "unknownOre";
     
     
-    //Item Names
+    //Item Internal Names
     public static final String SCI_NOTEBOOK_NAME = "scienceNotebook";
     public static final String UNKNOWN_DUST_NAME = "unknownDust";
+    
     
     
     

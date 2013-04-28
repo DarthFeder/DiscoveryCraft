@@ -1,6 +1,7 @@
 package mods.minecraft.darth.dc.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 import net.minecraft.block.Block;
 
@@ -22,6 +23,10 @@ public class ModBlocks
         
         //GameRegistry Initialization
         GameRegistry.registerBlock(unknownOre, Strings.UNKNOWN_ORE_NAME);
+        
+        
+        //Temp Language Registry
+        LanguageRegistry.addName(unknownOre, "Unknown Ore");
         
         
         blockRecipiesInit();
