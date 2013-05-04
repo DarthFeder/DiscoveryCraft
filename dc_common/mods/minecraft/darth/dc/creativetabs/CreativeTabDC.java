@@ -11,9 +11,9 @@ import net.minecraft.creativetab.CreativeTabs;
 public class CreativeTabDC extends CreativeTabs
 {
 
-    public CreativeTabDC(int par1, String str)
+    public CreativeTabDC(int par1, String par2str)
     {
-        super(par1, str);
+        super(par1, par2str);
     }
 
     @Override
