@@ -16,7 +16,6 @@ public class ItemDC extends Item
         maxStackSize = 1;
         
         
-        
     }
     
     @Override
