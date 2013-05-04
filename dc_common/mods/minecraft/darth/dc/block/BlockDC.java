@@ -34,7 +34,7 @@ public class BlockDC extends Block
     }
 
     
-    //Sets the direction of the block when placed
+    /*Sets the direction of the block when placed
     @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLiving entityLiving, ItemStack itemStack)
     {
@@ -72,7 +72,7 @@ public class BlockDC extends Block
         }
 
         ((TileDC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
-    }
+    }*/
 
 
 }
