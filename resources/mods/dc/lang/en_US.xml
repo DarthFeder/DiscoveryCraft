@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties version="1.0">
+	<comment>English (en_US) Localization File</comment>
+	<entry key="item.scienceNotebook.name">Science Notebook</entry>
+	<entry key="item.unknownDust.name">Unknown Dust</entry>
+	<entry key="tile.unknownOre.name">Unknown Ore</entry>
+	
+</properties>
