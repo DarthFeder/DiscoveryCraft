@@ -25,10 +25,6 @@ public class ModBlocks
         GameRegistry.registerBlock(unknownOre, Strings.UNKNOWN_ORE_NAME);
         
         
-        //Temp Language Registry
-        LanguageRegistry.addName(unknownOre, "Unknown Ore");
-        
-        
         blockRecipiesInit();
     }
     

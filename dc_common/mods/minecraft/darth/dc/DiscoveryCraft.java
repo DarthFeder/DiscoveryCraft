@@ -8,6 +8,7 @@ import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -15,6 +16,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 import mods.minecraft.darth.dc.block.ModBlocks;
 import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
+import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
@@ -36,6 +38,9 @@ public class DiscoveryCraft
 
         @Instance(Reference.MOD_ID)
         public static DiscoveryCraft instance;
+        
+        @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+        public static CommonProxy proxy;
         
         
         public static CreativeTabs tabsDC = new CreativeTabDC(CreativeTabs.getNextID(), Reference.MOD_NAME);

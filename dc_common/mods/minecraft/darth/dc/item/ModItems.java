@@ -26,11 +26,6 @@ public class ModItems
         unknownDust = new ItemUnknownDust(ItemIDs.UNKNOWN_DUST);
         
         
-        //Temp LanguageRegistry
-        LanguageRegistry.addName(sciNotebook, "Science Notebook");
-        LanguageRegistry.addName(unknownDust, "Unknown Dust");
-        
-        
         itemRecipiesInit();
     }
     
