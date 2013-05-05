@@ -10,6 +10,11 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class CreativeTabDC extends CreativeTabs
 {
+    
+    public CreativeTabDC(String label)
+    {
+        super(label);
+    }
 
     public CreativeTabDC(int par1, String par2str)
     {
