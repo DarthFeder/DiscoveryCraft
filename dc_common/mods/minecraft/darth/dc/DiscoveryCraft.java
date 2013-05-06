@@ -46,14 +46,6 @@ public class DiscoveryCraft
         
         
         public static CreativeTabs tabsDC = new CreativeTabDC(Reference.MOD_NAME);
-    
-        
-        @ServerStarting
-        public void serverStarting(FMLServerStartingEvent event)
-        {
-
-
-        }
 
         
         @PreInit
