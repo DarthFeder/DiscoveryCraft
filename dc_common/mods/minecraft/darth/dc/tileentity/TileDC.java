@@ -7,9 +7,9 @@ import net.minecraftforge.common.ForgeDirection;
 public class TileDC extends TileEntity
 {
 
-    private ForgeDirection orientation;
-    private byte state;
-    private String customName;
+    protected ForgeDirection orientation;
+    protected byte state;
+    protected String customName;
     
     public TileDC()
     {
