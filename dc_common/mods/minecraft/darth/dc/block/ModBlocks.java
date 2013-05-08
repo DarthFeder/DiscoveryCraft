@@ -26,7 +26,7 @@ public class ModBlocks
         GameRegistry.registerBlock(unknownOre, Strings.UNKNOWN_ORE_NAME);
         
         
-        MinecraftForge.setBlockHarvestLevel(unknownOre, "pickaxe", 4);
+        MinecraftForge.setBlockHarvestLevel(unknownOre, "pickaxe", 3);
         
         blockRecipiesInit();
     }
