@@ -2,22 +2,19 @@ package mods.minecraft.darth.dc.item;
 
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-
 import mods.minecraft.darth.dc.lib.BlockIDs;
 import mods.minecraft.darth.dc.lib.ItemIDs;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class ModItems
 {
-
     
     //Item Instances
     public static Item sciNotebook;
     public static Item unknownDust;
+    
     
     public static void init()
     {
@@ -29,14 +26,13 @@ public class ModItems
         itemRecipiesInit();
     }
     
-    public static void itemRecipiesInit()
+    private static void itemRecipiesInit()
     {
         //Unknown Dust
         GameRegistry.addSmelting(BlockIDs.UNKNOWN_ORE, new ItemStack(unknownDust), 0F);
         
         //Science Notebook
-        GameRegistry.addShapelessRecipe(new ItemStack(sciNotebook), new ItemStack(Item.writableBook));
-        
+        GameRegistry.addRecipe(new ItemStack(sciNotebook), "ddd", "dbd", "ddd", 'd', new ItemStack(unknownDust), 'b', new ItemStack(Item.writableBook));
     }
     
 }

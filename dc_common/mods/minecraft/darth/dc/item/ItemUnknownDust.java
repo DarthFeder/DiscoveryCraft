@@ -2,7 +2,6 @@ package mods.minecraft.darth.dc.item;
 
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.Strings;
-import cpw.mods.fml.common.Mod.Item;
 
 public class ItemUnknownDust extends ItemDC
 {

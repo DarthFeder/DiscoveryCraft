@@ -4,7 +4,6 @@ import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.Strings;
 
 import net.minecraft.block.material.Material;
-import net.minecraftforge.common.MinecraftForge;
 
 public class BlockUnknownOre extends BlockDC
 {
