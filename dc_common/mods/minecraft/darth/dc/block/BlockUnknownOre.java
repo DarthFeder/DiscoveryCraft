@@ -12,7 +12,7 @@ public class BlockUnknownOre extends BlockDC
     {
         super(id, Material.rock);
         this.setUnlocalizedName(Strings.UNKNOWN_ORE_NAME)
-            .setCreativeTab(DiscoveryCraft.tabsDC)
+            .setCreativeTab(DiscoveryCraft.tabDC)
             .setHardness(8F)
             .setResistance(80)
             .setLightValue(0.2F)

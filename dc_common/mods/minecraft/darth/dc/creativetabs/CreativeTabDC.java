@@ -26,6 +26,6 @@ public class CreativeTabDC extends CreativeTabs
     //Give item id of item to display as tab icon
     public int getTabIconItemIndex()
     {
-        return Reference.DC_CREATIVE_TAB_ICON;
+        return Reference.DC_CREATIVE_TAB_ICON + 256;
     }
 }

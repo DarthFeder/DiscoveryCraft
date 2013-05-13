@@ -10,7 +10,7 @@ public class ItemSciNotebook extends ItemDC
     {
         super(id);
         this.setUnlocalizedName(Strings.SCI_NOTEBOOK_NAME);
-        this.setCreativeTab(DiscoveryCraft.tabsDC);
+        this.setCreativeTab(DiscoveryCraft.tabDC);
     }
 
 }

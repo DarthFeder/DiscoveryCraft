@@ -11,7 +11,7 @@ public class ItemUnknownDust extends ItemDC
         super(id);
         maxStackSize = 64;
         this.setUnlocalizedName(Strings.UNKNOWN_DUST_NAME);
-        this.setCreativeTab(DiscoveryCraft.tabsDC);
+        this.setCreativeTab(DiscoveryCraft.tabDC);
     }
 
 }

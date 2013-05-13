@@ -43,7 +43,7 @@ public class DiscoveryCraft
         public static CommonProxy proxy;
         
         
-        public static CreativeTabs tabsDC = new CreativeTabDC(Reference.MOD_NAME);
+        public static CreativeTabs tabDC = new CreativeTabDC(Reference.MOD_ID);
 
         
         @PreInit
