@@ -5,4 +5,5 @@
 	<entry key="item.scienceNotebook.name">Science Notebook</entry>
 	<entry key="item.unknownDust.name">Unknown Dust</entry>
 	<entry key="tile.unknownOre.name">Unknown Ore</entry>
+	<entry key="itemGroup.DC">DiscoveryCraft</entry>
 </properties>
