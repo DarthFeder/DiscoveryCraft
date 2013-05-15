@@ -24,13 +24,28 @@ public class OreGeneration implements IWorldGenerator
     
     private void generateUnknownOre(World world, int i, int j)
     {
-        for(int k = 0;k < 10;k++)
+       
+        int xCoord = i + this.random.nextInt(16);
+        int yCoord = this.random.nextInt(6);
+        int zCoord = j + this.random.nextInt(16);
+        
+        if (yCoord < 4)
         {
-            int xCoord = i + this.random.nextInt(16);
-            int yCoord = this.random.nextInt(6);
-            int zCoord = j + this.random.nextInt(16);
-            new WorldGenMinable(BlockIDs.UNKNOWN_ORE, 10).generate(world, random, xCoord, yCoord, zCoord);
+            int tempRand = (this.random.nextInt(3) * 4) + 1;
+            new WorldGenMinable(BlockIDs.UNKNOWN_ORE, tempRand).generate(world, random, xCoord, yCoord, zCoord);
         }
+        
+        if (yCoord > 4)
+        {
+            int tempRand = this.random.nextInt(2) + 1;
+            new WorldGenMinable(BlockIDs.UNKNOWN_ORE, tempRand).generate(world, random, xCoord, yCoord, zCoord);
+        }
+        
+        if (yCoord == 4)
+        {
+            //No ore this chunk
+        }
+    
         
         
     }
