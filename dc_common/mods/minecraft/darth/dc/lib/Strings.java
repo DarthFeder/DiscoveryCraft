@@ -12,7 +12,7 @@ public class Strings
     //Item Internal Names
     public static final String SCI_NOTEBOOK_NAME = "scienceNotebook";
     public static final String UNKNOWN_DUST_NAME = "unknownDust";
-    
+    public static final String MONOCLE_LENS_NAME = "monocleLens";
     
     
     
