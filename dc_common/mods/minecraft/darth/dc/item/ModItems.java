@@ -36,7 +36,7 @@ public class ModItems
         GameRegistry.addRecipe(new ItemStack(sciNotebook), "ddd", "dbd", "ddd", 'd', new ItemStack(unknownDust), 'b', new ItemStack(Item.writableBook));
         
         //Monocle Lens
-        GameRegistry.addRecipe(new ItemStack(monocleLens), " g ", "gpg", " g ", 'g', new ItemStack(Item.ingotGold), 'p', new ItemStack(Block.thinGlass));
+        GameRegistry.addRecipe(new ItemStack(monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
     }
     
 }
