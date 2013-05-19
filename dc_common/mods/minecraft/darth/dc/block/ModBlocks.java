@@ -5,6 +5,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 
+import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.BlockIDs;
 import mods.minecraft.darth.dc.lib.Strings;
 
@@ -13,16 +14,16 @@ public class ModBlocks
 
     //Block Instances
     public static Block unknownOre;
-    
+    public static Block glowingUnknownOre;
     
     public static void init()
     {
         //Initialize each block
-        unknownOre = new BlockUnknownOre(BlockIDs.UNKNOWN_ORE);
+        unknownOre = new BlockUnknownOre(BlockIDs.UNKNOWN_ORE, false).setUnlocalizedName(Strings.UNKNOWN_ORE_NAME).setCreativeTab(DiscoveryCraft.tabDC).setHardness(8F).setResistance(80).setStepSound(Block.soundStoneFootstep).setLightValue(0.2F).setLightOpacity(4);
+        glowingUnknownOre = new BlockUnknownOre(BlockIDs.GLOWING_UNKNOWN_ORE, true).setUnlocalizedName(Strings.GLOWING_UNKNOWN_ORE_NAME).setCreativeTab(DiscoveryCraft.tabDC).setHardness(8F).setResistance(80).setStepSound(Block.soundStoneFootstep).setLightValue(0.5F).setLightOpacity(9);
         
         
-        MinecraftForge.setBlockHarvestLevel(unknownOre, "pickaxe", 3);
-        
+        blockHarvests();
         blockRegistry();
         blockRecipiesInit();
         
@@ -33,6 +34,16 @@ public class ModBlocks
         
         //GameRegistry Initialization
         GameRegistry.registerBlock(unknownOre, Strings.UNKNOWN_ORE_NAME);
+        GameRegistry.registerBlock(glowingUnknownOre, Strings.GLOWING_UNKNOWN_ORE_NAME);
+        
+    }
+    
+    private static void blockHarvests()
+    {
+        
+        //Set Block Harvest Levels
+        MinecraftForge.setBlockHarvestLevel(unknownOre, "pickaxe", 3);
+        MinecraftForge.setBlockHarvestLevel(glowingUnknownOre, "pickaxe", 3);
         
     }
     

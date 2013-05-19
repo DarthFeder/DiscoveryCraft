@@ -9,9 +9,9 @@ public class ItemUnknownDust extends ItemDC
     public ItemUnknownDust(int id)
     {
         super(id);
-        maxStackSize = 64;
         this.setUnlocalizedName(Strings.UNKNOWN_DUST_NAME);
         this.setCreativeTab(DiscoveryCraft.tabDC);
+        maxStackSize = 64;
     }
 
 }

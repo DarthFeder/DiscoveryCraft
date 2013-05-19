@@ -16,6 +16,8 @@ public class ModItems
     public static Item sciNotebook;
     public static Item unknownDust;
     public static Item monocleLens;
+    public static Item notebookLock;
+    
     
     public static void init()
     {
@@ -23,6 +25,7 @@ public class ModItems
         sciNotebook = new ItemSciNotebook(ItemIDs.SCI_NOTEBOOK);
         unknownDust = new ItemUnknownDust(ItemIDs.UNKNOWN_DUST);
         monocleLens = new ItemMonocleLens(ItemIDs.MONOCLE_LENS);
+        notebookLock = new ItemNotebookLock(ItemIDs.NOTEBOOK_LOCK);
         
         itemRecipiesInit();
     }
@@ -33,7 +36,7 @@ public class ModItems
         GameRegistry.addSmelting(BlockIDs.UNKNOWN_ORE, new ItemStack(unknownDust), 0F);
         
         //Science Notebook
-        GameRegistry.addRecipe(new ItemStack(sciNotebook), "ddd", "dbd", "ddd", 'd', new ItemStack(unknownDust), 'b', new ItemStack(Item.writableBook));
+        GameRegistry.addRecipe(new ItemStack(sciNotebook), "dld", "lbl", "dnd", 'd', new ItemStack(unknownDust), 'b', new ItemStack(Item.writableBook), 'l', new ItemStack(Item.dyePowder), 'n', new ItemStack(notebookLock));
         
         //Monocle Lens
         GameRegistry.addRecipe(new ItemStack(monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
