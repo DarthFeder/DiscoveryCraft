@@ -21,6 +21,7 @@ import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
+import mods.minecraft.darth.dc.world.DungeonFinds;
 import mods.minecraft.darth.dc.world.OreGeneration;
 
 
@@ -69,6 +70,9 @@ public class DiscoveryCraft
         {
             //Register Ore Generation
             GameRegistry.registerWorldGenerator(new OreGeneration());
+            
+            //Register Dungeon Additions
+            DungeonFinds.initDungeon();
             
         }
         
