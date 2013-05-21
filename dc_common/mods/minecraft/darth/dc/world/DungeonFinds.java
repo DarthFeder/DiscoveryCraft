@@ -11,8 +11,12 @@ public class DungeonFinds
 
     public static void initDungeon()
     {
+        System.out.println("DiscoveryCraft is initiating custom dungeon additions...");
         
-        DungeonHooks.addDungeonMob("creeper", 15);
+        DungeonHooks.addDungeonMob("creeper", 20);
+        DungeonHooks.addDungeonMob("enderman", 10);
+        DungeonHooks.addDungeonMob("witch", 5);
+        DungeonHooks.addDungeonMob("snowman", 1);
         
         
         WeightedRandomChestContent notebookLockDungeonFind = new WeightedRandomChestContent(new ItemStack(ModItems.notebookLock), 2, 20, 3);
@@ -25,6 +29,7 @@ public class DungeonFinds
         ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_CROSSING, notebookLockDungeonFind);
         ChestGenHooks.addItem(ChestGenHooks.VILLAGE_BLACKSMITH, notebookLockDungeonFind);
         
+        System.out.println("DiscoveryCraft has finished adding dungeon additions.");
     }
     
 }
