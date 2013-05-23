@@ -2,14 +2,10 @@ package mods.minecraft.darth.dc.block;
 
 import java.util.Random;
 
-import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.BlockIDs;
-import mods.minecraft.darth.dc.lib.Strings;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
 public class BlockUnknownOre extends BlockDC
