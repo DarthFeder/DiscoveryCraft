@@ -1,8 +1,8 @@
-package mods.minecraft.darth.dc.core.helper;
+package mods.minecraft.darth.dc.core.util;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class LocalizationHelper
+public class LocalizationUtil
 {
 
     public static boolean isXMLLanguageFile(String fileName)

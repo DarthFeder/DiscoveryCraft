@@ -16,5 +16,9 @@ public class Strings
     public static final String MONOCLE_LENS_NAME = "monocleLens";
     public static final String NOTEBOOK_LOCK_NAME = "notebookLock";
     
+    //NBT Related Strings
+    public static final String NBT_ITEM_DISPLAY = "display";
+    public static final String NBT_ITEM_COLOR = "color";
+    
     
 }

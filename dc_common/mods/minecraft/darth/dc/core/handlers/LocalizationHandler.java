@@ -1,6 +1,6 @@
 package mods.minecraft.darth.dc.core.handlers;
 
-import mods.minecraft.darth.dc.core.helper.LocalizationHelper;
+import mods.minecraft.darth.dc.core.util.LocalizationUtil;
 import mods.minecraft.darth.dc.lib.Localizations;
 
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -15,7 +15,7 @@ public class LocalizationHandler
         
         for (String localizationFile : Localizations.localeFiles)
         {
-            LanguageRegistry.instance().loadLocalization(localizationFile, LocalizationHelper.getLocaleFromFileName(localizationFile), LocalizationHelper.isXMLLanguageFile(localizationFile));
+            LanguageRegistry.instance().loadLocalization(localizationFile, LocalizationUtil.getLocaleFromFileName(localizationFile), LocalizationUtil.isXMLLanguageFile(localizationFile));
         }
         
     }   

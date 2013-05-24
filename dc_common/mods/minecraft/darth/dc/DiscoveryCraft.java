@@ -13,7 +13,6 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 import mods.minecraft.darth.dc.block.ModBlocks;
 import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
@@ -21,8 +20,7 @@ import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
-import mods.minecraft.darth.dc.world.DungeonFinds;
-import mods.minecraft.darth.dc.world.OreGeneration;
+import mods.minecraft.darth.dc.world.WorldInit;
 
 
 /**
@@ -68,11 +66,9 @@ public class DiscoveryCraft
         @Init
         public void load(FMLInitializationEvent event)
         {
-            //Register Ore Generation
-            GameRegistry.registerWorldGenerator(new OreGeneration());
-            
-            //Register Dungeon Additions
-            DungeonFinds.initDungeon();
+
+            //Register World Additions
+            WorldInit.init();
             
         }
         

@@ -11,9 +11,7 @@
   "logoFile": "/mods/dc/textures/logo/DCLogo.png",
   "screenshots": [],
   "parent":"",
-  "dependencies": [
-     "mod_MinecraftForge"
-  ]
+  "dependencies": ["mod_MinecraftForge"]
 }
 ]
 
