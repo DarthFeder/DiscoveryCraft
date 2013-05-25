@@ -3,6 +3,7 @@ package mods.minecraft.darth.dc.item;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -57,10 +58,10 @@ public class ItemSonicScrewdriver extends ItemDC
             par3World.setBlock(par4, par5, par6, Block.redstoneLampIdle.blockID);
             return true;
         }
-        else if (par3World.getBlockId(par4, par5,par6) == Block.wood.blockID || par3World.getBlockId(par4, par5,par6) == Block.planks.blockID || par3World.getBlockId(par4, par5,par6) == Block.doorWood.blockID)
+        else if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
         {
             par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
-            //Will play sound
+            par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
             return true;
         }
         
