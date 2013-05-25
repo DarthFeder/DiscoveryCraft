@@ -19,7 +19,7 @@ public class DungeonFinds
         DungeonHooks.addDungeonMob("snowman", 1);
         
         
-        WeightedRandomChestContent notebookLockDungeonFind = new WeightedRandomChestContent(new ItemStack(ModItems.notebookLock), 2, 20, 3);
+        WeightedRandomChestContent notebookLockDungeonFind = new WeightedRandomChestContent(new ItemStack(ModItems.notebookLock), 5, 25, 3);
         
         ChestGenHooks.addItem(ChestGenHooks.DUNGEON_CHEST, notebookLockDungeonFind);
         ChestGenHooks.addItem(ChestGenHooks.MINESHAFT_CORRIDOR, notebookLockDungeonFind);

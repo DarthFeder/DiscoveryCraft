@@ -15,6 +15,7 @@ public class Strings
     public static final String UNKNOWN_DUST_NAME = "unknownDust";
     public static final String MONOCLE_LENS_NAME = "monocleLens";
     public static final String NOTEBOOK_LOCK_NAME = "notebookLock";
+    public static final String SONIC_SCREWDRIVER_NAME = "sonicScrewdriver";
     
     //NBT Related Strings
     public static final String NBT_ITEM_DISPLAY = "display";

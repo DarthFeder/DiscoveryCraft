@@ -6,6 +6,7 @@
 	<entry key="item.unknownDust.name">Unknown Dust</entry>
 	<entry key="item.monocleLens.name">Monocle Lens</entry>
 	<entry key="item.notebookLock.name">Notebook Lock</entry>
+	<entry key="item.sonicScrewdriver.name">Sonic Screwdriver - DiscoveryCraft Edition</entry>
 	<entry key="tile.unknownOre.name">Unknown Ore</entry>
 	<entry key="itemGroup.DC">DiscoveryCraft</entry>
 </properties>

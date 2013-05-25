@@ -17,17 +17,21 @@ public class ModItems
     public static Item unknownDust;
     public static Item monocleLens;
     public static Item notebookLock;
+    public static Item sonicScrewdriver;
     
     
     public static void init()
     {
+        
         //Initialize each item
         sciNotebook = new ItemSciNotebook(ItemIDs.SCI_NOTEBOOK);
         unknownDust = new ItemUnknownDust(ItemIDs.UNKNOWN_DUST);
         monocleLens = new ItemMonocleLens(ItemIDs.MONOCLE_LENS);
         notebookLock = new ItemNotebookLock(ItemIDs.NOTEBOOK_LOCK);
+        sonicScrewdriver = new ItemSonicScrewdriver(ItemIDs.SONIC_SCREWDRIVER);
         
         itemRecipiesInit();
+        
     }
     
     private static void itemRecipiesInit()
@@ -40,6 +44,9 @@ public class ModItems
         
         //Monocle Lens
         GameRegistry.addRecipe(new ItemStack(monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
+    
+        //Sonic Screwdriver
+        GameRegistry.addRecipe(new ItemStack (sonicScrewdriver), "e  ", " s ", "  i", 'e', new ItemStack(Item.emerald), 's', new ItemStack(Item.stick), 'i', new ItemStack(Item.ingotIron));
     }
     
 }

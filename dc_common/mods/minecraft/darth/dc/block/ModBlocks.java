@@ -20,7 +20,7 @@ public class ModBlocks
     {
         //Initialize each block
         unknownOre = new BlockUnknownOre(BlockIDs.UNKNOWN_ORE, false).setUnlocalizedName(Strings.UNKNOWN_ORE_NAME).setCreativeTab(DiscoveryCraft.tabDC).setHardness(8F).setResistance(80).setStepSound(Block.soundStoneFootstep).setLightValue(0.2F).setLightOpacity(4);
-        glowingUnknownOre = new BlockUnknownOre(BlockIDs.GLOWING_UNKNOWN_ORE, true).setUnlocalizedName(Strings.GLOWING_UNKNOWN_ORE_NAME).setCreativeTab(DiscoveryCraft.tabDC).setHardness(8F).setResistance(80).setStepSound(Block.soundStoneFootstep).setLightValue(0.5F).setLightOpacity(9);
+        glowingUnknownOre = new BlockUnknownOre(BlockIDs.GLOWING_UNKNOWN_ORE, true).setUnlocalizedName(Strings.GLOWING_UNKNOWN_ORE_NAME).setHardness(8F).setResistance(80).setStepSound(Block.soundStoneFootstep).setLightValue(0.5F).setLightOpacity(9);
         
         
         blockHarvests();
