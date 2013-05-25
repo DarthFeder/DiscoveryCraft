@@ -53,7 +53,7 @@ public class DiscoveryCraft
         {
             
             //Register Sound Handler
-            //proxy.registerSoundHandler();
+            proxy.registerSoundHandler();
             
             //Load Language Localization Files
             LocalizationHandler.loadLanguages();
