@@ -46,20 +46,18 @@ public class ItemSonicScrewdriver extends ItemDC
         
         if (par3World.getBlockId(par4, par5,par6) == Block.tnt.blockID)
         {
-            playScrewdriverSound(par2EntityPlayer, par3World);
-                
+            //playScrewdriverSound(par2EntityPlayer, par3World);
+            
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.redstoneLampIdle.blockID)
         {
-            playScrewdriverSound(par2EntityPlayer, par3World);
+            //playScrewdriverSound(par2EntityPlayer, par3World);
             par3World.setBlock(par4, par5, par6, Block.redstoneLampActive.blockID);
-            return true;
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.redstoneLampActive.blockID)
         {
-            playScrewdriverSound(par2EntityPlayer, par3World);
+            //playScrewdriverSound(par2EntityPlayer, par3World);
             par3World.setBlock(par4, par5, par6, Block.redstoneLampIdle.blockID);
-            return true;
         }
         else if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
         {
@@ -74,7 +72,7 @@ public class ItemSonicScrewdriver extends ItemDC
     
     private static void playScrewdriverSound(EntityPlayer player, World world)
     {
-        world.playSoundAtEntity(player, Sounds.SOUND_SONIC_SCREWDRIVER , 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+        world.playSoundAtEntity(player, Sounds.SOUND_SONIC_SCREWDRIVER , 1.0F, 1.0F);
     }
     
 }
