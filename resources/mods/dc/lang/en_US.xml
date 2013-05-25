@@ -3,10 +3,12 @@
 <properties version="1.0">
 	<comment>English (en_US) Localization File</comment>
 	<entry key="item.scienceNotebook.name">Science Notebook</entry>
-	<entry key="item.unknownDust.name">Unknown Dust</entry>
+	<entry key="item.unknownDust.name">§kUnknown §rDust</entry>
 	<entry key="item.monocleLens.name">Monocle Lens</entry>
 	<entry key="item.notebookLock.name">Notebook Lock</entry>
 	<entry key="item.sonicScrewdriver.name">§2§lSonic Screwdriver</entry>
-	<entry key="tile.unknownOre.name">Unknown Ore</entry>
+	
+	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
+	
 	<entry key="itemGroup.DC">DiscoveryCraft</entry>
 </properties>
