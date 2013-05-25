@@ -20,6 +20,7 @@ import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
+import mods.minecraft.darth.dc.recipe.ModRecipes;
 import mods.minecraft.darth.dc.world.WorldInit;
 
 
@@ -59,6 +60,9 @@ public class DiscoveryCraft
             
             //Initialize Items
             ModItems.init();
+            
+            //Initialize Mod Crafting/Smelting/etc Recipes
+            ModRecipes.init();
             
         }
     

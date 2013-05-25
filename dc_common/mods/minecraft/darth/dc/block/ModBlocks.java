@@ -16,6 +16,7 @@ public class ModBlocks
     public static Block unknownOre;
     public static Block glowingUnknownOre;
     
+    
     public static void init()
     {
         //Initialize each block
@@ -25,16 +26,6 @@ public class ModBlocks
         
         blockHarvests();
         blockRegistry();
-        blockRecipiesInit();
-        
-    }
-    
-    private static void blockRegistry()
-    {
-        
-        //GameRegistry Initialization
-        GameRegistry.registerBlock(unknownOre, Strings.UNKNOWN_ORE_NAME);
-        GameRegistry.registerBlock(glowingUnknownOre, Strings.GLOWING_UNKNOWN_ORE_NAME);
         
     }
     
@@ -47,10 +38,13 @@ public class ModBlocks
         
     }
     
-    private static void blockRecipiesInit()
+    private static void blockRegistry()
     {
         
-        
+        //GameRegistry Initialization
+        GameRegistry.registerBlock(unknownOre, Strings.UNKNOWN_ORE_NAME);
+        GameRegistry.registerBlock(glowingUnknownOre, Strings.GLOWING_UNKNOWN_ORE_NAME);
         
     }
+    
 }
