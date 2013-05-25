@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.minecraft.darth.dc.lib.Reference;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
@@ -14,7 +15,6 @@ public class ItemDC extends Item
     {
         super(id);
         maxStackSize = 1;
-        
         
     }
     
