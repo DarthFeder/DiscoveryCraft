@@ -52,6 +52,9 @@ public class DiscoveryCraft
         public void preInit(FMLPreInitializationEvent event)
         {
             
+            //Register Sound Handler
+            //proxy.registerSoundHandler();
+            
             //Load Language Localization Files
             LocalizationHandler.loadLanguages();
             

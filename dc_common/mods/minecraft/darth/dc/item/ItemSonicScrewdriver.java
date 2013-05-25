@@ -12,6 +12,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.minecraft.darth.dc.DiscoveryCraft;
+import mods.minecraft.darth.dc.lib.Sounds;
 import mods.minecraft.darth.dc.lib.Strings;
 
 public class ItemSonicScrewdriver extends ItemDC
@@ -35,7 +36,7 @@ public class ItemSonicScrewdriver extends ItemDC
     @Override
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
-        //Will play sound
+        playScrewdriverSound(par3EntityPlayer, par2World);
         return par1ItemStack;
     }
     
@@ -45,16 +46,18 @@ public class ItemSonicScrewdriver extends ItemDC
         
         if (par3World.getBlockId(par4, par5,par6) == Block.tnt.blockID)
         {
-           
+            playScrewdriverSound(par2EntityPlayer, par3World);
                 
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.redstoneLampIdle.blockID)
         {
+            playScrewdriverSound(par2EntityPlayer, par3World);
             par3World.setBlock(par4, par5, par6, Block.redstoneLampActive.blockID);
             return true;
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.redstoneLampActive.blockID)
         {
+            playScrewdriverSound(par2EntityPlayer, par3World);
             par3World.setBlock(par4, par5, par6, Block.redstoneLampIdle.blockID);
             return true;
         }
@@ -68,5 +71,10 @@ public class ItemSonicScrewdriver extends ItemDC
         return false;
         
     }
-
+    
+    private static void playScrewdriverSound(EntityPlayer player, World world)
+    {
+        world.playSoundAtEntity(player, Sounds.SOUND_SONIC_SCREWDRIVER , 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+    }
+    
 }

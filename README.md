@@ -37,14 +37,31 @@ to your minecraft world. This is broken down into several main sector of science
 
 (In the future, I may also add Biology and Technology)
 
+Things that are currently in the mod:
 
-Since things are still being worked out (by that I mean nothing good has been added yet), I cannot say what will actually happen with the mod. But, I can tell you some of the things that I am planning to add in the future:
+- Unknown ore generation (a bit buggy with bedrock, may change) and smelting into dust
 
-- A science notebook to store all of your findings. The first and main item of DiscoveryCraft.
+- Finding locks in dungeons, craft into notebook
+
+- Sonic Screwdriver (very temp recipe and has limited functionality)
+
+Things coming up soon:
+
+- A lot more sonic screwdriver features
+
+- Armor sets
+
+- Liquid Bedrock
+
+- Better textures
+
+In the future:
+
+- A science notebook GUI and implementation
 
 - A research method.
 
-- An unknown ore that can be found near and below bedrock... with enough research, you can unlock what this stuff can really do!
+- Unlocking unknown ore's potential
 
 - A way of liquidizing bedrock to get to the ore underneath.
 
@@ -60,9 +77,7 @@ Since things are still being worked out (by that I mean nothing good has been ad
   
 - Temporary gravity manipulators (you can guess what that does).
 
-- A sonic screwdriver for your all-around tool (unlike the RedPower one, this one will actually function :D).
-
-- Lot's of other types of tools.
+- Lot's of types of tools.
 
 - The ability to add or change your own DNA. This could lead to either strange powers or consequences!
 
