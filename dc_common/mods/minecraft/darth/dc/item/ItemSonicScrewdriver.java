@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -180,6 +182,20 @@ public class ItemSonicScrewdriver extends ItemDC
         
         return false;
         
+    }
+    
+    public boolean itemInteractionForEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving)
+    {
+        if (par2EntityLiving instanceof EntityEnderman)
+        {
+            par2EntityLiving.travelToDimension(-1);
+        }
+        else if (par2EntityLiving instanceof EntityCreeper)
+        {
+            ((EntityCreeper) par2EntityLiving).setCreeperState(-1);  
+        }
+        
+        return false;
     }
     
     private static void playScrewdriverSound(EntityPlayer player, World world)
