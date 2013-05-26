@@ -67,11 +67,31 @@ public class ItemSonicScrewdriver extends ItemDC
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.sand.blockID)
         {
-            par3World.setBlock(par4, par5, par6, Block.glass.blockID);
+            if (par2EntityPlayer.isSneaking())
+                par3World.setBlock(par4, par5, par6, Block.glass.blockID);
+            else
+                par3World.setBlock(par4, par5, par6, Block.sandStone.blockID);
+        }
+        else if (par3World.getBlockId(par4, par5,par6) == Block.sandStone.blockID)
+        {
+            if (par2EntityPlayer.isSneaking())
+                par3World.setBlock(par4, par5, par6, Block.glass.blockID);
+            else
+                par3World.setBlock(par4, par5, par6, Block.sand.blockID);
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.glass.blockID)
         {
-            par3World.setBlock(par4, par5, par6, Block.sand.blockID);
+            if (par2EntityPlayer.isSneaking())
+                par3World.setBlock(par4, par5, par6, Block.sand.blockID);
+            else
+                par3World.setBlock(par4, par5, par6, Block.thinGlass.blockID);
+        }
+        else if (par3World.getBlockId(par4, par5,par6) == Block.thinGlass.blockID)
+        {
+            if (par2EntityPlayer.isSneaking())
+                par3World.setBlock(par4, par5, par6, Block.sand.blockID);
+            else
+                par3World.setBlock(par4, par5, par6, Block.glass.blockID);
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.anvil.blockID && par3World.getBlockMetadata(par4, par5, par6) == 2)
         {
@@ -146,7 +166,11 @@ public class ItemSonicScrewdriver extends ItemDC
             else
                 par3World.setBlock(par4, par5, par6, Block.pistonBase.blockID, par3World.getBlockMetadata(par4, par5, par6), 2);
         }
-        
+        else if (par3World.getBlockId(par4, par5,par6) == Block.leaves.blockID)
+        {
+            par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.break", 1.0F, 1.0F);
+            par3World.setBlockToAir(par4, par5, par6);
+        }
         
         return false;
         
