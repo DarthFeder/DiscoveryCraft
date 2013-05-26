@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -45,11 +46,12 @@ public class ItemSonicScrewdriver extends ItemDC
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
     {
         
-        if (par3World.getBlockId(par4, par5,par6) == Block.tnt.blockID)
+        if (par3World.getBlockId(par4, par5,par6) == Block.tnt.blockID && !par3World.isRemote)
         {
-            
-            //Light tnt
-            
+            EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(par3World, (double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), par2EntityPlayer);
+            par3World.spawnEntityInWorld(entitytntprimed);
+            par3World.playSoundAtEntity(entitytntprimed, "random.fuse", 1.0F, 1.0F);
+            par3World.setBlockToAir(par4, par5, par6);
         }
         else if (par3World.getBlockId(par4, par5,par6) == Block.redstoneLampIdle.blockID)
         {
@@ -170,6 +172,10 @@ public class ItemSonicScrewdriver extends ItemDC
         {
             par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.break", 1.0F, 1.0F);
             par3World.setBlockToAir(par4, par5, par6);
+        }
+        else
+        {
+            return super.onItemUse(par1ItemStack, par2EntityPlayer, par3World, par4, par5, par6, par7, par8, par9, par10);
         }
         
         return false;
