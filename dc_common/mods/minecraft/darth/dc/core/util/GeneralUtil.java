@@ -3,8 +3,6 @@ package mods.minecraft.darth.dc.core.util;
 import java.util.ArrayList;
 
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.monster.IMob;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -42,15 +40,5 @@ public class GeneralUtil
         
     }
 
-    
-    public static boolean isHostileEntity(EntityLiving entity)
-    {
-
-        if (entity instanceof IMob)
-            return true;
-        else
-            return false;
-        
-    }
 
 }
