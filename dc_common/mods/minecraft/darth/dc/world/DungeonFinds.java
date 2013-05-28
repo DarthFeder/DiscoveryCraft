@@ -11,7 +11,7 @@ public class DungeonFinds
 
     public static void initDungeon()
     {
-        System.out.println("DiscoveryCraft is initiating custom dungeon additions...");
+        System.out.println("[DiscoveryCraft] Initiating custom dungeon additions...");
         
         DungeonHooks.addDungeonMob("creeper", 20);
         DungeonHooks.addDungeonMob("enderman", 10);
@@ -29,7 +29,7 @@ public class DungeonFinds
         ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_CROSSING, notebookLockDungeonFind);
         ChestGenHooks.addItem(ChestGenHooks.VILLAGE_BLACKSMITH, notebookLockDungeonFind);
         
-        System.out.println("DiscoveryCraft has finished adding dungeon additions.");
+        System.out.println("[DiscoveryCraft] Finished adding dungeon additions.");
     }
     
 }

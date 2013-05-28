@@ -81,6 +81,7 @@ public class ItemSonicScrewdriver extends ItemDC
         }
         if (this.cooldown > 0)
             this.cooldown--;
+        
         return par1ItemStack;
     }
     
@@ -142,14 +143,6 @@ public class ItemSonicScrewdriver extends ItemDC
                     par3World.setBlock(par4, par5, par6, Block.sand.blockID);
                 else
                     par3World.setBlock(par4, par5, par6, Block.glass.blockID);
-            }
-            else if (par3World.getBlockId(par4, par5,par6) == Block.anvil.blockID && par3World.getBlockMetadata(par4, par5, par6) == 2)
-            {
-                par3World.setBlockMetadataWithNotify(par4, par5, par6, 1, 2);
-            }
-            else if (par3World.getBlockId(par4, par5,par6) == Block.anvil.blockID && par3World.getBlockMetadata(par4, par5, par6) == 1)
-            {
-                par3World.setBlockMetadataWithNotify(par4, par5, par6, 0, 2);
             }
             else if (par3World.getBlockId(par4, par5,par6) == Block.dirt.blockID)
             {
@@ -216,7 +209,7 @@ public class ItemSonicScrewdriver extends ItemDC
                 else
                     par3World.setBlock(par4, par5, par6, Block.pistonBase.blockID, par3World.getBlockMetadata(par4, par5, par6), 2);
             }
-            else if (par3World.getBlockId(par4, par5,par6) == Block.leaves.blockID)
+            else if (par3World.getBlockId(par4, par5,par6) == Block.leaves.blockID || par3World.getBlockId(par4, par5,par6) == Block.vine.blockID)
             {
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "dig.cloth1", 2.0F, 1.0F);
                 par3World.setBlockToAir(par4, par5, par6);
@@ -244,6 +237,54 @@ public class ItemSonicScrewdriver extends ItemDC
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.dirt.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.grass.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.grass.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.dirt.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.stone.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.cobblestone.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.cobblestone.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.stone.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.pumpkin.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.pumpkinLantern.blockID, par3World.getBlockMetadata(par4, par5, par6), 2);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.pumpkinLantern.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.pumpkin.blockID, par3World.getBlockMetadata(par4, par5, par6), 2);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.sand.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.sandStone.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.sandStone.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.sand.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.glass.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.thinGlass.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.thinGlass.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.glass.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.pistonBase.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.pistonStickyBase.blockID, par3World.getBlockMetadata(par4, par5, par6), 2);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.pistonStickyBase.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.pistonBase.blockID, par3World.getBlockMetadata(par4, par5, par6), 2);
+            }
             break;
         case 3:
             //Super-heat
@@ -252,6 +293,14 @@ public class ItemSonicScrewdriver extends ItemDC
                 par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.sand.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.glass.blockID);
+            }
+            else if (par3World.getBlockId(par4, par5,par6) == Block.sandStone.blockID)
+            {
+                par3World.setBlock(par4, par5, par6, Block.glass.blockID);
             }
             break;
         case 4:
@@ -321,7 +370,7 @@ public class ItemSonicScrewdriver extends ItemDC
             break;
         case 9:
             //Clear
-            if (par3World.getBlockId(par4, par5,par6) == Block.leaves.blockID)
+            if (par3World.getBlockId(par4, par5,par6) == Block.leaves.blockID || par3World.getBlockId(par4, par5,par6) == Block.vine.blockID)
             {
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "dig.cloth1", 2.0F, 1.0F);
                 par3World.setBlockToAir(par4, par5, par6);

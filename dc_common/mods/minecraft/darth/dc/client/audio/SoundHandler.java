@@ -18,11 +18,11 @@ public class SoundHandler
             try
             {
                 event.manager.soundPoolSounds.addSound(soundFile, this.getClass().getResource("/" + soundFile));
-                System.out.println("DISCOVERY Loaded sound files.");
+                System.out.println("[DiscoveryCraft] Loaded sound files.");
             }
             catch (Exception e)
             {
-                System.out.println("DISCOVERY Failed to load sound files.");
+                System.out.println("[DiscoveryCraft] Failed to load sound files.");
             }
         }
     }
