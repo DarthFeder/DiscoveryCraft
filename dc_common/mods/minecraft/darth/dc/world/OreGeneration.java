@@ -17,12 +17,8 @@ public class OreGeneration implements IWorldGenerator
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider)
     {
-        //System.out.println("DiscoveryCraft is adding custom ore generation...");
-        
         this.random = random;
         generateUnknownOre(world, chunkX * 16, chunkZ * 16);
-        
-        //System.out.println("DiscoveryCraft has finished adding ore generation.");
     }
 
     

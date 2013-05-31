@@ -17,6 +17,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import mods.minecraft.darth.dc.block.ModBlocks;
 import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
 import mods.minecraft.darth.dc.core.proxy.CommonProxy;
+import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
@@ -51,6 +52,8 @@ public class DiscoveryCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
+            //Register Logger
+            LogUtil.init();
             
             //Register Sound Handler
             proxy.registerSoundHandler();

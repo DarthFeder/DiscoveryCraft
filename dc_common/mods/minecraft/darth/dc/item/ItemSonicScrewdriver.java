@@ -432,11 +432,11 @@ public class ItemSonicScrewdriver extends ItemDC
     {
         if (entity instanceof EntityFireball || entity instanceof EntityArrow)
         {
-            entity.setPosition(0, 0, 0);
+            entity.setPosition(0, 1, 0);
         }
         else if (entity instanceof EntityTNTPrimed && (this.sonicMode == 0 || this.sonicMode == 5))
         {
-            entity.setPosition(0, 0, 0);
+            entity.setPosition(0, 1, 0);
         }
 
         return true;

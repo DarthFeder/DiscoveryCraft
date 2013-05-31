@@ -11,8 +11,7 @@ public class DungeonFinds
 
     public static void initDungeon()
     {
-        System.out.println("[DiscoveryCraft] Initiating custom dungeon additions...");
-        
+        //Extra rare dungeons
         DungeonHooks.addDungeonMob("creeper", 20);
         DungeonHooks.addDungeonMob("enderman", 10);
         DungeonHooks.addDungeonMob("witch", 5);
@@ -28,8 +27,6 @@ public class DungeonFinds
         ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_CORRIDOR, notebookLockDungeonFind);
         ChestGenHooks.addItem(ChestGenHooks.STRONGHOLD_CROSSING, notebookLockDungeonFind);
         ChestGenHooks.addItem(ChestGenHooks.VILLAGE_BLACKSMITH, notebookLockDungeonFind);
-        
-        System.out.println("[DiscoveryCraft] Finished adding dungeon additions.");
     }
     
 }

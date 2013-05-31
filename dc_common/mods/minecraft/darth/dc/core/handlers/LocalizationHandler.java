@@ -12,7 +12,6 @@ public class LocalizationHandler
     {
         
         // For every file specified in the Localization library class, load them into the Language Registry
-        
         for (String localizationFile : Localizations.localeFiles)
         {
             LanguageRegistry.instance().loadLocalization(localizationFile, LocalizationUtil.getLocaleFromFileName(localizationFile), LocalizationUtil.isXMLLanguageFile(localizationFile));

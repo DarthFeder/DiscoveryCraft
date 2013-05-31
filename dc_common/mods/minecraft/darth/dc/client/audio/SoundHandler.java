@@ -1,7 +1,10 @@
 package mods.minecraft.darth.dc.client.audio;
 
+import java.util.logging.Level;
+
 import net.minecraftforge.client.event.sound.SoundLoadEvent;
 import net.minecraftforge.event.ForgeSubscribe;
+import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.lib.Sounds;
 
 public class SoundHandler
@@ -18,12 +21,13 @@ public class SoundHandler
             try
             {
                 event.manager.soundPoolSounds.addSound(soundFile, this.getClass().getResource("/" + soundFile));
-                System.out.println("[DiscoveryCraft] Loaded sound files.");
             }
             catch (Exception e)
             {
-                System.out.println("[DiscoveryCraft] Failed to load sound files.");
+                LogUtil.log(Level.WARNING, "Failed to load sound file: " + soundFile);
             }
         }
+        
+        LogUtil.log(Level.INFO, "Succesfully loaded sound files.");
     }
 }
