@@ -69,11 +69,11 @@ public class DiscoveryCraft
             //Register Logger
             LogUtil.init();
             
-            //Register Sound Handler
-            proxy.registerSoundHandler();
-            
             //Load Language Localization Files
             LocalizationHandler.loadLanguages();
+            
+            //Register Sound Handler (Client-Side)
+            proxy.registerSoundHandler();
             
             //Initialize Blocks
             ModBlocks.init();
@@ -81,7 +81,7 @@ public class DiscoveryCraft
             //Initialize Items
             ModItems.init();
             
-            //Initialize Mod Crafting/Smelting/etc Recipes
+            //Initialize Mod Recipes
             ModRecipes.init();
             
         }
