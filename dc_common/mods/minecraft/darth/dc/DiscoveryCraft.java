@@ -8,13 +8,16 @@ import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 import mods.minecraft.darth.dc.block.ModBlocks;
+import mods.minecraft.darth.dc.command.CommandHandler;
 import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
 import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.core.util.LogUtil;
@@ -49,9 +52,20 @@ public class DiscoveryCraft
         public static CreativeTabs tabDC = new CreativeTabDC(Reference.MOD_ID);
 
         
+        @ServerStarting
+        public void serverStarting(FMLServerStartingEvent event)
+        {
+            
+            //Initialize Commands
+            CommandHandler.initCommands(event);
+            
+        }
+        
+        
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
+            
             //Register Logger
             LogUtil.init();
             
