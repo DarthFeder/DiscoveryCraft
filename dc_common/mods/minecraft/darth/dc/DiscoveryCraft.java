@@ -1,6 +1,8 @@
 package mods.minecraft.darth.dc;
 
 
+import java.util.logging.Level;
+
 import net.minecraft.creativetab.CreativeTabs;
 
 import cpw.mods.fml.common.Mod;
@@ -11,6 +13,7 @@ import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -25,6 +28,7 @@ import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
+import mods.minecraft.darth.dc.lib.Strings;
 import mods.minecraft.darth.dc.recipe.ModRecipes;
 import mods.minecraft.darth.dc.world.WorldInit;
 
@@ -54,10 +58,9 @@ public class DiscoveryCraft
 
         
         @FingerprintWarning
-        public void invalidFingerprintWarning()
+        public void invalidFingerprint(FMLFingerprintViolationEvent event)
         {
-            
-            
+            LogUtil.log(Level.SEVERE, Strings.INVALID_FINGERPRINT_WARNING);
         }
         
         @ServerStarting
