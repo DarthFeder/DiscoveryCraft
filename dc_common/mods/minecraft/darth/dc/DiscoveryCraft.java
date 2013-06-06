@@ -4,6 +4,7 @@ package mods.minecraft.darth.dc;
 import net.minecraft.creativetab.CreativeTabs;
 
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
@@ -51,6 +52,13 @@ public class DiscoveryCraft
         
         public static CreativeTabs tabDC = new CreativeTabDC(Reference.MOD_ID);
 
+        
+        @FingerprintWarning
+        public void invalidFingerprintWarning()
+        {
+            
+            
+        }
         
         @ServerStarting
         public void serverStarting(FMLServerStartingEvent event)

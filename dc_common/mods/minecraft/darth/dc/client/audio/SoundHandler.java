@@ -6,6 +6,7 @@ import net.minecraftforge.client.event.sound.SoundLoadEvent;
 import net.minecraftforge.event.ForgeSubscribe;
 import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.lib.Sounds;
+import mods.minecraft.darth.dc.lib.Strings;
 
 public class SoundHandler
 {
@@ -24,10 +25,10 @@ public class SoundHandler
             }
             catch (Exception e)
             {
-                LogUtil.log(Level.WARNING, "Failed to load sound file: " + soundFile);
+                LogUtil.log(Level.WARNING, Strings.SOUND_LOADING_FAILED + soundFile);
             }
         }
         
-        LogUtil.log(Level.INFO, "Succesfully loaded sound files.");
+        LogUtil.log(Level.INFO, Strings.SOUND_LOADING_SUCCESS);
     }
 }
