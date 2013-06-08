@@ -15,6 +15,7 @@ public class ModBlocks
     //Block Instances
     public static Block unknownOre;
     public static Block glowingUnknownOre;
+    public static Block scientificAssembler;
     
     
     public static void init()
@@ -22,6 +23,7 @@ public class ModBlocks
         //Initialize each block
         unknownOre = new BlockUnknownOre(BlockIDs.UNKNOWN_ORE, false).setUnlocalizedName(Strings.UNKNOWN_ORE_NAME).setCreativeTab(DiscoveryCraft.tabDC).setHardness(8F).setResistance(80).setStepSound(Block.soundStoneFootstep).setLightValue(0.2F).setLightOpacity(4);
         glowingUnknownOre = new BlockUnknownOre(BlockIDs.GLOWING_UNKNOWN_ORE, true).setUnlocalizedName(Strings.GLOWING_UNKNOWN_ORE_NAME).setHardness(8F).setResistance(80).setStepSound(Block.soundStoneFootstep).setLightValue(0.5F).setLightOpacity(9);
+        scientificAssembler = new BlockScientificAssembler(BlockIDs.SCIENTIFIC_ASSEMBLER).setUnlocalizedName(Strings.SCIENTIFIC_ASSEMBLER_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         
         
         blockHarvests();
@@ -35,6 +37,7 @@ public class ModBlocks
         //Set Block Harvest Levels
         MinecraftForge.setBlockHarvestLevel(unknownOre, "pickaxe", 3);
         MinecraftForge.setBlockHarvestLevel(glowingUnknownOre, "pickaxe", 3);
+        MinecraftForge.setBlockHarvestLevel(scientificAssembler, "pickaxe", 1);
         
     }
     
@@ -44,6 +47,7 @@ public class ModBlocks
         //GameRegistry Initialization
         GameRegistry.registerBlock(unknownOre, Strings.UNKNOWN_ORE_NAME);
         GameRegistry.registerBlock(glowingUnknownOre, Strings.GLOWING_UNKNOWN_ORE_NAME);
+        GameRegistry.registerBlock(scientificAssembler, Strings.SCIENTIFIC_ASSEMBLER_NAME);
         
     }
     

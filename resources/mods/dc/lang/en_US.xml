@@ -9,6 +9,7 @@
 	<entry key="item.sonicScrewdriver.name">§2§lSonic Screwdriver</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
+	<entry key="tile.scientificAssembler.name">Scientific Assembler</entry>
 	
 	<entry key="itemGroup.DC">DiscoveryCraft</entry>
 </properties>

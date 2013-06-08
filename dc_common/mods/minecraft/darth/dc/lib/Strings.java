@@ -18,6 +18,7 @@ public class Strings
     //Block Internal Names
     public static final String UNKNOWN_ORE_NAME = "unknownOre";
     public static final String GLOWING_UNKNOWN_ORE_NAME = "glowingUnknownOre";
+    public static final String SCIENTIFIC_ASSEMBLER_NAME = "scientificAssembler";
     
     
     //Item Internal Names
