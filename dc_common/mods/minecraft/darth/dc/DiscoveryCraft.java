@@ -19,9 +19,12 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 import mods.minecraft.darth.dc.block.ModBlocks;
 import mods.minecraft.darth.dc.command.CommandHandler;
+import mods.minecraft.darth.dc.core.handlers.AddonHandler;
+import mods.minecraft.darth.dc.core.handlers.FuelHandler;
 import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
 import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.core.util.LogUtil;
@@ -105,6 +108,9 @@ public class DiscoveryCraft
             //Register World Additions
             WorldInit.init();
             
+            //Register Fuel Handler
+            GameRegistry.registerFuelHandler(new FuelHandler());
+            
         }
         
         
@@ -112,6 +118,8 @@ public class DiscoveryCraft
         public void postInit(FMLPostInitializationEvent event)
         {
             
+            //Initialize Mod Addons
+            AddonHandler.init();
             
         }
     

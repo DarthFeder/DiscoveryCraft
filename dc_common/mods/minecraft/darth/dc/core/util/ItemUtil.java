@@ -59,11 +59,63 @@ public class ItemUtil
                             }
                         }
                         
-                        // Otherwise, they must be equal if we have gotten this far (item IDs, meta data, and stack size all match)
+                        // Otherwise, they must be equal if we have gotten this far (item IDs, meta data, NBT data and stack size all match)
                         else
                         {
                             return true;
                         }
+                    }
+                }
+            }
+        }
+
+        return false;
+        
+    }
+    
+    
+    /**
+     * Compares two ItemStacks for equality, testing itemID, metaData, and their NBTTagCompounds (if they are present)
+     * 
+     * @param first
+     *      The first ItemStack being tested for equality
+     * @param second
+     *      The second ItemStack being tested for equality
+     * @return
+     *      true if the two ItemStacks are equivalent, false otherwise
+     */
+    public static boolean compareIgnoreStackSize(ItemStack first, ItemStack second)
+    {
+        
+        // Check to see if either argument is null
+        if ((first != null) && (second != null))
+        {
+            // Check the item IDs
+            if (first.itemID == second.itemID)
+            {
+                // Check the meta data
+                if (first.getItemDamage() == second.getItemDamage())
+                {
+                    // If at least one of the ItemStacks has a NBTTagCompound, test for equality
+                    if (first.hasTagCompound() || second.hasTagCompound())
+                    {
+                        // If one of the stacks has a tag compound, but not both, they are not equal
+                        if (!(first.hasTagCompound() && second.hasTagCompound()))
+                        {
+                            return false;
+                        }
+                        
+                        // Otherwise, they both have tag compounds and we need to test them for equality
+                        else
+                        {
+                            return first.getTagCompound().equals(second.getTagCompound());
+                        }
+                    }
+                    
+                    // Otherwise, they must be equal if we have gotten this far (item IDs, meta data, and NBT data all match)
+                    else
+                    {
+                        return true;
                     }
                 }
             }

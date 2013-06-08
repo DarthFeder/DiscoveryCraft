@@ -20,9 +20,6 @@ public class CraftingRecipes
         //Monocle Lens
         GameRegistry.addRecipe(new ItemStack(ModItems.monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
     
-        //Sonic Screwdriver
-        GameRegistry.addRecipe(new ItemStack (ModItems.sonicScrewdriver), "e  ", " s ", "  i", 'e', new ItemStack(Item.emerald), 's', new ItemStack(Item.stick), 'i', new ItemStack(Item.ingotIron));
-        
     }
     
 }
