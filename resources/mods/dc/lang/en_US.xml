@@ -7,6 +7,7 @@
 	<entry key="item.monocleLens.name">Monocle Lens</entry>
 	<entry key="item.notebookLock.name">Notebook Lock</entry>
 	<entry key="item.sonicScrewdriver.name">§2§lSonic Screwdriver</entry>
+	<entry key="item.debugTool.name">Debug Tool</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
 	<entry key="tile.scientificAssembler.name">Scientific Assembler</entry>

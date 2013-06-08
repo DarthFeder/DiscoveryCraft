@@ -27,6 +27,7 @@ public class Strings
     public static final String MONOCLE_LENS_NAME = "monocleLens";
     public static final String NOTEBOOK_LOCK_NAME = "notebookLock";
     public static final String SONIC_SCREWDRIVER_NAME = "sonicScrewdriver";
+    public static final String DEBUG_TOOL_NAME = "debugTool";
     
     
     //NBT Related Strings

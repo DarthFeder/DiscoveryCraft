@@ -16,6 +16,7 @@ public class ModItems
     public static Item monocleLens;
     public static Item notebookLock;
     public static Item sonicScrewdriver;
+    public static Item debugTool;
     
     
     public static void init()
@@ -27,7 +28,7 @@ public class ModItems
         monocleLens = new ItemDC(ItemIDs.MONOCLE_LENS).setUnlocalizedName(Strings.MONOCLE_LENS_NAME).setCreativeTab(DiscoveryCraft.tabDC).setMaxStackSize(64);
         notebookLock = new ItemDC(ItemIDs.NOTEBOOK_LOCK).setUnlocalizedName(Strings.NOTEBOOK_LOCK_NAME).setCreativeTab(DiscoveryCraft.tabDC).setMaxStackSize(64);
         sonicScrewdriver = new ItemSonicScrewdriver(ItemIDs.SONIC_SCREWDRIVER);
-        
+        debugTool = new ItemDebug(ItemIDs.DEBUG_TOOL);
         
     }
     
