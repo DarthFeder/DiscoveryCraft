@@ -86,6 +86,9 @@ public class DiscoveryCraft
             //Load Language Localization Files
             LocalizationHandler.loadLanguages();
             
+            //Register Key Bindings (CLient-Side)
+            //proxy.registerKeyBindingHandler();
+            
             //Register Sound Handler (Client-Side)
             proxy.registerSoundHandler();
             
