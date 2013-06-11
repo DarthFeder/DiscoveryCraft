@@ -1,2 +1,2 @@
 @echo off
-gource -i 0
+start gource -i 0

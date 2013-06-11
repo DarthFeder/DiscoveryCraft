@@ -28,6 +28,7 @@ public class Strings
     public static final String NOTEBOOK_LOCK_NAME = "notebookLock";
     public static final String SONIC_SCREWDRIVER_NAME = "sonicScrewdriver";
     public static final String DEBUG_TOOL_NAME = "debugTool";
+    public static final String CRAFTING_UPGRADE_NAME = "craftingUpgrade";
     
     
     //NBT Related Strings

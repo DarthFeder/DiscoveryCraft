@@ -27,7 +27,7 @@ public class ItemSonicScrewdriver extends ItemDC
 {
     
     private int sonicMode;
-    private final String[] modes /*TO-DO: TURN INTO ENUM*/ = {"ALL", "SCAN", "TRANSMUTE", "SUPERHEAT", "POWER", "DEFUSE", "MOB", "ROTATE", "REPAIR", "CLEAR", "DISABLED"};
+    private final String[] modes /*TODO: TURN INTO ENUM and/or NBT*/ = {"ALL", "SCAN", "TRANSMUTE", "SUPERHEAT", "POWER", "DEFUSE", "MOB", "ROTATE", "REPAIR", "CLEAR", "DISABLED"};
     private int cooldown;
     
     public ItemSonicScrewdriver(int id)

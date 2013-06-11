@@ -10,6 +10,7 @@ public class ItemIDs
     public static int NOTEBOOK_LOCK_DEFAULT = 3203;
     public static int SONIC_SCREWDRIVER_DEFAULT = 3204;
     public static int DEBUG_TOOL_DEFAULT = 3205;
+    public static int CRAFTING_UPGRADE_DEFAULT = 3206;
     
     
     //Current item ids
@@ -19,5 +20,6 @@ public class ItemIDs
     public static int NOTEBOOK_LOCK = 3203;
     public static int SONIC_SCREWDRIVER = 3204;
     public static int DEBUG_TOOL = 3205;
+    public static int CRAFTING_UPGRADE = 3206;
     
 }

@@ -14,8 +14,7 @@ public class ItemDC extends Item
     public ItemDC(int id)
     {
         super(id);
-        maxStackSize = 1;
-        
+        this.setMaxStackSize(1);
     }
     
     @Override

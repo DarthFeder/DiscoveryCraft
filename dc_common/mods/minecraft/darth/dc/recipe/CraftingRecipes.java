@@ -15,7 +15,7 @@ public class CraftingRecipes
     {
         
         //Science Notebook
-        GameRegistry.addRecipe(new ItemStack(ModItems.sciNotebook), "dld", "lbl", "dnd", 'd', new ItemStack(ModItems.unknownDust), 'b', new ItemStack(Item.writableBook), 'l', new ItemStack(Item.dyePowder, 1, 4), 'n', new ItemStack(ModItems.notebookLock));
+        GameRegistry.addRecipe(new ItemStack(ModItems.sciNotebook), "dld", "dbd", "dnd", 'd', new ItemStack(Item.paper), 'b', new ItemStack(Item.writableBook), 'l', new ItemStack(Item.dyePowder, 1, 4), 'n', new ItemStack(ModItems.notebookLock));
         
         //Monocle Lens
         GameRegistry.addRecipe(new ItemStack(ModItems.monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
