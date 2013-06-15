@@ -18,7 +18,7 @@ public class Strings
     //Block Internal Names
     public static final String UNKNOWN_ORE_NAME = "unknownOre";
     public static final String GLOWING_UNKNOWN_ORE_NAME = "glowingUnknownOre";
-    public static final String SCIENTIFIC_ASSEMBLER_NAME = "scientificAssembler";
+    public static final String SCIENTIFIC_ASSEMBLER_NAME = "sciAssembler";
     
     
     //Item Internal Names
@@ -29,6 +29,14 @@ public class Strings
     public static final String SONIC_SCREWDRIVER_NAME = "sonicScrewdriver";
     public static final String DEBUG_TOOL_NAME = "debugTool";
     public static final String CRAFTING_UPGRADE_NAME = "craftingUpgrade";
+    
+    
+    //Tile Internal Names
+    public static final String TE_SCI_ASSEMBLER_NAME = "tileSciAssembler";
+    
+    
+    //Container Internal Names
+    public static final String CONTAINER_SCI_ASSEMBLER_NAME = "container." + SCIENTIFIC_ASSEMBLER_NAME;
     
     
     //NBT Related Strings

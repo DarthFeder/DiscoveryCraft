@@ -11,7 +11,9 @@
 	<entry key="item.craftingUpgrade.name">Scientific Crafting Initializer Mk1</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
-	<entry key="tile.scientificAssembler.name">Scientific Assembler</entry>
+	<entry key="tile.sciAssembler.name">Scientific Assembler</entry>
+	
+	<entry key="container.sciAssembler">Scientific Assembler</entry>
 	
 	<entry key="itemGroup.DC">DiscoveryCraft</entry>
 </properties>

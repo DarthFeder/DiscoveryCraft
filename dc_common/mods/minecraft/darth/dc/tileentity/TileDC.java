@@ -68,4 +68,12 @@ public class TileDC extends TileEntity
         return true;
     }
 
+    public String toString()
+    {
+        StringBuilder s = new StringBuilder();
+        
+        s.append(String.format("TileDC Data - xCoord: %d, yCoord: %d, zCoord: %d, customName: '%s', orientation: %s, state: %d\n", xCoord, yCoord, zCoord, customName, orientation, state));
+        
+        return s.toString();
+    }
 }

@@ -3,6 +3,7 @@ package mods.minecraft.darth.dc.core.util;
 import java.util.ArrayList;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -40,5 +41,13 @@ public class GeneralUtil
         
     }
 
+    
+    public static void sendChat(EntityPlayer player, String s)
+    {
+        
+        player.sendChatToPlayer(s);
+        
+    }
 
+    
 }

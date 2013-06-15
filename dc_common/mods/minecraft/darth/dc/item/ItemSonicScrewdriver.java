@@ -20,6 +20,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.minecraft.darth.dc.DiscoveryCraft;
+import mods.minecraft.darth.dc.core.util.GeneralUtil;
 import mods.minecraft.darth.dc.lib.Sounds;
 import mods.minecraft.darth.dc.lib.Strings;
 
@@ -388,7 +389,8 @@ public class ItemSonicScrewdriver extends ItemDC
             this.cooldown = 6;
             break;
         case 10:
-            //Disabled
+            if (cooldown == 0)
+                GeneralUtil.sendChat(par2EntityPlayer, "Screwdriver is disabled.");
             return true;
         default:
             //Should not happen, just in case
