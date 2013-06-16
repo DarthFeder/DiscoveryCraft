@@ -9,6 +9,7 @@
 	<entry key="item.sonicScrewdriver.name">§2§lSonic Screwdriver</entry>
 	<entry key="item.debugTool.name">Debug Tool</entry>
 	<entry key="item.craftingUpgrade.name">Scientific Crafting Initializer Mk1</entry>
+	<entry key="item.knife.name">Primitive Knife</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
 	<entry key="tile.sciAssembler.name">Scientific Assembler</entry>

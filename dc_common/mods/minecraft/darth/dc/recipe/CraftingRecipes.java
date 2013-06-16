@@ -20,6 +20,8 @@ public class CraftingRecipes
         //Monocle Lens
         GameRegistry.addRecipe(new ItemStack(ModItems.monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
     
+        //Knife
+        GameRegistry.addRecipe(new ItemStack(ModItems.knife), " f ", " s ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
     }
     
 }

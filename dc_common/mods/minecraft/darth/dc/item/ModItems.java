@@ -18,6 +18,7 @@ public class ModItems
     public static Item sonicScrewdriver;
     public static Item debugTool;
     public static Item craftingUpgrade;
+    public static Item knife;
     
     
     public static void init()
@@ -29,6 +30,7 @@ public class ModItems
         sonicScrewdriver = new ItemSonicScrewdriver(ItemIDs.SONIC_SCREWDRIVER);
         debugTool = new ItemDebug(ItemIDs.DEBUG_TOOL);
         craftingUpgrade = new ItemCraftingUpgrade(ItemIDs.CRAFTING_UPGRADE);
+        knife = new ItemKnife(ItemIDs.KNIFE);
         
         //Initialize each Crafting Ingredient Item
         notebookLock = new ItemCrafting(ItemIDs.NOTEBOOK_LOCK).setUnlocalizedName(Strings.NOTEBOOK_LOCK_NAME).setCreativeTab(DiscoveryCraft.tabDC);

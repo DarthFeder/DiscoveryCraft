@@ -29,6 +29,7 @@ public class Strings
     public static final String SONIC_SCREWDRIVER_NAME = "sonicScrewdriver";
     public static final String DEBUG_TOOL_NAME = "debugTool";
     public static final String CRAFTING_UPGRADE_NAME = "craftingUpgrade";
+    public static final String KNIFE_NAME = "knife";
     
     
     //Tile Internal Names

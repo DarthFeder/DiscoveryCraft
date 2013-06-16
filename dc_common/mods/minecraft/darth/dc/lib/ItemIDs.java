@@ -11,6 +11,7 @@ public class ItemIDs
     public static int SONIC_SCREWDRIVER_DEFAULT = 3204;
     public static int DEBUG_TOOL_DEFAULT = 3205;
     public static int CRAFTING_UPGRADE_DEFAULT = 3206;
+    public static int KNIFE_DEFAULT = 3207;
     
     
     //Current item ids
@@ -21,5 +22,6 @@ public class ItemIDs
     public static int SONIC_SCREWDRIVER = 3204;
     public static int DEBUG_TOOL = 3205;
     public static int CRAFTING_UPGRADE = 3206;
+    public static int KNIFE = 3207;
     
 }
