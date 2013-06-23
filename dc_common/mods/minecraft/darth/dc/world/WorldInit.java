@@ -1,7 +1,5 @@
 package mods.minecraft.darth.dc.world;
 
-import java.util.logging.Level;
-
 import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.lib.Strings;
 
@@ -20,7 +18,7 @@ public class WorldInit
         DungeonFinds.initDungeon();
         
         //Log Completion
-        LogUtil.log(Level.INFO, Strings.WORLD_LOAD_SUCCESS);
+        LogUtil.info(Strings.WORLD_LOAD_SUCCESS);
         
     }
     

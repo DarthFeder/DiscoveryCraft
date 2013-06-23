@@ -1,8 +1,6 @@
 package mods.minecraft.darth.dc;
 
 
-import java.util.logging.Level;
-
 import net.minecraft.creativetab.CreativeTabs;
 
 import cpw.mods.fml.common.Mod;
@@ -63,7 +61,7 @@ public class DiscoveryCraft
         @FingerprintWarning
         public void invalidFingerprint(FMLFingerprintViolationEvent event)
         {
-            LogUtil.log(Level.SEVERE, Strings.INVALID_FINGERPRINT_WARNING);
+            LogUtil.severe(Strings.INVALID_FINGERPRINT_WARNING);
         }
         
         @ServerStarting
