@@ -64,6 +64,7 @@ public class DiscoveryCraft
             LogUtil.severe(Strings.INVALID_FINGERPRINT_WARNING);
         }
         
+        
         @ServerStarting
         public void serverStarting(FMLServerStartingEvent event)
         {
