@@ -1,7 +1,9 @@
 package mods.minecraft.darth.dc;
 
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
@@ -27,6 +29,7 @@ import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
 import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
+import mods.minecraft.darth.dc.event.GuiEffectBar;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.lib.Strings;
@@ -119,6 +122,9 @@ public class DiscoveryCraft
         @PostInit
         public void postInit(FMLPostInitializationEvent event)
         {
+            
+            //GUD Test
+            MinecraftForge.EVENT_BUS.register(new GuiEffectBar(Minecraft.getMinecraft()));
             
             //Initialize Mod Addons
             AddonHandler.init();
