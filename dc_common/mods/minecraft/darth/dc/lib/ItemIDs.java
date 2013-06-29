@@ -12,6 +12,11 @@ public class ItemIDs
     public static int DEBUG_TOOL_DEFAULT = 3205;
     public static int CRAFTING_UPGRADE_DEFAULT = 3206;
     public static int KNIFE_DEFAULT = 3207;
+    public static int UNKNOWN_CHUNKS_DEFAULT = 3208;
+    public static int FLINT_SHOVEL_DEFULT = 3209;
+    public static int FLINT_PICKAXE_DEFULT = 3210;
+    public static int FLINT_AXE_DEFULT = 3211;
+    public static int DIRT_PELLET_DEFAULT = 3212;
     
     
     //Current item ids
@@ -23,5 +28,10 @@ public class ItemIDs
     public static int DEBUG_TOOL = 3205;
     public static int CRAFTING_UPGRADE = 3206;
     public static int KNIFE = 3207;
+    public static int UNKNOWN_CHUNKS = 3208;
+    public static int FLINT_SHOVEL = 3209;
+    public static int FLINT_PICKAXE = 3210;
+    public static int FLINT_AXE = 3211;
+    public static int DIRT_PELLET = 3212;
     
 }

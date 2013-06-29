@@ -123,7 +123,7 @@ public class DiscoveryCraft
         public void postInit(FMLPostInitializationEvent event)
         {
             
-            //GUD Test
+            //Initiate Effect Bar on HUD
             MinecraftForge.EVENT_BUS.register(new GuiEffectBar(Minecraft.getMinecraft()));
             
             //Initialize Mod Addons

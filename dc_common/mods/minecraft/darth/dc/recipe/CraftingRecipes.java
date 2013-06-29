@@ -22,6 +22,15 @@ public class CraftingRecipes
     
         //Knife
         GameRegistry.addRecipe(new ItemStack(ModItems.knife)," f ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+    
+        //Flint Shovel
+        GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint)," f ", " s ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+        
+        //Flint Pickaxe
+        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeFlint),"fff", " s ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+   
+        //Flint Axe
+        GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint),"ff ", "fs ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
     }
     
 }

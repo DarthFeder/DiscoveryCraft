@@ -30,6 +30,11 @@ public class Strings
     public static final String DEBUG_TOOL_NAME = "debugTool";
     public static final String CRAFTING_UPGRADE_NAME = "craftingUpgrade";
     public static final String KNIFE_NAME = "knife";
+    public static final String UNKNOWN_CHUNKS_NAME = "unknownChunks";
+    public static final String FLINT_SHOVEL_NAME = "shovelFlint";
+    public static final String FLINT_PICKAXE_NAME = "pickaxeFlint";
+    public static final String FLINT_AXE_NAME = "axeFlint";
+    public static final String DIRT_PELLET_NAME = "dirtPellet";
     
     
     //Tile Internal Names
