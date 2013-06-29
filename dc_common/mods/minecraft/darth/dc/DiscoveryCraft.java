@@ -3,6 +3,7 @@ package mods.minecraft.darth.dc;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+
 import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.common.Mod;
@@ -88,7 +89,7 @@ public class DiscoveryCraft
             //Load Language Localization Files
             LocalizationHandler.loadLanguages();
             
-            //Register Key Bindings (CLient-Side)
+            //Register Key Bindings (Client-Side)
             //proxy.registerKeyBindingHandler();
             
             //Register Sound Handler (Client-Side)
