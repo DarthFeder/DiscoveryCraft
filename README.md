@@ -12,7 +12,7 @@ This mod is made by Darth_Feder. It is avaliable to see on github: https://githu
 I have a YouTube channel where I will be posting updates and videos relating to my mod, as well as my usual stuff.
 Check it out here: http://www.youtube.com/user/MinecraftTechz.
 
-DC is currently in a Pre-Stage (I just started working on it). It is currently more a bunch of ideas curculating in my head than a functioning mod.
+DC is currently in version pre1 (I just started working on it). Remember, it is not yet a fully-functioning mod, so things may be very broken!
 If you have any ideas, please feel free to message me. If you have something to fix or update, submit a pull request, and fix it! :D
 If you are a good artist (unlike me) and would like to help with wither my textures or my modeling, I am devoted to your help! Please contact me.
 I am frequently on IRC, on channels such as #direwolf20 and #minecraftforge, both on esper.net.
@@ -23,7 +23,7 @@ Thanks to Pahimar for his Let's Mod series! It really helped to make this mod po
 #WHAT IS DISCOVERYCRAFT?
 
 DiscoveryCraft is a mod for Minecraft currently in the works. Its main function is to add more scientific discovery
-to your minecraft world. This is broken down into several main sector of science:
+to your minecraft world. This is broken down into several main sectors of science:
 
 - Astronomy
 
@@ -43,11 +43,15 @@ Things that are currently in the mod:
 
 - Finding locks in dungeons, craft into notebook
 
-- Sonic Screwdriver (very temp recipe and has limited functionality)
+- Sonic Screwdriver (creative tool for now)
+
+- Flint tools (not fully implemented as proper tools yet)
+
+- A lot of things that don't yet do anything!
 
 Things coming up soon:
 
-- A lot more sonic screwdriver features
+- A special, upgradable crafting table!
 
 - Armor sets
 
