@@ -46,7 +46,7 @@ public class ModItems
         
         //Initialize each Crafting Ingredient Item
         notebookLock = new ItemCrafting(ItemIDs.NOTEBOOK_LOCK).setUnlocalizedName(Strings.NOTEBOOK_LOCK_NAME);
-        dirtPellet = new ItemDC(ItemIDs.DIRT_PELLET).setUnlocalizedName(Strings.DIRT_PELLET_NAME);
+        dirtPellet = new ItemCrafting(ItemIDs.DIRT_PELLET).setUnlocalizedName(Strings.DIRT_PELLET_NAME);
         monocleLens = new ItemCrafting(ItemIDs.MONOCLE_LENS).setUnlocalizedName(Strings.MONOCLE_LENS_NAME);
         
         
@@ -56,9 +56,9 @@ public class ModItems
     
     private static void registry()
     {
-        MinecraftForge.setToolClass(shovelFlint, "shovel", 0);
-        MinecraftForge.setToolClass(pickaxeFlint, "pickaxe", 0);
-        MinecraftForge.setToolClass(axeFlint, "axe", 0);
+        MinecraftForge.setToolClass(shovelFlint, "shovel", 1);
+        MinecraftForge.setToolClass(pickaxeFlint, "pickaxe", 1);
+        MinecraftForge.setToolClass(axeFlint, "axe", 1);
         
         MinecraftForge.addGrassSeed(new ItemStack(dirtPellet), 4);
     }
