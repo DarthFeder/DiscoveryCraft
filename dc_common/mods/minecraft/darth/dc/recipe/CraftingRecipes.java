@@ -23,6 +23,9 @@ public class CraftingRecipes
         //Throwing Knife
         GameRegistry.addRecipe(new ItemStack(ModItems.knifeThrowing)," f ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
     
+        //Melee Knife
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.knifeMelee), new Object[]{ModItems.knifeThrowing});
+        
         //Flint Shovel
         GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint)," f ", " s ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
         
@@ -32,8 +35,7 @@ public class CraftingRecipes
         //Flint Axe
         GameRegistry.addRecipe(new ItemStack(ModItems.axeFlint),"ff ", "fs ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
         
-        //Melee Knife
-        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.knifeMelee), new Object[]{ModItems.knifeThrowing});
+        
     }
     
 }

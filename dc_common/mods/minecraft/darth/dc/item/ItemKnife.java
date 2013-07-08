@@ -14,22 +14,26 @@ import net.minecraft.world.World;
 public class ItemKnife extends ItemDC
 {
 	boolean melee;
+	
     public ItemKnife(int id, boolean melee)
     {
         super(id);
         this.setCreativeTab(DiscoveryCraft.tabDC)
             .setUnlocalizedName(Strings.KNIFE_NAME);
+        
         this.melee = melee;
         
         if(melee)
         {
         	this.setMaxStackSize(1)
-    		.setMaxDamage(3);
-        }else{
-        	
+    		    .setMaxDamage(3);
+        }
+        else
+        {
         	this.setMaxStackSize(8);
         }
     }
+    
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
     	if(!melee)
@@ -40,36 +44,42 @@ public class ItemKnife extends ItemDC
 	        {
 	
 	            EntityKnifeProjectile entityknife = new EntityKnifeProjectile(par2World, par3EntityPlayer, 1.0F);
-	            if(!flag){
+	            
+	            if(!flag)
+	            {
 	            	--par1ItemStack.stackSize;
 	            	entityknife.canBePickedUp = 1;
 	            }
-	            par2World.playSoundAtEntity(par3EntityPlayer, "random.bow", 1.0F, 1.0F);
 	            
-	            
-	            
-	            
-	
-	            entityknife.setDamage(1.5D);
+	            par2World.playSoundAtEntity(par3EntityPlayer, "random.breath", 1.0F, 1.0F);
+
+	            entityknife.setDamage(2D);
 	
 	            if (!par2World.isRemote)
 	            {
 	                par2World.spawnEntityInWorld(entityknife);
 	            }
 	        }
+	        
 	        return par1ItemStack;
-    	}else{
+    	}
+    	else
+    	{
     		return par1ItemStack;
     	}
     }
+    
     @SuppressWarnings({"unchecked", "rawtypes"})
     @Override
-    @SideOnly(Side.CLIENT) //Adds lore to screwdriver
+    @SideOnly(Side.CLIENT) //Adds lore to knife
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
-    	if(melee){
+    	if(melee)
+    	{
     		par3List.add("§cMelee");
-    	}else{
+    	}
+    	else
+    	{
     		par3List.add("§bThrowing");
     	}
         
