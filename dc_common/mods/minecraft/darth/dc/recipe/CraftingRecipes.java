@@ -20,8 +20,8 @@ public class CraftingRecipes
         //Monocle Lens
         GameRegistry.addRecipe(new ItemStack(ModItems.monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
     
-        //Knife
-        GameRegistry.addRecipe(new ItemStack(ModItems.knife)," f ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+        //Throwing Knife
+        GameRegistry.addRecipe(new ItemStack(ModItems.knifeThrowing)," f ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
     
         //Flint Shovel
         GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint)," f ", " s ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
@@ -31,6 +31,9 @@ public class CraftingRecipes
    
         //Flint Axe
         GameRegistry.addRecipe(new ItemStack(ModItems.axeFlint),"ff ", "fs ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+        
+        //Melee Knife
+        GameRegistry.addShapelessRecipe(new ItemStack(ModItems.knifeMelee), new Object[]{ModItems.knifeThrowing});
     }
     
 }

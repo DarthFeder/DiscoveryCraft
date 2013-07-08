@@ -20,7 +20,8 @@ public class ModItems
     public static Item sonicScrewdriver;
     public static Item debugTool;
     public static Item craftingUpgrade;
-    public static Item knife;
+    public static Item knifeThrowing;
+    public static Item knifeMelee;
     public static Item unknownChunks;
     public static Item shovelFlint;
     public static Item pickaxeFlint;
@@ -38,7 +39,8 @@ public class ModItems
         sonicScrewdriver = new ItemSonicScrewdriver(ItemIDs.SONIC_SCREWDRIVER);
         debugTool = new ItemDebug(ItemIDs.DEBUG_TOOL);
         craftingUpgrade = new ItemCraftingUpgrade(ItemIDs.CRAFTING_UPGRADE);
-        knife = new ItemKnife(ItemIDs.KNIFE);
+        knifeThrowing = new ItemKnife(ItemIDs.KNIFE_THROWING, false);
+        knifeMelee = new ItemKnife(ItemIDs.KNIFE_MELEE, true);
         shovelFlint = new ItemDC(ItemIDs.FLINT_SHOVEL).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         pickaxeFlint = new ItemDC(ItemIDs.FLINT_PICKAXE).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         axeFlint = new ItemDC(ItemIDs.FLINT_AXE).setUnlocalizedName(Strings.FLINT_AXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);

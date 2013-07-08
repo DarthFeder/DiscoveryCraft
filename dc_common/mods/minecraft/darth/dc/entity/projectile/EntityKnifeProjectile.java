@@ -440,7 +440,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 	        {
 	            boolean flag = this.canBePickedUp == 1 || this.canBePickedUp == 2 && par1EntityPlayer.capabilities.isCreativeMode;
 
-	            if (this.canBePickedUp == 1 && !par1EntityPlayer.inventory.addItemStackToInventory(new ItemStack(ModItems.knife, 1)))
+	            if (this.canBePickedUp == 1 && !par1EntityPlayer.inventory.addItemStackToInventory(new ItemStack(ModItems.knifeThrowing, 1)))
 	            {
 	                flag = false;
 	            }

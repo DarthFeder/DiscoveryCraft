@@ -27,11 +27,12 @@ public class ItemIDs
     public static int SONIC_SCREWDRIVER = 3204;
     public static int DEBUG_TOOL = 3205;
     public static int CRAFTING_UPGRADE = 3206;
-    public static int KNIFE = 3207;
+    public static int KNIFE_THROWING = 3207;
     public static int UNKNOWN_CHUNKS = 3208;
     public static int FLINT_SHOVEL = 3209;
     public static int FLINT_PICKAXE = 3210;
     public static int FLINT_AXE = 3211;
     public static int DIRT_PELLET = 3212;
+    public static int KNIFE_MELEE = 3213;
     
 }
