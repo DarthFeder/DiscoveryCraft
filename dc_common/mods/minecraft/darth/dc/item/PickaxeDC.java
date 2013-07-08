@@ -1,14 +1,18 @@
 package mods.minecraft.darth.dc.item;
 
 import mods.minecraft.darth.dc.lib.Reference;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemPickaxe;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class PickaxeDC extends ItemPickaxe{
-	public PickaxeDC(int id, EnumToolMaterial par2EnumToolMaterial) {
+public class PickaxeDC extends ItemPickaxe
+{
+	public PickaxeDC(int id, EnumToolMaterial par2EnumToolMaterial)
+	{
 		super(id, par2EnumToolMaterial);
 	}
 

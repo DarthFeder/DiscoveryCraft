@@ -30,8 +30,10 @@ public class ModItems
     public static Item axeFlint;
     public static Item dirtPellet;
     
+    //Enum Materials
     public static EnumToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 50, 4.0F, 1, 5);
     public static EnumToolMaterial BLANK = EnumHelper.addToolMaterial("BLANK", -1, -1, -1F, -3, -1);
+    
     public static void init()
     {
         
