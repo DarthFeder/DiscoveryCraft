@@ -33,13 +33,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 	    private boolean inGround = false;
 
 	    /** 1 if the player can pick up the arrow */
-	    public int canBePickedUp = 0;
 
 	    /** Seems to be some sort of timer for animating an arrow. */
-	    public int arrowShake = 0;
 
 	    /** The owner of this arrow. */
-	    public Entity shootingEntity;
 	    private int ticksInGround;
 	    private int ticksInAir = 0;
 	    private double damage = 2.0D;

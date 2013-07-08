@@ -34,7 +34,7 @@ public class ItemKnife extends ItemDC
             
             entityknife.canBePickedUp = 1;
 
-            entityknife.setDamage(0.1D);
+            entityknife.setDamage(1.0D);
 
             if (!par2World.isRemote)
             {
