@@ -45,7 +45,7 @@ Things that are currently in the mod:
 
 - Sonic Screwdriver (creative tool for now)
 
-- Flint tools (not fully implemented as proper tools yet)
+- Flint tools and knifes (very good starting items - perfect for the first night)
 
 - A lot of things that don't yet do anything!
 

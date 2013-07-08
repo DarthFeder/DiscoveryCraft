@@ -15,6 +15,7 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
 
+//Code on the Forge Tutorials - Edited a bit by Darth
 public class GuiEffectBar extends Gui
 {
     private Minecraft mc;
@@ -37,6 +38,7 @@ public class GuiEffectBar extends Gui
     
     
     // This event is called by GuiIngameForge during each frame by GuiIngameForge.pre() and GuiIngameForce.post().
+    @SuppressWarnings("rawtypes")
     @ForgeSubscribe(priority = EventPriority.NORMAL)
     public void onRenderExperienceBar(RenderGameOverlayEvent event)
     {
