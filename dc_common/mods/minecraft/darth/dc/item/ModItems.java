@@ -41,9 +41,9 @@ public class ModItems
         craftingUpgrade = new ItemCraftingUpgrade(ItemIDs.CRAFTING_UPGRADE);
         knifeThrowing = new ItemKnife(ItemIDs.KNIFE_THROWING, false);
         knifeMelee = new ItemKnife(ItemIDs.KNIFE_MELEE, true);
-        shovelFlint = new ItemDC(ItemIDs.FLINT_SHOVEL).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME).setCreativeTab(DiscoveryCraft.tabDC);
-        pickaxeFlint = new ItemDC(ItemIDs.FLINT_PICKAXE).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
-        axeFlint = new ItemDC(ItemIDs.FLINT_AXE).setUnlocalizedName(Strings.FLINT_AXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
+        shovelFlint = new ItemFlintTool(ItemIDs.FLINT_SHOVEL).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME);
+        pickaxeFlint = new ItemFlintTool(ItemIDs.FLINT_PICKAXE).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME);
+        axeFlint = new ItemFlintTool(ItemIDs.FLINT_AXE).setUnlocalizedName(Strings.FLINT_AXE_NAME);
         
         
         //Initialize each Crafting Ingredient Item
