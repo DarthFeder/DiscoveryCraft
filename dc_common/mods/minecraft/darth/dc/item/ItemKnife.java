@@ -8,16 +8,17 @@ import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.entity.projectile.EntityKnifeProjectile;
 import mods.minecraft.darth.dc.lib.Strings;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemKnife extends ItemDC
+public class ItemKnife extends SwordDC
 {
 	boolean melee;
 	
-    public ItemKnife(int id, boolean melee)
+    public ItemKnife(int id, EnumToolMaterial toolMaterial, boolean melee)
     {
-        super(id);
+        super(id, toolMaterial);
         this.setCreativeTab(DiscoveryCraft.tabDC)
             .setUnlocalizedName(Strings.KNIFE_NAME);
         
@@ -26,11 +27,12 @@ public class ItemKnife extends ItemDC
         if(melee)
         {
         	this.setMaxStackSize(1)
-    		    .setMaxDamage(3);
+    		    .setMaxDamage(9);
         }
         else
         {
-        	this.setMaxStackSize(8);
+        	this.setMaxStackSize(8)
+        		.setMaxDamage(-1);
         }
     }
     

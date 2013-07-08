@@ -4,8 +4,10 @@ import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.ItemIDs;
 import mods.minecraft.darth.dc.lib.Strings;
 
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 
 
@@ -28,7 +30,8 @@ public class ModItems
     public static Item axeFlint;
     public static Item dirtPellet;
     
-    
+    public static EnumToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 50, 4.0F, 1, 5);
+    public static EnumToolMaterial BLANK = EnumHelper.addToolMaterial("BLANK", -1, -1, -1F, -3, -1);
     public static void init()
     {
         
@@ -39,11 +42,11 @@ public class ModItems
         sonicScrewdriver = new ItemSonicScrewdriver(ItemIDs.SONIC_SCREWDRIVER);
         debugTool = new ItemDebug(ItemIDs.DEBUG_TOOL);
         craftingUpgrade = new ItemCraftingUpgrade(ItemIDs.CRAFTING_UPGRADE);
-        knifeThrowing = new ItemKnife(ItemIDs.KNIFE_THROWING, false);
-        knifeMelee = new ItemKnife(ItemIDs.KNIFE_MELEE, true);
-        shovelFlint = new ItemFlintTool(ItemIDs.FLINT_SHOVEL).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME);
-        pickaxeFlint = new ItemFlintTool(ItemIDs.FLINT_PICKAXE).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME);
-        axeFlint = new ItemFlintTool(ItemIDs.FLINT_AXE).setUnlocalizedName(Strings.FLINT_AXE_NAME);
+        knifeThrowing = new ItemKnife(ItemIDs.KNIFE_THROWING, BLANK, false);
+        knifeMelee = new ItemKnife(ItemIDs.KNIFE_MELEE, FLINT, true);
+        shovelFlint = new ShovelDC(ItemIDs.FLINT_SHOVEL,FLINT).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME).setCreativeTab(DiscoveryCraft.tabDC);
+        pickaxeFlint = new PickaxeDC(ItemIDs.FLINT_PICKAXE,FLINT).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
+        axeFlint = new AxeDC(ItemIDs.FLINT_AXE,FLINT).setUnlocalizedName(Strings.FLINT_AXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         
         
         //Initialize each Crafting Ingredient Item
@@ -58,12 +61,13 @@ public class ModItems
     
     private static void registry()
     {
-        MinecraftForge.setToolClass(shovelFlint, "shovel", 1);
-        MinecraftForge.setToolClass(pickaxeFlint, "pickaxe", 1);
-        MinecraftForge.setToolClass(axeFlint, "axe", 1);
+        MinecraftForge.setToolClass(shovelFlint, "shovel", FLINT.getHarvestLevel());
+        MinecraftForge.setToolClass(pickaxeFlint, "pickaxe", FLINT.getHarvestLevel());
+        MinecraftForge.setToolClass(axeFlint, "axe", FLINT.getHarvestLevel());
+        MinecraftForge.setToolClass(knifeMelee, "sword", FLINT.getHarvestLevel());
         
         MinecraftForge.addGrassSeed(new ItemStack(dirtPellet), 4);
     }
     
-    
+
 }
