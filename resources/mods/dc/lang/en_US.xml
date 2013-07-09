@@ -2,6 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
 	<comment>English (en_US) Localization File</comment>
+	
 	<entry key="item.scienceNotebook.name">Science Notebook</entry>
 	<entry key="item.unknownDust.name">§kUnknown §rDust</entry>
 	<entry key="item.monocleLens.name">Monocle Lens</entry>
