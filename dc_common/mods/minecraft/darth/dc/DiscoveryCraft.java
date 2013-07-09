@@ -31,6 +31,7 @@ import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
 import mods.minecraft.darth.dc.event.GuiEffectBar;
+import mods.minecraft.darth.dc.event.PlayerDeathEvent;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.lib.Strings;
@@ -113,6 +114,9 @@ public class DiscoveryCraft
 
             //Register World Additions
             WorldInit.init();
+            
+            //Register Player Death Event
+            MinecraftForge.EVENT_BUS.register(new PlayerDeathEvent());
             
             //Register Fuel Handler
             GameRegistry.registerFuelHandler(new FuelHandler());
