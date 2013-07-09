@@ -118,6 +118,9 @@ public class DiscoveryCraft
             //Register Player Death Event
             MinecraftForge.EVENT_BUS.register(new PlayerDeathEvent());
             
+            //Initiate Effect Bar on HUD
+            MinecraftForge.EVENT_BUS.register(new GuiEffectBar(Minecraft.getMinecraft()));
+            
             //Register Fuel Handler
             GameRegistry.registerFuelHandler(new FuelHandler());
             
@@ -127,10 +130,7 @@ public class DiscoveryCraft
         @PostInit
         public void postInit(FMLPostInitializationEvent event)
         {
-            
-            //Initiate Effect Bar on HUD
-            MinecraftForge.EVENT_BUS.register(new GuiEffectBar(Minecraft.getMinecraft()));
-            
+
             //Initialize Mod Addons
             AddonHandler.init();
             
