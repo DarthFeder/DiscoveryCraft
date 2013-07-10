@@ -4,7 +4,7 @@
 DiscoveryCraft is a mod for Minecraft, a game made by Mojang AB.
 
 
-This mod is published under the GNU Lesser GLPv3 liscense. For more information, head to http://www.gnu.org/copyleft/lesser.html.
+This mod is published under the Minecraft Mod Public License.
 It says basically you are allowed to see, download, use, and edit my source code, but you are NOT allowed to disribute my mod without my expresssed permission.
 
 This mod is made by Darth_Feder. It is avaliable to see on github: https://github.com/DarthFeder/DiscoveryCraft.
