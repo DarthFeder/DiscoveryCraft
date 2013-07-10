@@ -111,7 +111,7 @@ public class DiscoveryCraft
         @Init
         public void load(FMLInitializationEvent event)
         {
-
+            
             //Register World Additions
             WorldInit.init();
             
