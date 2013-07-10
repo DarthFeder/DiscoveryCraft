@@ -19,8 +19,7 @@ public class ItemKnife extends SwordDC
     public ItemKnife(int id, EnumToolMaterial toolMaterial, boolean melee)
     {
         super(id, toolMaterial);
-        this.setCreativeTab(DiscoveryCraft.tabDC)
-            .setUnlocalizedName(Strings.KNIFE_NAME);
+        this.setCreativeTab(DiscoveryCraft.tabDC);
         
         this.melee = melee;
         

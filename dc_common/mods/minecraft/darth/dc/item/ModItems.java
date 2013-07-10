@@ -44,8 +44,8 @@ public class ModItems
         sonicScrewdriver = new ItemSonicScrewdriver(ItemIDs.SONIC_SCREWDRIVER);
         debugTool = new ItemDebug(ItemIDs.DEBUG_TOOL);
         craftingUpgrade = new ItemCraftingUpgrade(ItemIDs.CRAFTING_UPGRADE);
-        knifeThrowing = new ItemKnife(ItemIDs.KNIFE_THROWING, BLANK, false);
-        knifeMelee = new ItemKnife(ItemIDs.KNIFE_MELEE, FLINT, true);
+        knifeThrowing = new ItemKnife(ItemIDs.KNIFE_THROWING, BLANK, false).setUnlocalizedName(Strings.KNIFE_THROWING_NAME);
+        knifeMelee = new ItemKnife(ItemIDs.KNIFE_MELEE, FLINT, true).setUnlocalizedName(Strings.KNIFE_MELEE_NAME);
         shovelFlint = new ShovelDC(ItemIDs.FLINT_SHOVEL,FLINT).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         pickaxeFlint = new PickaxeDC(ItemIDs.FLINT_PICKAXE,FLINT).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         axeFlint = new AxeDC(ItemIDs.FLINT_AXE,FLINT).setUnlocalizedName(Strings.FLINT_AXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);

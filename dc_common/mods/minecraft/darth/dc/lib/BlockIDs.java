@@ -10,8 +10,8 @@ public class BlockIDs
     
     
     //Current blocks ids
-    public static int UNKNOWN_ORE = 1200; //temporary
-    public static int GLOWING_UNKNOWN_ORE = 1201;
-    public static int SCIENTIFIC_ASSEMBLER = 1202;
+    public static int UNKNOWN_ORE;
+    public static int GLOWING_UNKNOWN_ORE;
+    public static int SCIENTIFIC_ASSEMBLER;
     
 }

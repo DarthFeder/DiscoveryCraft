@@ -11,28 +11,29 @@ public class ItemIDs
     public static int SONIC_SCREWDRIVER_DEFAULT = 3204;
     public static int DEBUG_TOOL_DEFAULT = 3205;
     public static int CRAFTING_UPGRADE_DEFAULT = 3206;
-    public static int KNIFE_DEFAULT = 3207;
-    public static int UNKNOWN_CHUNKS_DEFAULT = 3208;
+    public static int KNIFE_MELEE_DEFAULT = 3207;
+    public static int KNIFE_THROWING_DEFAULT = 3208;
     public static int FLINT_SHOVEL_DEFULT = 3209;
     public static int FLINT_PICKAXE_DEFULT = 3210;
     public static int FLINT_AXE_DEFULT = 3211;
     public static int DIRT_PELLET_DEFAULT = 3212;
+    public static int UNKNOWN_CHUNKS_DEFAULT = 3213;
     
     
     //Current item ids
-    public static int SCI_NOTEBOOK = 3200;  // temp
-    public static int UNKNOWN_DUST = 3201;
-    public static int MONOCLE_LENS = 3202;
-    public static int NOTEBOOK_LOCK = 3203;
-    public static int SONIC_SCREWDRIVER = 3204;
-    public static int DEBUG_TOOL = 3205;
-    public static int CRAFTING_UPGRADE = 3206;
-    public static int KNIFE_THROWING = 3207;
-    public static int KNIFE_MELEE = 3208;
-    public static int FLINT_SHOVEL = 3209;
-    public static int FLINT_PICKAXE = 3210;
-    public static int FLINT_AXE = 3211;
-    public static int DIRT_PELLET = 3212;
-    public static int UNKNOWN_CHUNKS = 3213;
+    public static int SCI_NOTEBOOK;
+    public static int UNKNOWN_DUST;
+    public static int MONOCLE_LENS;
+    public static int NOTEBOOK_LOCK;
+    public static int SONIC_SCREWDRIVER;
+    public static int DEBUG_TOOL;
+    public static int CRAFTING_UPGRADE;
+    public static int KNIFE_THROWING;
+    public static int KNIFE_MELEE;
+    public static int FLINT_SHOVEL;
+    public static int FLINT_PICKAXE;
+    public static int FLINT_AXE;
+    public static int DIRT_PELLET;
+    public static int UNKNOWN_CHUNKS;
     
 }
