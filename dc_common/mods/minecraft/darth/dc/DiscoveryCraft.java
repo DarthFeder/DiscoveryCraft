@@ -1,6 +1,8 @@
 package mods.minecraft.darth.dc;
 
 
+import java.io.File;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -24,6 +26,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 import mods.minecraft.darth.dc.block.ModBlocks;
 import mods.minecraft.darth.dc.command.CommandHandler;
+import mods.minecraft.darth.dc.configuration.ConfigHandler;
 import mods.minecraft.darth.dc.core.handlers.AddonHandler;
 import mods.minecraft.darth.dc.core.handlers.FuelHandler;
 import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
@@ -90,6 +93,9 @@ public class DiscoveryCraft
             
             //Load Language Localization Files
             LocalizationHandler.loadLanguages();
+            
+            //Load the Configuration File
+            ConfigHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.CHANNEL_NAME + ".cfg"));
             
             //Register Key Bindings (Client-Side)
             //proxy.registerKeyBindingHandler();

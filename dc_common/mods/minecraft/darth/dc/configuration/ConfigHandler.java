@@ -1,11 +1,13 @@
 package mods.minecraft.darth.dc.configuration;
 
 import java.io.File;
-
-import mods.minecraft.darth.dc.lib.BlockIDs;
-import mods.minecraft.darth.dc.lib.Strings;
+import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
+
+import cpw.mods.fml.common.FMLLog;
+
+import mods.minecraft.darth.dc.lib.Reference;
 
 
 public class ConfigHandler
@@ -15,12 +17,24 @@ public class ConfigHandler
     
     public static void init(File configFile)
     {
-        //configuration.load();
         
+        configuration = new Configuration(configFile);
         
-        BlockIDs.UNKNOWN_ORE = configuration.getBlock(Strings.UNKNOWN_ORE_NAME, BlockIDs.UNKNOWN_ORE_DEFAULT).getInt(BlockIDs.UNKNOWN_ORE_DEFAULT);
+        try
+        {
+            configuration.load();
+        
     
-    
+        }
+        catch (Exception e)
+        {
+            FMLLog.log(Level.SEVERE, e, Reference.MOD_NAME + " had a problem loading its configuration file.");
+        }
+        finally
+        {
+            configuration.save();
+        }
     
     }
+    
 }
