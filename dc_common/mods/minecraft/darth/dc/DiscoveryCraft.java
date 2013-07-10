@@ -35,6 +35,7 @@ import mods.minecraft.darth.dc.event.PlayerDeathEvent;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.lib.Strings;
+import mods.minecraft.darth.dc.network.PacketHandler;
 import mods.minecraft.darth.dc.recipe.ModRecipes;
 import mods.minecraft.darth.dc.world.WorldInit;
 
@@ -49,7 +50,7 @@ import mods.minecraft.darth.dc.world.WorldInit;
 
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES, acceptedMinecraftVersions = Reference.MC_VERSIONS, modExclusionList = Reference.EXCLUSION_MODS)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(channels = {Reference.CHANNEL_NAME}, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
 public class DiscoveryCraft
 {
 
