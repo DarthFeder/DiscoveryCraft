@@ -3,10 +3,7 @@ package mods.minecraft.darth.dc;
 
 import java.io.File;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
-
-import net.minecraftforge.common.MinecraftForge;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
@@ -33,8 +30,7 @@ import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
 import mods.minecraft.darth.dc.core.proxy.CommonProxy;
 import mods.minecraft.darth.dc.core.util.LogUtil;
 import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
-import mods.minecraft.darth.dc.event.GuiEffectBar;
-import mods.minecraft.darth.dc.event.PlayerDeathEvent;
+import mods.minecraft.darth.dc.event.EventRegistry;
 import mods.minecraft.darth.dc.item.ModItems;
 import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.lib.Strings;
@@ -95,7 +91,7 @@ public class DiscoveryCraft
             LocalizationHandler.loadLanguages();
             
             //Load the Configuration File
-            ConfigHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.CHANNEL_NAME + ".cfg"));
+            ConfigHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_NAME + ".cfg"));
             
             //Register Key Bindings (Client-Side)
             //proxy.registerKeyBindingHandler();
@@ -122,11 +118,8 @@ public class DiscoveryCraft
             //Register World Additions
             WorldInit.init();
             
-            //Register Player Death Event
-            MinecraftForge.EVENT_BUS.register(new PlayerDeathEvent());
-            
-            //Initiate Effect Bar on HUD
-            MinecraftForge.EVENT_BUS.register(new GuiEffectBar(Minecraft.getMinecraft()));
+            //Register Events
+            EventRegistry.init();
             
             //Register Fuel Handler
             GameRegistry.registerFuelHandler(new FuelHandler());

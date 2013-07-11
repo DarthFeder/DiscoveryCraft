@@ -72,4 +72,10 @@ public class LogUtil
     {
         dcLogger.log(Level.CONFIG, msg);
     }
+    
+    public static void debug(String msg)
+    {
+        dcLogger.log(Level.INFO, "[DEBUG] " + msg);
+    }
+    
 }
