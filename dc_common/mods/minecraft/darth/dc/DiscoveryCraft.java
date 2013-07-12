@@ -19,6 +19,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 import mods.minecraft.darth.dc.block.ModBlocks;
@@ -117,6 +118,12 @@ public class DiscoveryCraft
             
             //Register World Additions
             WorldInit.init();
+            
+            //Register the GUI Handler
+            NetworkRegistry.instance().registerGuiHandler(instance, proxy);
+            
+            //Register Tile Entities
+            proxy.registerTileEntities();
             
             //Register Events
             EventRegistry.init();
