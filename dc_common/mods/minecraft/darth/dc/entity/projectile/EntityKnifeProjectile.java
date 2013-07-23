@@ -3,6 +3,7 @@ package mods.minecraft.darth.dc.entity.projectile;
 import java.util.List;
 
 import mods.minecraft.darth.dc.item.ModItems;
+import mods.minecraft.darth.dc.lib.Sounds;
 import net.minecraft.block.Block;
 import net.minecraft.enchantment.EnchantmentThorns;
 import net.minecraft.entity.Entity;
@@ -49,7 +50,7 @@ public class EntityKnifeProjectile extends EntityArrow
     {
         super(par1World, par2EntityLiving, par3);
     }
-
+    @Override
     public void setThrowableHeading(double par1, double par3, double par5, float par7, float par8)
     {
         float f2 = MathHelper.sqrt_double(par1 * par1 + par3 * par3 + par5 * par5);
@@ -77,6 +78,7 @@ public class EntityKnifeProjectile extends EntityArrow
      * Sets the position and rotation. Only difference from the other one is no bounding on the rotation. Args: posX,
      * posY, posZ, yaw, pitch
      */
+    @Override
     public void setPositionAndRotation2(double par1, double par3, double par5, float par7, float par8, int par9)
     {
         this.setPosition(par1, par3, par5);
@@ -87,6 +89,7 @@ public class EntityKnifeProjectile extends EntityArrow
     /**
      * Sets the velocity to the args. Args: x, y, z
      */
+    @Override
     public void setVelocity(double par1, double par3, double par5)
     {
         this.motionX = par1;
@@ -108,9 +111,10 @@ public class EntityKnifeProjectile extends EntityArrow
     /**
      * Called to update the entity's position/logic.
      */
+    @Override
     public void onUpdate()
     {
-        super.onUpdate();
+        
 
         if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F)
         {
@@ -283,7 +287,8 @@ public class EntityKnifeProjectile extends EntityArrow
                             }
                         }
 
-                        this.playSound("random.bowhit", 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
+                        this.playSound("step.gravel", 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
+                        this.playSound(Sounds.SOUND_KNIFE, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
 
                         if (!(movingobjectposition.entityHit instanceof EntityEnderman))
                         {
@@ -314,7 +319,7 @@ public class EntityKnifeProjectile extends EntityArrow
                     this.posX -= this.motionX / (double)f2 * 0.05000000074505806D;
                     this.posY -= this.motionY / (double)f2 * 0.05000000074505806D;
                     this.posZ -= this.motionZ / (double)f2 * 0.05000000074505806D;
-                    this.playSound("random.bowhit", 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
+                    this.playSound(Sounds.SOUND_KNIFE, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
                     this.inGround = true;
                     this.arrowShake = 7;
                     this.setIsCritical(false);
@@ -388,6 +393,7 @@ public class EntityKnifeProjectile extends EntityArrow
     /**
      * (abstract) Protected helper method to write subclass entity data to NBT.
      */
+    @Override
     public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
     {
         par1NBTTagCompound.setShort("xTile", (short)this.xTile);
@@ -404,6 +410,7 @@ public class EntityKnifeProjectile extends EntityArrow
     /**
      * (abstract) Protected helper method to read subclass entity data from NBT.
      */
+    @Override
     public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
     {
         this.xTile = par1NBTTagCompound.getShort("xTile");
@@ -432,6 +439,7 @@ public class EntityKnifeProjectile extends EntityArrow
     /**
      * Called by a player entity when they collide with an entity
      */
+    @Override
     public void onCollideWithPlayer(EntityPlayer par1EntityPlayer)
     {
         if (!this.worldObj.isRemote && this.inGround && this.arrowShake <= 0)

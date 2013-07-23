@@ -52,7 +52,7 @@ public class ItemKnife extends SwordDC
 	            	entityknife.canBePickedUp = 1;
 	            }
 	            
-	            par2World.playSoundAtEntity(par3EntityPlayer, "random.breath", 1.0F, 1.0F);
+	            par2World.playSoundAtEntity(par3EntityPlayer, "random.pop", 1.0F, 1.0F);
 
 	            entityknife.setDamage(2D);
 	
