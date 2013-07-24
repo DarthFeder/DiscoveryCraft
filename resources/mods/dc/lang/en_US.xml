@@ -17,6 +17,8 @@
 	<entry key="item.pickaxeFlint.name">Flint Pickaxe</entry>
 	<entry key="item.axeFlint.name">Flint Axe</entry>
 	<entry key="item.dirtPellet.name">Dirt Pellets</entry>
+	<entry key="item.goronRaw.name">Raw Goron Alloy</entry>
+	<entry key="item.ingotGoron.name">Goron Alloy Ingot</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
 	<entry key="tile.sciAssembler.name">Scientific Assembler</entry>

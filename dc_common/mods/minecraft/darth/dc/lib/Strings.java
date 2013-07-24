@@ -36,6 +36,8 @@ public class Strings
     public static final String FLINT_PICKAXE_NAME = "pickaxeFlint";
     public static final String FLINT_AXE_NAME = "axeFlint";
     public static final String DIRT_PELLET_NAME = "dirtPellet";
+    public static final String RAW_GORON_ALLOY_NAME = "goronRaw";
+    public static final String GORON_ALLOY_INGOT_NAME = "ingotGoron";
     
     
     //Tile Internal Names

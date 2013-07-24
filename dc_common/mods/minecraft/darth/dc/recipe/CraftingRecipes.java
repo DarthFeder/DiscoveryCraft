@@ -36,6 +36,7 @@ public class CraftingRecipes
         GameRegistry.addRecipe(new ItemStack(ModItems.axeFlint),"ff ", "fs ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
         
         
+        
     }
     
 }

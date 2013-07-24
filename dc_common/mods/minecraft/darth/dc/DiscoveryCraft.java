@@ -37,6 +37,7 @@ import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.lib.Strings;
 import mods.minecraft.darth.dc.network.PacketHandler;
 import mods.minecraft.darth.dc.recipe.ModRecipes;
+import mods.minecraft.darth.dc.tileentity.GuiHandler;
 import mods.minecraft.darth.dc.world.WorldInit;
 
 
@@ -84,7 +85,9 @@ public class DiscoveryCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
-            
+            //Some gui stuff
+        	NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
+        	
             //Register Logger
             LogUtil.init();
             

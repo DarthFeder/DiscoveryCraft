@@ -2,8 +2,9 @@ package mods.minecraft.darth.dc.block;
 
 import java.util.Random;
 
+import mods.minecraft.darth.dc.DiscoveryCraft;
+import mods.minecraft.darth.dc.lib.GuiIDs;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -49,8 +50,11 @@ public class BlockScientificAssembler extends BlockDC
             {
                 TileScientificAssembler tile = (TileScientificAssembler) world.getBlockTileEntity(x, y, z);
 
-                if (tile != null){};
-                    //player.openGui(DiscoveryCraft.instance, GuiIds.ASSEMBLER1, world, x, y, z);
+                if (tile != null){
+                	
+                    player.openGui(DiscoveryCraft.instance, GuiIDs.ASSEMBLER1, world, x, y, z);
+                    System.out.println(tile.toString());
+                }
             }
 
             return true;

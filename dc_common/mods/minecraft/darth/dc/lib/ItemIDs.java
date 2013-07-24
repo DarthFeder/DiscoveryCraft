@@ -18,6 +18,8 @@ public class ItemIDs
     public static int FLINT_AXE_DEFULT = 3211;
     public static int DIRT_PELLET_DEFAULT = 3212;
     public static int UNKNOWN_CHUNKS_DEFAULT = 3213;
+    public static int RAW_GORON_ALLOY_DEFAULT = 3214;
+    public static int GORON_ALLOY_INGOT_DEFAULT = 3215;
     
     
     //Current item ids
@@ -35,5 +37,7 @@ public class ItemIDs
     public static int FLINT_AXE;
     public static int DIRT_PELLET;
     public static int UNKNOWN_CHUNKS;
+    public static int RAW_GORON_ALLOY;
+    public static int GORON_ALLOY_INGOT;
     
 }

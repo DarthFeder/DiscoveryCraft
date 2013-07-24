@@ -49,6 +49,8 @@ public class ConfigHandler
             ItemIDs.FLINT_AXE = configuration.getItem(Strings.FLINT_AXE_NAME, ItemIDs.FLINT_AXE_DEFULT).getInt(ItemIDs.FLINT_AXE_DEFULT);
             ItemIDs.DIRT_PELLET = configuration.getItem(Strings.DIRT_PELLET_NAME, ItemIDs.DIRT_PELLET_DEFAULT).getInt(ItemIDs.DIRT_PELLET_DEFAULT);
             ItemIDs.UNKNOWN_CHUNKS = configuration.getItem(Strings.UNKNOWN_CHUNKS_NAME, ItemIDs.UNKNOWN_DUST_DEFAULT).getInt(ItemIDs.UNKNOWN_DUST_DEFAULT);
+            ItemIDs.RAW_GORON_ALLOY = configuration.getItem(Strings.RAW_GORON_ALLOY_NAME, ItemIDs.RAW_GORON_ALLOY_DEFAULT).getInt(ItemIDs.RAW_GORON_ALLOY_DEFAULT);
+            ItemIDs.GORON_ALLOY_INGOT = configuration.getItem(Strings.GORON_ALLOY_INGOT_NAME, ItemIDs.GORON_ALLOY_INGOT_DEFAULT).getInt(ItemIDs.GORON_ALLOY_INGOT_DEFAULT);
             
         }
         catch (Exception e)
