@@ -144,6 +144,6 @@ public class TileScientificAssembler extends TileDC implements IInventory
             }
             tagCompound.setTag("Inventory", itemList);
     }
-    
+
 
 }

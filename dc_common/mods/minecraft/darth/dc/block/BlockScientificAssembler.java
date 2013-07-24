@@ -30,6 +30,7 @@ public class BlockScientificAssembler extends BlockDC
     public TileEntity createNewTileEntity(World world)
     {
         return new TileScientificAssembler();
+        
     }
 
     @Override
