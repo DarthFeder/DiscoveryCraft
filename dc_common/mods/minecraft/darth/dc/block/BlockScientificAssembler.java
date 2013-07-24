@@ -4,14 +4,18 @@ import java.util.Random;
 
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.GuiIDs;
+import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockScientificAssembler extends BlockDC
@@ -39,6 +43,31 @@ public class BlockScientificAssembler extends BlockDC
         dropInventory(world, x, y, z);
         super.breakBlock(world, x, y, z, id, meta);
     }
+    private Icon sides;
+    private Icon front;
+    @Override
+    public void registerIcons(IconRegister iconRegister)
+    {
+        sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_sides");
+        front = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_front");
+    }
+    @Override
+    public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int x, int y, int z, int side){
+    	TileScientificAssembler tile = (TileScientificAssembler) par1IBlockAccess.getBlockTileEntity(x, y, z);
+    	if(tile != null){
+    		if(tile.getOrientation()!=null){
+	    		int i = tile.getOrientation().ordinal();
+	    		
+	    	
+		    	if(side == i){
+		    		return front;
+		    	}else{
+		    		return sides;
+		    	}
+    		}
+    	}
+    	return null;
+    }
     
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
@@ -47,8 +76,7 @@ public class BlockScientificAssembler extends BlockDC
             return false;
         else
         {
-            if (!world.isRemote)
-            {
+            
                 TileScientificAssembler tile = (TileScientificAssembler) world.getBlockTileEntity(x, y, z);
 
                 if (tile != null){
@@ -56,7 +84,7 @@ public class BlockScientificAssembler extends BlockDC
                     player.openGui(DiscoveryCraft.instance, GuiIDs.ASSEMBLER1, world, x, y, z);
                     System.out.println(tile.toString());
                 }
-            }
+            
 
             return true;
         }

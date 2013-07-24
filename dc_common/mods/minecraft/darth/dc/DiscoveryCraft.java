@@ -3,8 +3,23 @@ package mods.minecraft.darth.dc;
 
 import java.io.File;
 
+import mods.minecraft.darth.dc.block.ModBlocks;
+import mods.minecraft.darth.dc.command.CommandHandler;
+import mods.minecraft.darth.dc.configuration.ConfigHandler;
+import mods.minecraft.darth.dc.core.handlers.AddonHandler;
+import mods.minecraft.darth.dc.core.handlers.FuelHandler;
+import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
+import mods.minecraft.darth.dc.core.proxy.CommonProxy;
+import mods.minecraft.darth.dc.core.util.LogUtil;
+import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
+import mods.minecraft.darth.dc.event.EventRegistry;
+import mods.minecraft.darth.dc.item.ModItems;
+import mods.minecraft.darth.dc.lib.Reference;
+import mods.minecraft.darth.dc.lib.Strings;
+import mods.minecraft.darth.dc.network.PacketHandler;
+import mods.minecraft.darth.dc.recipe.ModRecipes;
+import mods.minecraft.darth.dc.world.WorldInit;
 import net.minecraft.creativetab.CreativeTabs;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
@@ -21,24 +36,6 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-
-import mods.minecraft.darth.dc.block.ModBlocks;
-import mods.minecraft.darth.dc.command.CommandHandler;
-import mods.minecraft.darth.dc.configuration.ConfigHandler;
-import mods.minecraft.darth.dc.core.handlers.AddonHandler;
-import mods.minecraft.darth.dc.core.handlers.FuelHandler;
-import mods.minecraft.darth.dc.core.handlers.LocalizationHandler;
-import mods.minecraft.darth.dc.core.proxy.CommonProxy;
-import mods.minecraft.darth.dc.core.util.LogUtil;
-import mods.minecraft.darth.dc.creativetabs.CreativeTabDC;
-import mods.minecraft.darth.dc.event.EventRegistry;
-import mods.minecraft.darth.dc.item.ModItems;
-import mods.minecraft.darth.dc.lib.Reference;
-import mods.minecraft.darth.dc.lib.Strings;
-import mods.minecraft.darth.dc.network.PacketHandler;
-import mods.minecraft.darth.dc.recipe.ModRecipes;
-import mods.minecraft.darth.dc.tileentity.GuiHandler;
-import mods.minecraft.darth.dc.world.WorldInit;
 
 
 /**
@@ -85,8 +82,9 @@ public class DiscoveryCraft
         @PreInit
         public void preInit(FMLPreInitializationEvent event)
         {
-            //Some gui stuff
-        	NetworkRegistry.instance().registerGuiHandler(this, new GuiHandler());
+            
+        	proxy.registerTileEntities();
+
         	
             //Register Logger
             LogUtil.init();
@@ -122,11 +120,11 @@ public class DiscoveryCraft
             //Register World Additions
             WorldInit.init();
             
-            //Register the GUI Handler
-            NetworkRegistry.instance().registerGuiHandler(instance, proxy);
+            //Some gui stuff
+        	NetworkRegistry.instance().registerGuiHandler(instance, proxy);
             
             //Register Tile Entities
-            proxy.registerTileEntities();
+            
             
             //Register Events
             EventRegistry.init();

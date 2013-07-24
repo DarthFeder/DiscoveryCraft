@@ -7,13 +7,14 @@ import net.minecraftforge.common.ForgeDirection;
 public class TileDC extends TileEntity
 {
 
-    private ForgeDirection orientation;
+    protected ForgeDirection orientation;
     private byte state;
     private String customName;
     
     public TileDC()
     {
-        orientation = ForgeDirection.SOUTH;
+        
+    	
         state = 0;
         customName = "";
         
@@ -76,7 +77,8 @@ public class TileDC extends TileEntity
         
         return s.toString();
     }
-    static{
-    	addMapping(TileScientificAssembler.class,"Scientific Assembler");
-    }
+    //static{
+    //	addMapping(TileScientificAssembler.class,"Scientific Assembler");
+    	
+    //}
 }

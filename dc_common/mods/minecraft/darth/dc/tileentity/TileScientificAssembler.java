@@ -5,6 +5,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraftforge.common.ForgeDirection;
 
 public class TileScientificAssembler extends TileDC implements IInventory
 {
@@ -127,6 +128,10 @@ public class TileScientificAssembler extends TileDC implements IInventory
                             inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
                     }
             }
+            orientation = ForgeDirection.getOrientation(tagCompound.getInteger("Orientation"));
+            System.out.println(orientation.toString());
+            	
+            
     }
     @Override
     public void writeToNBT(NBTTagCompound tagCompound) {
@@ -143,6 +148,13 @@ public class TileScientificAssembler extends TileDC implements IInventory
                     }
             }
             tagCompound.setTag("Inventory", itemList);
+            System.out.println(orientation.toString());
+            
+            
+            tagCompound.setInteger("Orientation", orientation.ordinal());
+            
+            
+            
     }
 
 

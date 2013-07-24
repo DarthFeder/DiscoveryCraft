@@ -72,7 +72,7 @@ public class BlockDC extends BlockContainer
             ((TileDC) world.getBlockTileEntity(x, y, z)).setCustomName(itemStack.getDisplayName());
         }
         
-        //((TileDC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
+        ((TileDC) world.getBlockTileEntity(x, y, z)).setOrientation(direction);
         
     }
 

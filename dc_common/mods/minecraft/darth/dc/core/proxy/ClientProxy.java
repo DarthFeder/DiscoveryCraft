@@ -1,11 +1,14 @@
 package mods.minecraft.darth.dc.core.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import mods.minecraft.darth.dc.client.audio.SoundHandler;
 import mods.minecraft.darth.dc.core.handlers.KeyBindingHandler;
+import mods.minecraft.darth.dc.tileentity.GuiScientificAssembler;
+import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 import net.minecraftforge.common.MinecraftForge;
 
 
@@ -28,7 +31,13 @@ public class ClientProxy extends CommonProxy
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
         
-        // TODO Auto-generated method stub
+    	TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+        System.out.println("THECODEWASCALLED");
+        if(ID==0){
+        	System.out.println("isTileSA");
+                return new GuiScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity);
+                
+        }
         return null;
     }
     
