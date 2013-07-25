@@ -32,9 +32,8 @@ public class ClientProxy extends CommonProxy
     {
         
     	TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-        System.out.println("THECODEWASCALLED");
         if(ID==0){
-        	System.out.println("isTileSA");
+        	
                 return new GuiScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity);
                 
         }

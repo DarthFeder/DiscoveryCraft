@@ -129,7 +129,7 @@ public class TileScientificAssembler extends TileDC implements IInventory
                     }
             }
             orientation = ForgeDirection.getOrientation(tagCompound.getInteger("Orientation"));
-            System.out.println(orientation.toString());
+            
             	
             
     }
@@ -148,7 +148,6 @@ public class TileScientificAssembler extends TileDC implements IInventory
                     }
             }
             tagCompound.setTag("Inventory", itemList);
-            System.out.println(orientation.toString());
             
             
             tagCompound.setInteger("Orientation", orientation.ordinal());

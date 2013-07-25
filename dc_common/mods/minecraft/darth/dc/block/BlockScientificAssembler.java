@@ -6,6 +6,7 @@ import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.GuiIDs;
 import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.item.EntityItem;
@@ -17,6 +18,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 
 public class BlockScientificAssembler extends BlockDC
 {
@@ -52,26 +54,14 @@ public class BlockScientificAssembler extends BlockDC
         front = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_front");
     }
     @Override
-    public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int x, int y, int z, int side){
-    	TileScientificAssembler tile = (TileScientificAssembler) par1IBlockAccess.getBlockTileEntity(x, y, z);
-    	if(tile != null){
-    		if(tile.getOrientation()!=null){
-	    		int i = tile.getOrientation().ordinal();
-	    		
-	    	
-		    	if(side == i){
-		    		return front;
-		    	}else{
-		    		return sides;
-		    	}
-    		}
-    	}
-    	return null;
+    public Icon getIcon(int par1, int par2){
+    	return par1 == par2 ? front : sides;
     }
     
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
     {
+    	
         if (player.isSneaking())
             return false;
         else
@@ -82,7 +72,6 @@ public class BlockScientificAssembler extends BlockDC
                 if (tile != null){
                 	
                     player.openGui(DiscoveryCraft.instance, GuiIDs.ASSEMBLER1, world, x, y, z);
-                    System.out.println(tile.toString());
                 }
             
 
@@ -90,7 +79,7 @@ public class BlockScientificAssembler extends BlockDC
         }
     }
 
-    
+
     private void dropInventory(World world, int x, int y, int z)
     {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
