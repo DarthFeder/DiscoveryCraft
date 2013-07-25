@@ -39,15 +39,15 @@ public class ContainerScientificAssembler extends Container{
     protected void bindPlayerInventory(InventoryPlayer inventoryPlayer) {
         for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 9; j++) {
-                        addSlotToContainer(new Slot(inventoryPlayer, sn,
+                        addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9,
                                         8 + j * 18, 111 + i * 18));
-                        sn++;
+                        
                 }
         }
 
         for (int i = 0; i < 9; i++) {
-                addSlotToContainer(new Slot(inventoryPlayer, sn, 8 + i * 18, 169));
-                sn++;
+                addSlotToContainer(new Slot(inventoryPlayer, i, 8 + i * 18, 169));
+                
         }
 }
 	@Override
@@ -55,7 +55,7 @@ public class ContainerScientificAssembler extends Container{
 		
 		return tileEntity.isUseableByPlayer(entityplayer);
 	}
-	
+	@Override
     public ItemStack transferStackInSlot(EntityPlayer player, int slot) {
         ItemStack stack = null;
         Slot slotObject = (Slot) inventorySlots.get(slot);
