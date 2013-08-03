@@ -6,34 +6,103 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.ItemStack;
 
 public class ContainerScientificAssembler extends Container
 {
-
-    public ContainerScientificAssembler(InventoryPlayer inventoryPlayer, TileScientificAssembler tile)
+    protected TileScientificAssembler tileEntity;
+    private int sn = 0;
+    
+    public ContainerScientificAssembler (InventoryPlayer inventoryPlayer, TileScientificAssembler te)
     {
-
-        //Add the row of crafting storage
-        for (int storageSlotIndex = 0; storageSlotIndex < 9; storageSlotIndex++)
-            this.addSlotToContainer(new Slot(inventoryPlayer, storageSlotIndex + 36, 44 + storageSlotIndex * 18, 0/*TO-DO*/));
+        tileEntity = te;
         
-        // Add the player's inventory slots to the container
-        for (int inventoryRowIndex = 0; inventoryRowIndex < 3; inventoryRowIndex++)
+        //the Slot constructor takes the IInventory and the slot number in that it binds to
+        //and the x-y coordinates it resides on-screen
+        
+        //crafting grid
+        for (int x = 0; x < 3; x++)
         {
-            for (int inventoryColumnIndex = 0; inventoryColumnIndex < 9; ++inventoryColumnIndex)
-                this.addSlotToContainer(new Slot(inventoryPlayer, inventoryColumnIndex + inventoryRowIndex * 9 + 9, 44 + inventoryColumnIndex * 18, 104 + inventoryRowIndex * 18));
+                for (int y = 0; y < 3; y++)
+                {
+                        addSlotToContainer(new Slot(tileEntity, sn, 30 + x * 18, 17 + y * 18));
+                        sn++;
+                }
         }
+        
+        //bottom inventory
+        for(int x = 0; x < 9; x++)
+        {
+            addSlotToContainer(new Slot(tileEntity, sn, 8 + x * 18, 82));
+            sn++;
+        }
+        
+        //result
+        addSlotToContainer(new Slot(tileEntity, sn, 124, 35));
+        sn++;
 
-        // Add the player's action bar slots to the container
-        for (int actionBarSlotIndex = 0; actionBarSlotIndex < 9; actionBarSlotIndex++)
-            this.addSlotToContainer(new Slot(inventoryPlayer, actionBarSlotIndex, 44 + actionBarSlotIndex * 18, 162));
-       
+        //commonly used vanilla code that adds the player's inventory
+            
+        bindPlayerInventory(inventoryPlayer);
     }
-
+    
+    protected void bindPlayerInventory(InventoryPlayer inventoryPlayer)
+    {
+        //player main inv
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 9; j++)
+                addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9, 8 + j * 18, 111 + i * 18)); 
+        }
+        
+        //player hotbar
+        for (int j = 0; j < 9; ++j)
+            this.addSlotToContainer(new Slot(inventoryPlayer, j, 8 + j * 18, 169));
+    }
+    
     @Override
     public boolean canInteractWith(EntityPlayer entityplayer)
     {
-        return true;
+        return tileEntity.isUseableByPlayer(entityplayer);
+    }
+    
+    @Override
+    public ItemStack transferStackInSlot(EntityPlayer player, int slot)
+    {
+        ItemStack stack = null;
+        Slot slotObject = (Slot) inventorySlots.get(slot);
+
+        //null checks and checks if the item can be stacked (maxStackSize > 1)
+        if (slotObject != null && slotObject.getHasStack())
+        {
+            ItemStack stackInSlot = slotObject.getStack();
+            stack = stackInSlot.copy();
+
+            //merges the item into player inventory since its in the tileEntity
+            if (slot < tileEntity.INVENTORY_SIZE)
+            {
+                if (!this.mergeItemStack(stackInSlot, 0, 35, true))
+                    return null;
+            }
+            //places it into the tileEntity is possible since its in the player inventory
+            else if (!this.mergeItemStack(stackInSlot, 0, tileEntity.INVENTORY_SIZE, false))
+                return null;
+
+            
+            if (stackInSlot.stackSize == 0)
+                slotObject.putStack(null);
+            else
+                slotObject.onSlotChanged();
+
+            if (stackInSlot.stackSize == stack.stackSize)
+                return null;
+            
+            slotObject.onPickupFromSlot(player, stackInSlot);
+        }
+        
+        return stack;
     }
 
+
+   
 }

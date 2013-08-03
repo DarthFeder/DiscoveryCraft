@@ -83,8 +83,8 @@ public class DiscoveryCraft
         public void preInit(FMLPreInitializationEvent event)
         {
             
+            //Register Tile Entities
         	proxy.registerTileEntities();
-
         	
             //Register Logger
             LogUtil.init();
@@ -120,11 +120,8 @@ public class DiscoveryCraft
             //Register World Additions
             WorldInit.init();
             
-            //Some gui stuff
+            //Register GUIs
         	NetworkRegistry.instance().registerGuiHandler(instance, proxy);
-            
-            //Register Tile Entities
-            
             
             //Register Events
             EventRegistry.init();
