@@ -63,7 +63,7 @@ public class ContainerScientificAssembler extends Container
     @Override
     public boolean canInteractWith(EntityPlayer entityplayer)
     {
-        return tileEntity.isUseableByPlayer(entityplayer);
+        return true;
     }
     
     @Override
