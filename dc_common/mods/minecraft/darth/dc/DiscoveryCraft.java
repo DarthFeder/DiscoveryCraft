@@ -19,7 +19,9 @@ import mods.minecraft.darth.dc.lib.Strings;
 import mods.minecraft.darth.dc.network.PacketHandler;
 import mods.minecraft.darth.dc.recipe.ModRecipes;
 import mods.minecraft.darth.dc.world.WorldInit;
+
 import net.minecraft.creativetab.CreativeTabs;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.FingerprintWarning;
 import cpw.mods.fml.common.Mod.Init;
