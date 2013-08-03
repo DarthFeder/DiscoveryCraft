@@ -6,7 +6,7 @@ import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.GuiIDs;
 import mods.minecraft.darth.dc.lib.Reference;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
-import net.minecraft.block.Block;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.item.EntityItem;
@@ -16,13 +16,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeDirection;
 
-public class BlockScientificAssembler extends BlockDC
+public class BlockScientificAssembler extends BlockContainerDC
 {
     private Random rand = new Random();
+    
+    private Icon sides;
+    private Icon front;
 
     public BlockScientificAssembler(int id)
     {
@@ -45,17 +46,18 @@ public class BlockScientificAssembler extends BlockDC
         dropInventory(world, x, y, z);
         super.breakBlock(world, x, y, z, id, meta);
     }
-    private Icon sides;
-    private Icon front;
+    
     @Override
     public void registerIcons(IconRegister iconRegister)
     {
         sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_sides");
         front = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_front");
     }
+    
     @Override
-    public Icon getIcon(int par1, int par2){
-    	return par1 == par2 ? front : sides;
+    public Icon getIcon(int par1, int par2)
+    {
+    	return par1 == 1 ? front : sides;
     }
     
     @Override
@@ -66,19 +68,14 @@ public class BlockScientificAssembler extends BlockDC
             return false;
         else
         {
-            
-                TileScientificAssembler tile = (TileScientificAssembler) world.getBlockTileEntity(x, y, z);
+            TileScientificAssembler tile = (TileScientificAssembler) world.getBlockTileEntity(x, y, z);
 
-                if (tile != null){
-                	
-                    player.openGui(DiscoveryCraft.instance, GuiIDs.ASSEMBLER1, world, x, y, z);
-                }
-            
+            if (tile != null)
+                player.openGui(DiscoveryCraft.instance, GuiIDs.ASSEMBLER1, world, x, y, z);
 
             return true;
         }
     }
-
 
     private void dropInventory(World world, int x, int y, int z)
     {
