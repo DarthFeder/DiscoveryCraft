@@ -23,11 +23,11 @@ public class ContainerScientificAssembler extends Container
         //crafting grid
         for (int x = 0; x < 3; x++)
         {
-                for (int y = 0; y < 3; y++)
-                {
-                        addSlotToContainer(new Slot(tileEntity, sn, 30 + x * 18, 17 + y * 18));
-                        sn++;
-                }
+            for (int y = 0; y < 3; y++)
+            {
+                addSlotToContainer(new Slot(tileEntity, sn, 30 + x * 18, 17 + y * 18));
+                sn++;
+            }
         }
         
         //bottom inventory
