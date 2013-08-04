@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import org.lwjgl.opengl.GL11;
 
+import mods.minecraft.darth.dc.lib.Textures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.potion.Potion;
@@ -58,7 +59,7 @@ public class GuiEffectBar extends Gui
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glDisable(GL11.GL_LIGHTING);
                 
-                this.mc.renderEngine.bindTexture("/gui/inventory.png");      
+                this.mc.func_110434_K().func_110577_a(Textures.VANILLA_HUD);  
         
                 for (Iterator iterator = this.mc.thePlayer.getActivePotionEffects().iterator(); iterator.hasNext(); xPos += BUFF_ICON_SPACING)
                 {

@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.enchantment.EnchantmentThorns;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -46,10 +47,11 @@ public class EntityKnifeProjectile extends EntityArrow
     private int knockbackStrength;
 
 
-    public EntityKnifeProjectile(World par1World, EntityLiving par2EntityLiving, float par3)
+    public EntityKnifeProjectile(World par1World, EntityLivingBase par2EntityLiving, float par3)
     {
         super(par1World, par2EntityLiving, par3);
     }
+    
     @Override
     public void setThrowableHeading(double par1, double par3, double par5, float par7, float par8)
     {

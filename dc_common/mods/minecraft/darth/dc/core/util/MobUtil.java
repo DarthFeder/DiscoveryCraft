@@ -3,6 +3,7 @@ package mods.minecraft.darth.dc.core.util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -34,7 +35,6 @@ public class MobUtil
                     entity.setLocationAndAngles(par2, par4, par6, MathHelper.wrapAngleTo180_float(par0World.rand.nextFloat() * 360.0F), 0.0F);
                     entityliving.rotationYawHead = entityliving.rotationYaw;
                     entityliving.renderYawOffset = entityliving.rotationYaw;
-                    entityliving.initCreature();
                     par0World.spawnEntityInWorld(entity);
                     entityliving.playLivingSound();
                 }
@@ -50,7 +50,7 @@ public class MobUtil
      * @param Mob
      * @return true if hostile, false otherwise
      */
-    public static boolean isHostileEntity(EntityLiving entity)
+    public static boolean isHostileEntity(EntityLivingBase entity)
     {
 
         if (entity instanceof IMob)

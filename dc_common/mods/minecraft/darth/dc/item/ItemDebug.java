@@ -2,6 +2,7 @@ package mods.minecraft.darth.dc.item;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.world.World;
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.block.ModBlocks;
@@ -23,7 +24,7 @@ public class ItemDebug extends ItemDC
     {
        
         if (par3World.getBlockId(par4, par5, par6) == ModBlocks.scientificAssembler.blockID)
-            GeneralUtil.sendChat(player, par3World.getBlockTileEntity(par4, par5, par6).toString());
+            GeneralUtil.sendChat(player, ChatMessageComponent.func_111077_e(par3World.getBlockTileEntity(par4, par5, par6).toString()));
         
         
         return false;

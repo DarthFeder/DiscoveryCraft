@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 
 public class GeneralUtil
 {
@@ -42,7 +43,7 @@ public class GeneralUtil
     }
 
     
-    public static void sendChat(EntityPlayer player, String s)
+    public static void sendChat(EntityPlayer player, ChatMessageComponent s)
     {
         
         player.sendChatToPlayer(s);

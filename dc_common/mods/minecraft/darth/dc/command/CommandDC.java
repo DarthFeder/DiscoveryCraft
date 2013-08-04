@@ -3,6 +3,7 @@ package mods.minecraft.darth.dc.command;
 import mods.minecraft.darth.dc.lib.Commands;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.util.ChatMessageComponent;
 
 public class CommandDC extends CommandBase
 {
@@ -29,9 +30,16 @@ public class CommandDC extends CommandBase
         }
         else
         {
-            commandSender.sendChatToPlayer(Commands.COMMAND_MAIN);
+            commandSender.sendChatToPlayer(ChatMessageComponent.func_111077_e(Commands.COMMAND_MAIN));
         }
         
+    }
+
+    @Override
+    public String getCommandUsage(ICommandSender icommandsender)
+    {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }

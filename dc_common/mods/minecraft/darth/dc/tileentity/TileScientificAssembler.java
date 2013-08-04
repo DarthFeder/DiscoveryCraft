@@ -99,12 +99,6 @@ public class TileScientificAssembler extends TileDC implements IInventory
     public void closeChest()
     {      
     }
-
-    @Override
-    public boolean isStackValidForSlot(int i, ItemStack itemstack)
-    {
-        return true;
-    }
     
     @Override
     public String toString()
@@ -154,6 +148,15 @@ public class TileScientificAssembler extends TileDC implements IInventory
             
             
             
+    }
+
+    @Override
+    public boolean isItemValidForSlot(int i, ItemStack itemstack)
+    {
+        if (i == 9)
+            return false;
+        else
+            return true;
     }
 
 

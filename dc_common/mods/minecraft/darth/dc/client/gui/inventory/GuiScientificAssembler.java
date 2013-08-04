@@ -1,6 +1,7 @@
 package mods.minecraft.darth.dc.client.gui.inventory;
 
 import mods.minecraft.darth.dc.inventory.ContainerScientificAssembler;
+import mods.minecraft.darth.dc.lib.Textures;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -40,7 +41,7 @@ public class GuiScientificAssembler extends GuiContainer
         //draw your Gui here, only thing you need to change is the path
         
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture("/mods/dc/textures/gui/SAInventory.png");
+        this.mc.func_110434_K().func_110577_a(Textures.GUI_SA1);
         
         int x = (width - xSize) / 2;
         int y = (height - ySize) / 2;

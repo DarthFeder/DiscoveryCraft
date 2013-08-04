@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityEnderman;
@@ -14,6 +15,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
@@ -113,7 +115,7 @@ public class ItemSonicScrewdriver extends ItemDC
             }
             else if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -225,7 +227,7 @@ public class ItemSonicScrewdriver extends ItemDC
             //Scan
             if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -234,7 +236,7 @@ public class ItemSonicScrewdriver extends ItemDC
             //Transmute
             if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -291,7 +293,7 @@ public class ItemSonicScrewdriver extends ItemDC
             //Super-heat
             if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -323,7 +325,7 @@ public class ItemSonicScrewdriver extends ItemDC
             }
             else if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -337,7 +339,7 @@ public class ItemSonicScrewdriver extends ItemDC
             //Defuse
             if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -346,7 +348,7 @@ public class ItemSonicScrewdriver extends ItemDC
             //Mob
             if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -355,7 +357,7 @@ public class ItemSonicScrewdriver extends ItemDC
             //Rotate
             if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -364,7 +366,7 @@ public class ItemSonicScrewdriver extends ItemDC
             //Repair
             if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -378,7 +380,7 @@ public class ItemSonicScrewdriver extends ItemDC
             }
             else if (par3World.getBlockMaterial(par4, par5, par6) == Material.wood)
             {
-                par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
+                //par3World.getClosestPlayer(par4, par5, par6, 10).spawnExplosionParticle();
                 par3World.playSoundEffect((double) par4 + 0.5D, (double) par5 + 0.5D, (double) par6 + 0.5D, "random.fizz", 1.0F, par3World.rand.nextFloat() * 0.1F + 0.9F);
                 return true;
             }
@@ -390,7 +392,7 @@ public class ItemSonicScrewdriver extends ItemDC
             break;
         case 10:
             if (cooldown == 0)
-                GeneralUtil.sendChat(par2EntityPlayer, "Screwdriver is disabled.");
+                GeneralUtil.sendChat(par2EntityPlayer,ChatMessageComponent.func_111077_e("Screwdriver is disabled."));
             return true;
         default:
             //Should not happen, just in case
@@ -405,8 +407,8 @@ public class ItemSonicScrewdriver extends ItemDC
         
     }
     
-    @Override //Called when right clicking entity, seems to be only for EntityLiving
-    public boolean itemInteractionForEntity(ItemStack par1ItemStack, EntityLiving par2EntityLiving)
+    /*@Override //Called when right clicking entity, seems to be only for EntityLiving
+    public boolean itemInteractionForEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLiving)
     {
         if (this.sonicMode == 0 || this.sonicMode == 6)
         {
@@ -427,7 +429,7 @@ public class ItemSonicScrewdriver extends ItemDC
         }
         
         return false;
-    }
+    }*/
     
     @Override //Called when attacking an entity with screwdriver
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)

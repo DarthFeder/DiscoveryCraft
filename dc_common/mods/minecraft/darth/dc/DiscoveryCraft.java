@@ -23,12 +23,8 @@ import mods.minecraft.darth.dc.world.WorldInit;
 import net.minecraft.creativetab.CreativeTabs;
 
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.FingerprintWarning;
-import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
-import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -64,14 +60,14 @@ public class DiscoveryCraft
         public static CreativeTabs tabDC = new CreativeTabDC(Reference.MOD_ID);
 
         
-        @FingerprintWarning
+        @EventHandler
         public void invalidFingerprint(FMLFingerprintViolationEvent event)
         {
             LogUtil.severe(Strings.INVALID_FINGERPRINT_WARNING);
         }
         
         
-        @ServerStarting
+        @EventHandler
         public void serverStarting(FMLServerStartingEvent event)
         {
             
@@ -81,7 +77,7 @@ public class DiscoveryCraft
         }
         
         
-        @PreInit
+        @EventHandler
         public void preInit(FMLPreInitializationEvent event)
         {
             
@@ -115,7 +111,7 @@ public class DiscoveryCraft
         }
     
     
-        @Init
+        @EventHandler
         public void load(FMLInitializationEvent event)
         {
             
@@ -134,7 +130,7 @@ public class DiscoveryCraft
         }
         
         
-        @PostInit
+        @EventHandler
         public void postInit(FMLPostInitializationEvent event)
         {
 
