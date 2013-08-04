@@ -20,6 +20,7 @@ public class ItemIDs
     public static int UNKNOWN_CHUNKS_DEFAULT = 3213;
     public static int RAW_GORON_ALLOY_DEFAULT = 3214;
     public static int GORON_ALLOY_INGOT_DEFAULT = 3215;
+    public static int SCIENCE_DYE_DEFAULT = 3216;
     
     
     //Current item ids
@@ -39,5 +40,6 @@ public class ItemIDs
     public static int UNKNOWN_CHUNKS;
     public static int RAW_GORON_ALLOY;
     public static int GORON_ALLOY_INGOT;
+    public static int SCIENCE_DYE;
     
 }

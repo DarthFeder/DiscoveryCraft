@@ -38,7 +38,7 @@ public class ConfigHandler
             ItemIDs.SCI_NOTEBOOK = configuration.getItem(Strings.SCI_NOTEBOOK_NAME, ItemIDs.SCI_NOTEBOOK_DEFAULT).getInt(ItemIDs.SCI_NOTEBOOK_DEFAULT);
             ItemIDs.UNKNOWN_DUST = configuration.getItem(Strings.UNKNOWN_DUST_NAME, ItemIDs.UNKNOWN_DUST_DEFAULT).getInt(ItemIDs.UNKNOWN_DUST_DEFAULT);
             ItemIDs.MONOCLE_LENS = configuration.getItem(Strings.MONOCLE_LENS_NAME, ItemIDs.MONOCLE_LENS_DEFAULT).getInt(ItemIDs.MONOCLE_LENS_DEFAULT);
-            ItemIDs.NOTEBOOK_LOCK = configuration.getItem(Strings.NOTEBOOK_LOCK_NAME, ItemIDs.NOTEBOOK_LOCK_DEFAULT).getInt(ItemIDs.NOTEBOOK_LOCK_DEFAULT);
+            ItemIDs.NOTEBOOK_LOCK = configuration.getItem(Strings.NOTEBOOK_LOCK_NAME, ItemIDs.NOTEBOOK_LOCK_DEFAULT).getInt(ItemIDs.NOTEBOOK_LOCK_DEFAULT) ;
             ItemIDs.SONIC_SCREWDRIVER = configuration.getItem(Strings.SONIC_SCREWDRIVER_NAME, ItemIDs.SONIC_SCREWDRIVER_DEFAULT).getInt(ItemIDs.SONIC_SCREWDRIVER_DEFAULT);
             ItemIDs.DEBUG_TOOL = configuration.getItem(Strings.DEBUG_TOOL_NAME, ItemIDs.DEBUG_TOOL_DEFAULT).getInt(ItemIDs.DEBUG_TOOL_DEFAULT);
             ItemIDs.CRAFTING_UPGRADE = configuration.getItem(Strings.CRAFTING_UPGRADE_NAME, ItemIDs.CRAFTING_UPGRADE_DEFAULT).getInt(ItemIDs.CRAFTING_UPGRADE_DEFAULT);
@@ -51,6 +51,7 @@ public class ConfigHandler
             ItemIDs.UNKNOWN_CHUNKS = configuration.getItem(Strings.UNKNOWN_CHUNKS_NAME, ItemIDs.UNKNOWN_DUST_DEFAULT).getInt(ItemIDs.UNKNOWN_DUST_DEFAULT);
             ItemIDs.RAW_GORON_ALLOY = configuration.getItem(Strings.RAW_GORON_ALLOY_NAME, ItemIDs.RAW_GORON_ALLOY_DEFAULT).getInt(ItemIDs.RAW_GORON_ALLOY_DEFAULT);
             ItemIDs.GORON_ALLOY_INGOT = configuration.getItem(Strings.GORON_ALLOY_INGOT_NAME, ItemIDs.GORON_ALLOY_INGOT_DEFAULT).getInt(ItemIDs.GORON_ALLOY_INGOT_DEFAULT);
+            ItemIDs.SCIENCE_DYE = configuration.getItem(Strings.SCIENCE_DYE_NAME, ItemIDs.SCIENCE_DYE_DEFAULT).getInt(ItemIDs.SCIENCE_DYE_DEFAULT);
             
         }
         catch (Exception e)

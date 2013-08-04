@@ -38,6 +38,7 @@ public class Strings
     public static final String DIRT_PELLET_NAME = "dirtPellet";
     public static final String RAW_GORON_ALLOY_NAME = "goronRaw";
     public static final String GORON_ALLOY_INGOT_NAME = "ingotGoron";
+    public static final String SCIENCE_DYE_NAME = "scienceDye";
     
     
     //Tile Internal Names

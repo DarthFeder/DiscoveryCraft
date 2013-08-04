@@ -1,5 +1,6 @@
 package mods.minecraft.darth.dc.recipe;
 
+import mods.minecraft.darth.dc.core.util.RecipeUtil;
 import mods.minecraft.darth.dc.item.ModItems;
 
 import net.minecraft.block.Block;
@@ -15,27 +16,31 @@ public class CraftingRecipes
     {
         
         //Science Notebook
-        GameRegistry.addRecipe(new ItemStack(ModItems.sciNotebook), "dld", "dbd", "dnd", 'd', new ItemStack(Item.paper), 'b', new ItemStack(Item.writableBook), 'l', new ItemStack(Item.dyePowder, 1, 4), 'n', new ItemStack(ModItems.notebookLock));
+        GameRegistry.addRecipe(new ItemStack(ModItems.sciNotebook), "dld", "dbd", "dnd", 'd', Item.paper, 'b', Item.writableBook, 'l', ModItems.scienceDye, 'n', ModItems.notebookLock);
         
         //Monocle Lens
-        GameRegistry.addRecipe(new ItemStack(ModItems.monocleLens), "ggg", "gpg", "ggg", 'g', new ItemStack(Item.goldNugget), 'p', new ItemStack(Block.thinGlass));
+        GameRegistry.addRecipe(new ItemStack(ModItems.monocleLens), "ggg", "gpg", "ggg", 'g', Item.goldNugget, 'p', Block.thinGlass);
     
         //Throwing Knife
-        GameRegistry.addRecipe(new ItemStack(ModItems.knifeThrowing)," f ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+        GameRegistry.addRecipe(new ItemStack(ModItems.knifeThrowing), " f ", " s ", 'f', Item.flint, 's', Item.stick);
     
         //Melee Knife
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.knifeMelee), new Object[]{ModItems.knifeThrowing});
         
         //Flint Shovel
-        GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint)," f ", " s ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+        GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint), " f ", " s ", " s ", 'f', Item.flint, 's', Item.stick);
         
         //Flint Pickaxe
-        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeFlint),"fff", " s ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+        GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeFlint), "fff", " s ", " s ", 'f', Item.flint, 's', Item.stick);
    
         //Flint Axe
-        GameRegistry.addRecipe(new ItemStack(ModItems.axeFlint),"ff ", "fs ", " s ", 'f', new ItemStack(Item.flint), 's', new ItemStack(Item.stick));
+        GameRegistry.addRecipe(new ItemStack(ModItems.axeFlint), "ff ", "fs ", " s ", 'f', Item.flint, 's', Item.stick);
         
+        //Raw Goron
+        GameRegistry.addRecipe(new ItemStack(ModItems.rawGoron), "iii", "gdg", "iii", 'g', Item.ingotGold, 'i', Item.ingotIron, 'd', ModItems.scienceDye);
         
+        //Scientific Dye
+        RecipeUtil.addOreRecipe(new ItemStack(ModItems.scienceDye, 2), new Object[]{ "ddd", "dpd", "ddd", 'd', new ItemStack(Item.dyePowder, 1, 4), 'p', new ItemStack(ModItems.dirtPellet)});
         
     }
     

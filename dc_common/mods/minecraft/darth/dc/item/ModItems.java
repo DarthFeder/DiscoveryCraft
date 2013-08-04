@@ -32,6 +32,7 @@ public class ModItems
     public static Item dirtPellet;
     public static Item rawGoron;
     public static Item goronIngot;
+    public static Item scienceDye;
     
     
     public static EnumToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 50, 4.0F, 1, 5);
@@ -60,7 +61,7 @@ public class ModItems
         notebookLock = new ItemCrafting(ItemIDs.NOTEBOOK_LOCK).setUnlocalizedName(Strings.NOTEBOOK_LOCK_NAME);
         dirtPellet = new ItemCrafting(ItemIDs.DIRT_PELLET).setUnlocalizedName(Strings.DIRT_PELLET_NAME);
         monocleLens = new ItemCrafting(ItemIDs.MONOCLE_LENS).setUnlocalizedName(Strings.MONOCLE_LENS_NAME);
-        
+        scienceDye = new ItemCrafting(ItemIDs.SCIENCE_DYE).setUnlocalizedName(Strings.SCIENCE_DYE_NAME);
         
         registry();
     }
