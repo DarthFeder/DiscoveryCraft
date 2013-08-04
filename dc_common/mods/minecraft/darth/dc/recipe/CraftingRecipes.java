@@ -42,6 +42,9 @@ public class CraftingRecipes
         //Scientific Dye
         RecipeUtil.addOreRecipe(new ItemStack(ModItems.scienceDye, 2), new Object[]{ "ddd", "dpd", "ddd", 'd', new ItemStack(Item.dyePowder, 1, 4), 'p', new ItemStack(ModItems.dirtPellet)});
         
+        //Crafting Initializer MK 1
+        GameRegistry.addRecipe(new ItemStack(ModItems.craftingUpgrade), "ggg", "dcd", "ddd", 'g', ModItems.goronIngot, 'd', ModItems.scienceDye, 'c', Block.workbench);
+        
     }
     
 }
