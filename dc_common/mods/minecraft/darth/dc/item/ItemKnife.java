@@ -7,7 +7,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.entity.projectile.EntityKnifeProjectile;
-import mods.minecraft.darth.dc.lib.Strings;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;

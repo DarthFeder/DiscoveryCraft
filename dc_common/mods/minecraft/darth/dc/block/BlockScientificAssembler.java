@@ -2,6 +2,9 @@ package mods.minecraft.darth.dc.block;
 
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.GuiIDs;
 import mods.minecraft.darth.dc.lib.Reference;
@@ -22,7 +25,11 @@ public class BlockScientificAssembler extends BlockContainerDC
 {
     private Random rand = new Random();
     
+    @SideOnly(Side.CLIENT)
     private Icon sides;
+    @SideOnly(Side.CLIENT)
+    private Icon top;
+    @SideOnly(Side.CLIENT)
     private Icon front;
 
     public BlockScientificAssembler(int id)
@@ -50,14 +57,15 @@ public class BlockScientificAssembler extends BlockContainerDC
     @Override
     public void registerIcons(IconRegister iconRegister)
     {
-        sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_sides");
-        front = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_front");
+        this.sides = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_sides");
+        this.top = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":sciass_top");
+        //this.front = iconRegister.registerIcon(Reference.MOD_NAME.toLowerCase() + ":sciass_front");
     }
     
     @Override
     public Icon getIcon(int par1, int par2)
     {
-    	return par1 == 1 ? front : sides;
+    	return par1 == 1 ? top : sides;
     }
     
     @Override
@@ -66,6 +74,8 @@ public class BlockScientificAssembler extends BlockContainerDC
     	
         if (player.isSneaking())
             return false;
+        else if (world.isRemote)
+            return true;
         else
         {
             TileScientificAssembler tile = (TileScientificAssembler) world.getBlockTileEntity(x, y, z);
