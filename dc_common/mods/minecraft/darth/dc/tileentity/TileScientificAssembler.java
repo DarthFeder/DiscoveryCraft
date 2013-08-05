@@ -109,52 +109,50 @@ public class TileScientificAssembler extends TileDC implements IInventory
     
     @Override
     public void readFromNBT(NBTTagCompound tagCompound) {
-            super.readFromNBT(tagCompound);
+        
+        super.readFromNBT(tagCompound);
             
-            NBTTagList tagList = tagCompound.getTagList("Inventory");
-            for (int i = 0; i < tagList.tagCount(); i++) {
-                    NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
-                    byte slot = tag.getByte("Slot");
-                    if (slot >= 0 && slot < inventory.length) {
-                            inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
-                    }
-            }
-            orientation = ForgeDirection.getOrientation(tagCompound.getInteger("Orientation"));
-            
-            	
-            
-    }
-    @Override
-    public void writeToNBT(NBTTagCompound tagCompound) {
-            super.writeToNBT(tagCompound);
-                            
-            NBTTagList itemList = new NBTTagList();
-            for (int i = 0; i < inventory.length; i++)
+        NBTTagList tagList = tagCompound.getTagList("Inventory");
+        for (int i = 0; i < tagList.tagCount(); i++)
+        {
+            NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
+            byte slot = tag.getByte("Slot");
+            if (slot >= 0 && slot < inventory.length)
             {
-                    ItemStack stack = inventory[i];
-                    if (stack != null)
-                    {
-                            NBTTagCompound tag = new NBTTagCompound();
-                            tag.setByte("Slot", (byte) i);
-                            stack.writeToNBT(tag);
-                            itemList.appendTag(tag);
-                    }
+                inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
             }
-            tagCompound.setTag("Inventory", itemList);
-            
-            
-            tagCompound.setInteger("Orientation", orientation.ordinal());
-            
-            
-            
+        }
+        
+        //orientation = ForgeDirection.getOrientation(tagCompound.getInteger("Orientation"));
+    }
+    
+    @Override
+    public void writeToNBT(NBTTagCompound tagCompound)
+    {
+        super.writeToNBT(tagCompound);
+                        
+        NBTTagList itemList = new NBTTagList();
+        
+        for (int i = 0; i < inventory.length; i++)
+        {
+            ItemStack stack = inventory[i];
+            if (stack != null)
+            {
+                NBTTagCompound tag = new NBTTagCompound();
+                tag.setByte("Slot", (byte) i);
+                stack.writeToNBT(tag);
+                itemList.appendTag(tag);
+            }
+        }
+        
+        tagCompound.setTag("Inventory", itemList);
+        
+        //tagCompound.setInteger("Orientation", orientation.ordinal());
     }
 
     @Override
     public boolean isItemValidForSlot(int i, ItemStack itemstack)
     {
-        if (i == 9)
-            return false;
-        else
             return true;
     }
 

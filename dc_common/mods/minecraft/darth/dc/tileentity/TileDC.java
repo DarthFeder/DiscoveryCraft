@@ -77,8 +77,4 @@ public class TileDC extends TileEntity
         
         return s.toString();
     }
-    static{
-    	addMapping(TileScientificAssembler.class,"Scientific Assembler");
-    	
-    }
 }
