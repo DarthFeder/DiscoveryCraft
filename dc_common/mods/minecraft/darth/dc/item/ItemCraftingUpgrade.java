@@ -15,7 +15,8 @@ public class ItemCraftingUpgrade extends ItemDC
     {
         super(id);
         this.setCreativeTab(DiscoveryCraft.tabDC)
-            .setUnlocalizedName(Strings.CRAFTING_UPGRADE_NAME);
+            .setUnlocalizedName(Strings.CRAFTING_UPGRADE_NAME)
+            .setMaxStackSize(16);
     }
 
     @Override
@@ -25,6 +26,7 @@ public class ItemCraftingUpgrade extends ItemDC
         {
             world.setBlock(par4, par5, par6, BlockIDs.SCIENTIFIC_ASSEMBLER);
             --par1ItemStack.stackSize;
+            return true;
         }
         
         return false;
