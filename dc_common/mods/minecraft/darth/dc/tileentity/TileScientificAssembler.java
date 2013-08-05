@@ -32,19 +32,21 @@ public class TileScientificAssembler extends TileDC implements IInventory
     }
 
     @Override
-    public ItemStack decrStackSize(int slot, int amt) {
-            ItemStack stack = getStackInSlot(slot);
-            if (stack != null) {
-                    if (stack.stackSize <= amt) {
-                            setInventorySlotContents(slot, null);
-                    } else {
-                            stack = stack.splitStack(amt);
-                            if (stack.stackSize == 0) {
-                                    setInventorySlotContents(slot, null);
-                            }
-                    }
+    public ItemStack decrStackSize(int slot, int amt)
+    {
+        ItemStack stack = getStackInSlot(slot);
+        if (stack != null)
+        {
+            if (stack.stackSize <= amt)
+                setInventorySlotContents(slot, null);
+            else
+            {
+                stack = stack.splitStack(amt);
+                if (stack.stackSize == 0)
+                    setInventorySlotContents(slot, null);
             }
-            return stack;
+        }
+        return stack;
     }
 
     @Override
