@@ -1,6 +1,7 @@
 package mods.minecraft.darth.dc.core.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -35,7 +36,7 @@ public class ClientProxy extends CommonProxy
     	TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
     	
         if(ID == 0)
-            return new GuiScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity);
+            return new GuiScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity, world);
         
         return null;
     }

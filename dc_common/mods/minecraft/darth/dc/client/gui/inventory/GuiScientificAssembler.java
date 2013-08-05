@@ -3,9 +3,11 @@ package mods.minecraft.darth.dc.client.gui.inventory;
 import mods.minecraft.darth.dc.inventory.ContainerScientificAssembler;
 import mods.minecraft.darth.dc.lib.Textures;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
+
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
+import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
@@ -16,14 +18,15 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class GuiScientificAssembler extends GuiContainer
 {
 
-    public GuiScientificAssembler(InventoryPlayer inventoryPlayer, TileScientificAssembler tileEntity)
+    public GuiScientificAssembler(InventoryPlayer inventoryPlayer, TileScientificAssembler tileEntity, World world)
     {
         //the container is instantiated and passed to the superclass for handling
-        super(new ContainerScientificAssembler(inventoryPlayer, tileEntity));
+        super(new ContainerScientificAssembler(inventoryPlayer, tileEntity, world));
         ySize = 196;
 
     }
     
+
     @Override
     protected void drawGuiContainerForegroundLayer(int param1, int param2)
     {

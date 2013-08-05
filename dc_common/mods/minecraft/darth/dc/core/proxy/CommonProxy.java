@@ -30,7 +30,7 @@ public class CommonProxy implements IGuiHandler
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
         
         if(ID==0)
-            return new ContainerScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity);
+            return new ContainerScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity, world);
 
         return null;
     }

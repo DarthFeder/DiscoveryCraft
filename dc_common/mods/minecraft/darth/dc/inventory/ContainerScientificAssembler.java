@@ -9,6 +9,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.Slot;
+import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
@@ -17,18 +18,19 @@ public class ContainerScientificAssembler extends Container
 {
     protected TileScientificAssembler tileEntity;
     private int sn = 0;
+    private World worldObj;
     
     /** The crafting matrix inventory (3x3). */
     public InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 3);
     public IInventory craftResult = new InventoryCraftResult();
-    private World worldObj;
-    private int posX;
-    private int posY;
-    private int posZ;
+
     
-    public ContainerScientificAssembler (InventoryPlayer inventoryPlayer, TileScientificAssembler te)
+    public ContainerScientificAssembler (InventoryPlayer inventoryPlayer, TileScientificAssembler te, World world)
     {
         tileEntity = te;
+        this.worldObj = world;
+        
+        this.addSlotToContainer(new SlotCrafting(inventoryPlayer.player, this.craftMatrix, this.craftResult, 0, 124, 35));
         
         //the Slot constructor takes the IInventory and the slot number in that it binds to
         //and the x-y coordinates it resides on-screen
@@ -37,15 +39,9 @@ public class ContainerScientificAssembler extends Container
         for (int x = 0; x < 3; x++)
         {
             for (int y = 0; y < 3; y++)
-            {
-                addSlotToContainer(new Slot(this.craftMatrix, sn, 30 + x * 18, 17 + y * 18));
-                sn++;
-            }
+                addSlotToContainer(new Slot(this.craftMatrix, y + x * 3, 30 + x * 18, 17 + y * 18));
         }
         
-        //output
-        addSlotToContainer(new Slot(tileEntity, sn, 124, 35));
-        sn++;
         
         //bottom inventory
         for(int x = 0; x < 9; x++)
@@ -142,6 +138,8 @@ public class ContainerScientificAssembler extends Container
     {
         this.craftResult.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
     }
+    
+    
 
 
    

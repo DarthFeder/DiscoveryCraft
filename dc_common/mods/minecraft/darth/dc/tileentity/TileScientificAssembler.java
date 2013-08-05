@@ -129,9 +129,11 @@ public class TileScientificAssembler extends TileDC implements IInventory
             super.writeToNBT(tagCompound);
                             
             NBTTagList itemList = new NBTTagList();
-            for (int i = 0; i < inventory.length; i++) {
+            for (int i = 0; i < inventory.length; i++)
+            {
                     ItemStack stack = inventory[i];
-                    if (stack != null) {
+                    if (stack != null)
+                    {
                             NBTTagCompound tag = new NBTTagCompound();
                             tag.setByte("Slot", (byte) i);
                             stack.writeToNBT(tag);
