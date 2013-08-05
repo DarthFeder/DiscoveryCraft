@@ -25,6 +25,8 @@ public class ContainerScientificAssembler extends Container
     
     public ContainerScientificAssembler (InventoryPlayer inventoryPlayer, TileScientificAssembler te, World world)
     {
+        //super(te.getSizeInventory());
+        
         tileEntity = te;
         this.worldObj = world;
         
