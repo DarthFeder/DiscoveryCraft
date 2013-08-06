@@ -106,13 +106,13 @@ public class ContainerScientificAssembler extends Container
             }
             
             //merges the item into player inventory since its in the tileEntity
-            if (slot < tileEntity.INVENTORY_SIZE)
+            if (slot < TileScientificAssembler.INVENTORY_SIZE)
             {
                 if (!this.mergeItemStack(stackInSlot, 0, 35, true))
                     return null;
             }
             //places it into the tileEntity is possible since its in the player inventory
-            else if (!this.mergeItemStack(stackInSlot, 0, tileEntity.INVENTORY_SIZE, false))
+            else if (!this.mergeItemStack(stackInSlot, 0, TileScientificAssembler.INVENTORY_SIZE, false))
                 return null;
 
             

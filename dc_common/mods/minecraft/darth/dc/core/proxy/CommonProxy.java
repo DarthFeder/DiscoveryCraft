@@ -18,6 +18,8 @@ public class CommonProxy implements IGuiHandler
     public void registerKeyBindingHandler() {}
     
     public void registerSoundHandler() {}
+    
+    public void registerGuiEvent() {}
 
     public void registerTileEntities()
     {

@@ -1,17 +1,16 @@
 package mods.minecraft.darth.dc.core.proxy;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.world.World;
-
-import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import mods.minecraft.darth.dc.client.audio.SoundHandler;
 import mods.minecraft.darth.dc.client.gui.inventory.GuiScientificAssembler;
 import mods.minecraft.darth.dc.core.handlers.KeyBindingHandler;
+import mods.minecraft.darth.dc.event.GuiEffectBar;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
-
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import cpw.mods.fml.client.registry.KeyBindingRegistry;
 
 
 public class ClientProxy extends CommonProxy
@@ -29,6 +28,10 @@ public class ClientProxy extends CommonProxy
         MinecraftForge.EVENT_BUS.register(new SoundHandler());
     }
     
+    @Override
+    public void registerGuiEvent(){
+    	MinecraftForge.EVENT_BUS.register(new GuiEffectBar(Minecraft.getMinecraft()));
+    }
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {

@@ -5,17 +5,19 @@ import java.util.Iterator;
 
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import mods.minecraft.darth.dc.lib.Textures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.event.EventPriority;
 import net.minecraftforge.event.ForgeSubscribe;
 
+@SideOnly(Side.CLIENT)
 //Code on the Forge Tutorials - Edited a bit by Darth
 public class GuiEffectBar extends Gui
 {

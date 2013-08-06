@@ -124,6 +124,9 @@ public class DiscoveryCraft
             //Register Events
             EventRegistry.init();
             
+            //Client gui
+            proxy.registerGuiEvent();
+            
             //Register Fuel Handler
             GameRegistry.registerFuelHandler(new FuelHandler());
             

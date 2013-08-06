@@ -5,9 +5,6 @@ import java.util.EnumSet;
 import mods.minecraft.darth.dc.core.util.KeyBindingUtil;
 import mods.minecraft.darth.dc.lib.Reference;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.KeyBindingRegistry;
 import cpw.mods.fml.common.TickType;
 
