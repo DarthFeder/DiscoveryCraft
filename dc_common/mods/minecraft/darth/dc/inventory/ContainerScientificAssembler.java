@@ -4,7 +4,6 @@ import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.Slot;
@@ -13,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
 
-public class ContainerScientificAssembler extends Container
+public class ContainerScientificAssembler extends ContainerDC
 {
     protected TileScientificAssembler tileEntity;
     private World worldObj;
@@ -25,7 +24,7 @@ public class ContainerScientificAssembler extends Container
     
     public ContainerScientificAssembler (InventoryPlayer inventoryPlayer, TileScientificAssembler te, World world)
     {
-        //super(te.getSizeInventory());
+        super(te.getSizeInventory());
         
         tileEntity = te;
         this.worldObj = world;

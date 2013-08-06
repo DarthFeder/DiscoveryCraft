@@ -7,7 +7,71 @@ import net.minecraft.nbt.NBTTagCompound;
 
 public class ItemUtil
 {
+    private static ItemUtil instance;
 
+    public static ItemUtil instance()
+    {
+        if (instance == null)
+            instance = new ItemUtil();
+
+        return instance;
+    }
+
+    public static void setInstance(ItemUtil inst)
+    {
+        instance = inst;
+    }
+
+    protected ItemUtil()
+    {
+        
+    }
+
+    /* STACK MERGING */
+    /**
+     * Checks if two ItemStacks are identical enough to be merged
+     *
+     * @param stack1 - The first stack
+     * @param stack2 - The second stack
+     * @return true if stacks can be merged, false otherwise
+     */
+    public boolean canStacksMerge(ItemStack stack1, ItemStack stack2)
+    {
+        if (stack1 == null || stack2 == null)
+            return false;
+        if (!stack1.isItemEqual(stack2))
+            return false;
+        if (!ItemStack.areItemStackTagsEqual(stack1, stack2))
+            return false;
+        
+        return true;
+    }
+
+    /**
+     * Merges mergeSource into mergeTarget
+     *
+     * @param mergeSource - The stack to merge into mergeTarget, this stack is
+     * not modified
+     * @param mergeTarget - The target merge, this stack is modified if doMerge
+     * is set
+     * @param doMerge - To actually do the merge
+     * @return The number of items that was successfully merged.
+     */
+    public int mergeStacks(ItemStack mergeSource, ItemStack mergeTarget, boolean doMerge)
+    {
+        if (!canStacksMerge(mergeSource, mergeTarget))
+            return 0;
+        
+        int mergeCount = Math.min(mergeTarget.getMaxStackSize() - mergeTarget.stackSize, mergeSource.stackSize);
+        
+        if (mergeCount < 1)
+            return 0;
+        if (doMerge)
+            mergeTarget.stackSize += mergeCount;
+
+        return mergeCount;
+    }
+    
     public static String toString(ItemStack itemStack)
     {
         StringBuilder stringBuilder = new StringBuilder();
