@@ -124,7 +124,10 @@ public class DiscoveryCraft
             //Register Events
             EventRegistry.init();
             
-            //Client gui
+            //Init Rendering (Client-Side)
+            proxy.initRenderingAndTextures();
+            
+            //Client guis (Client-Side)
             proxy.registerGuiEvent();
             
             //Register Fuel Handler

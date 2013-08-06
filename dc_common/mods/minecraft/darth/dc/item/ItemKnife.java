@@ -27,7 +27,7 @@ public class ItemKnife extends SwordDC
         if(melee)
         {
         	this.setMaxStackSize(1)
-    		    .setMaxDamage(9);
+    		    .setMaxDamage(14);
         }
         else
         {

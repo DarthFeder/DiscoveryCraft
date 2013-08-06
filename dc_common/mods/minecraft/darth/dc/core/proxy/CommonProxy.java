@@ -7,7 +7,9 @@ import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+import mods.minecraft.darth.dc.client.gui.inventory.GuiScientificAssembler;
 import mods.minecraft.darth.dc.inventory.ContainerScientificAssembler;
+import mods.minecraft.darth.dc.lib.GuiIDs;
 import mods.minecraft.darth.dc.lib.Strings;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 
@@ -20,6 +22,8 @@ public class CommonProxy implements IGuiHandler
     public void registerSoundHandler() {}
     
     public void registerGuiEvent() {}
+    
+    public void initRenderingAndTextures() {}
 
     public void registerTileEntities()
     {
@@ -31,17 +35,21 @@ public class CommonProxy implements IGuiHandler
     {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
         
-        if(ID==0)
+        if (ID == GuiIDs.ASSEMBLER1)
             return new ContainerScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity, world);
-
-        return null;
+        else
+            return null;
     }
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z)
     {
-        // TODO Auto-generated method stub
-        return null;
+        TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
+        
+        if (ID == GuiIDs.ASSEMBLER1)
+            return new GuiScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity, world);
+        else
+            return null;
     }
     
 }

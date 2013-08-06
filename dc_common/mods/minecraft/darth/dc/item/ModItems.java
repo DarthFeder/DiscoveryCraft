@@ -35,7 +35,7 @@ public class ModItems
     public static Item scienceDye;
     
     
-    public static EnumToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 50, 4.0F, 1, 5);
+    public static EnumToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 50, 4.0F, 2F, 5);
     public static EnumToolMaterial BLANK = EnumHelper.addToolMaterial("BLANK", -1, -1, -1F, -3, -1);
     public static EnumToolMaterial GORON = EnumHelper.addToolMaterial("GORON", 3, 400, 15.0F, 5, 20);
     

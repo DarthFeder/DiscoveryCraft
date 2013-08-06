@@ -20,7 +20,7 @@ public class SoundHandler
             // Add the custom sound file to the pool of sounds
             try
             {
-                event.manager.soundPoolSounds.addSound(soundFile);
+                event.manager.addSound(soundFile);
             }
             catch (Exception e)
             {
