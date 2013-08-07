@@ -33,6 +33,7 @@ public class ModItems
     public static Item rawGoron;
     public static Item goronIngot;
     public static Item scienceDye;
+    public static Item specialShovelFlint;
     
     
     public static EnumToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 50, 4.0F, 2F, 5);
@@ -51,11 +52,12 @@ public class ModItems
         craftingUpgrade = new ItemCraftingUpgrade(ItemIDs.CRAFTING_UPGRADE);
         knifeThrowing = new ItemKnife(ItemIDs.KNIFE_THROWING, BLANK, false).setUnlocalizedName(Strings.KNIFE_THROWING_NAME);
         knifeMelee = new ItemKnife(ItemIDs.KNIFE_MELEE, FLINT, true).setUnlocalizedName(Strings.KNIFE_MELEE_NAME);;
-        shovelFlint = new ShovelDC(ItemIDs.FLINT_SHOVEL,FLINT).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME).setCreativeTab(DiscoveryCraft.tabDC);
-        pickaxeFlint = new PickaxeDC(ItemIDs.FLINT_PICKAXE,FLINT).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
-        axeFlint = new AxeDC(ItemIDs.FLINT_AXE,FLINT).setUnlocalizedName(Strings.FLINT_AXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
+        shovelFlint = new ShovelDC(ItemIDs.FLINT_SHOVEL, FLINT).setUnlocalizedName(Strings.FLINT_SHOVEL_NAME).setCreativeTab(DiscoveryCraft.tabDC);
+        pickaxeFlint = new PickaxeDC(ItemIDs.FLINT_PICKAXE, FLINT).setUnlocalizedName(Strings.FLINT_PICKAXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
+        axeFlint = new AxeDC(ItemIDs.FLINT_AXE, FLINT).setUnlocalizedName(Strings.FLINT_AXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         rawGoron = new ItemDC(ItemIDs.RAW_GORON_ALLOY).setUnlocalizedName(Strings.RAW_GORON_ALLOY_NAME).setCreativeTab(DiscoveryCraft.tabDC).setMaxStackSize(64);
         goronIngot = new ItemDC(ItemIDs.GORON_ALLOY_INGOT).setUnlocalizedName(Strings.GORON_ALLOY_INGOT_NAME).setCreativeTab(DiscoveryCraft.tabDC).setMaxStackSize(64);
+        specialShovelFlint = new ItemSpecialFlintShovel(ItemIDs.SPECIAL_FLINT_SHOVEL, FLINT);
         
         //Initialize each Crafting Ingredient Item
         notebookLock = new ItemCrafting(ItemIDs.NOTEBOOK_LOCK).setUnlocalizedName(Strings.NOTEBOOK_LOCK_NAME);
@@ -73,6 +75,7 @@ public class ModItems
         MinecraftForge.setToolClass(pickaxeFlint, "pickaxe", FLINT.getHarvestLevel());
         MinecraftForge.setToolClass(axeFlint, "axe", FLINT.getHarvestLevel());
         MinecraftForge.setToolClass(knifeMelee, "sword", FLINT.getHarvestLevel());
+        MinecraftForge.setToolClass(specialShovelFlint, "shovel", FLINT.getHarvestLevel());
         
         OreDictionary.registerOre("ingotGoron", goronIngot);
         

@@ -21,6 +21,7 @@ public class ItemIDs
     public static int RAW_GORON_ALLOY_DEFAULT = 3214;
     public static int GORON_ALLOY_INGOT_DEFAULT = 3215;
     public static int SCIENCE_DYE_DEFAULT = 3216;
+    public static int SPECIAL_FLINT_SHOVEL_DEFAULT = 3217;
     
     
     //Current item ids
@@ -41,5 +42,6 @@ public class ItemIDs
     public static int RAW_GORON_ALLOY;
     public static int GORON_ALLOY_INGOT;
     public static int SCIENCE_DYE;
+    public static int SPECIAL_FLINT_SHOVEL;
     
 }

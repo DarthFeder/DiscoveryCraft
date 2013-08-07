@@ -45,6 +45,10 @@ public class CraftingRecipes
         //Crafting Initializer MK 1
         GameRegistry.addRecipe(new ItemStack(ModItems.craftingUpgrade), "ggg", "dcd", "ddd", 'g', ModItems.goronIngot, 'd', ModItems.scienceDye, 'c', Block.workbench);
         
+        //Special Flint Shovel
+        GameRegistry.addRecipe(new ItemStack(ModItems.specialShovelFlint), "fff", "fhf", "fsf", 'f', Item.flint, 's', Item.stick, 'h', ModItems.shovelFlint);
+        
+        
     }
     
 }

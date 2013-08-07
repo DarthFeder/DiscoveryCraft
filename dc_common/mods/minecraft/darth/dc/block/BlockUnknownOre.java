@@ -3,6 +3,7 @@ package mods.minecraft.darth.dc.block;
 import java.util.Random;
 
 import mods.minecraft.darth.dc.lib.BlockIDs;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -33,6 +34,12 @@ public class BlockUnknownOre extends BlockDC
     
     //Make sure that glowing ore drops regular ore
     public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return BlockIDs.UNKNOWN_ORE;
+    }
+    
+    @Override
+    public int idPicked(World par1World, int par2, int par3, int par4)
     {
         return BlockIDs.UNKNOWN_ORE;
     }

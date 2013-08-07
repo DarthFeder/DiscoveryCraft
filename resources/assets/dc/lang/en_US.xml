@@ -20,6 +20,7 @@
 	<entry key="item.goronRaw.name">Raw Goron Alloy</entry>
 	<entry key="item.ingotGoron.name">Goron Alloy Ingot</entry>
 	<entry key="item.scienceDye.name">Scientific Dye</entry>
+	<entry key="item.specialShovelFlint.name">Especially Flinty Flint Shovel</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
 	<entry key="tile.sciAssembler.name">Scientific Assembler</entry>
