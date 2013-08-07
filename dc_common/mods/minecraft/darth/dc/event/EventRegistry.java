@@ -11,11 +11,6 @@ public class EventRegistry
         //Register Player Death Event
         MinecraftForge.EVENT_BUS.register(new PlayerDeathEvent());
         
-        
-        
-        
-        
-        
     }
 
     
