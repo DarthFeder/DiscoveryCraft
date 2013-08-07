@@ -35,13 +35,46 @@ public class ItemSpecialFlintShovel extends ShovelDC
             else
                 ItemUtil.spawnItemOnGround(player.worldObj, X, Y, Z, 1, player, new ItemStack(Block.gravel));
         
-            itemstack.damageItem(2, player);
+            itemstack.damageItem(1, player);
             player.worldObj.setBlockToAir(X, Y, Z);
             player.playSound("dig.gravel", 1, 1);
+            //player.worldObj.spawnParticle(par1Str, X, Y, Z, par8, par10, par12);
             
             return true;
         }
-
-        return false;
+        else if (player.worldObj.getBlockId(X, Y, Z) == Block.dirt.blockID || player.worldObj.getBlockId(X, Y, Z) == Block.grass.blockID)
+        {
+            Random rand = new Random();
+            int temp = (int) rand.nextInt(5);
+            
+            if (temp == 0)
+                ItemUtil.spawnItemOnGround(player.worldObj, X, Y, Z, 1, player, new ItemStack(Item.flint));
+            else
+                ItemUtil.spawnItemOnGround(player.worldObj, X, Y, Z, 1, player, new ItemStack(Block.dirt));
+        
+            itemstack.damageItem(1, player);
+            player.worldObj.setBlockToAir(X, Y, Z);
+            player.playSound("dig.grass", 1, 1);
+            
+            return true;
+        }
+        else if (player.worldObj.getBlockId(X, Y, Z) == Block.sand.blockID)
+        {
+            Random rand = new Random();
+            int temp = (int) rand.nextInt(10);
+            
+            if (temp == 0)
+                ItemUtil.spawnItemOnGround(player.worldObj, X, Y, Z, 1, player, new ItemStack(Item.flint));
+            else
+                ItemUtil.spawnItemOnGround(player.worldObj, X, Y, Z, 1, player, new ItemStack(Block.sand));
+        
+            itemstack.damageItem(1, player);
+            player.worldObj.setBlockToAir(X, Y, Z);
+            player.playSound("dig.sand", 1, 1);
+            
+            return true;
+        }
+        else
+            return false;
     }
 }

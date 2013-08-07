@@ -35,10 +35,12 @@ public class ModItems
     public static Item scienceDye;
     public static Item specialShovelFlint;
     
-    
+    //Custom Enum Tool Materials
     public static EnumToolMaterial FLINT = EnumHelper.addToolMaterial("FLINT", 1, 50, 4.0F, 2F, 5);
+    public static EnumToolMaterial BETTER_FLINT = EnumHelper.addToolMaterial("BETTER_FLINT", 1, 65, 4.5F, 2.5F, 2);
     public static EnumToolMaterial BLANK = EnumHelper.addToolMaterial("BLANK", -1, -1, -1F, -3, -1);
     public static EnumToolMaterial GORON = EnumHelper.addToolMaterial("GORON", 3, 400, 15.0F, 5, 20);
+    
     
     public static void init()
     {
@@ -57,7 +59,7 @@ public class ModItems
         axeFlint = new AxeDC(ItemIDs.FLINT_AXE, FLINT).setUnlocalizedName(Strings.FLINT_AXE_NAME).setCreativeTab(DiscoveryCraft.tabDC);
         rawGoron = new ItemDC(ItemIDs.RAW_GORON_ALLOY).setUnlocalizedName(Strings.RAW_GORON_ALLOY_NAME).setCreativeTab(DiscoveryCraft.tabDC).setMaxStackSize(64);
         goronIngot = new ItemDC(ItemIDs.GORON_ALLOY_INGOT).setUnlocalizedName(Strings.GORON_ALLOY_INGOT_NAME).setCreativeTab(DiscoveryCraft.tabDC).setMaxStackSize(64);
-        specialShovelFlint = new ItemSpecialFlintShovel(ItemIDs.SPECIAL_FLINT_SHOVEL, FLINT);
+        specialShovelFlint = new ItemSpecialFlintShovel(ItemIDs.SPECIAL_FLINT_SHOVEL, BETTER_FLINT);
         
         //Initialize each Crafting Ingredient Item
         notebookLock = new ItemCrafting(ItemIDs.NOTEBOOK_LOCK).setUnlocalizedName(Strings.NOTEBOOK_LOCK_NAME);
