@@ -80,9 +80,6 @@ public class DiscoveryCraft
         @EventHandler
         public void preInit(FMLPreInitializationEvent event)
         {
-            
-            //Register Tile Entities
-        	proxy.registerTileEntities();
         	
             //Register Logger
             LogUtil.init();
@@ -123,6 +120,9 @@ public class DiscoveryCraft
             
             //Register Events
             EventRegistry.init();
+            
+            //Register Tile Entities
+            proxy.registerTileEntities();
             
             //Init Rendering (Client-Side)
             proxy.initRenderingAndTextures();
