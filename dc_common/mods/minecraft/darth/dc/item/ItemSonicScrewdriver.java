@@ -5,7 +5,11 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityFireball;
@@ -402,8 +406,8 @@ public class ItemSonicScrewdriver extends ItemDC
         
     }
     
-    /*@Override //Called when right clicking entity, seems to be only for EntityLiving
-    public boolean itemInteractionForEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLiving)
+    @Override //Called when right clicking entity, seems to be only for EntityLiving
+    public boolean func_111207_a(ItemStack par1ItemStack, EntityPlayer player, EntityLivingBase par2EntityLiving)
     {
         if (this.sonicMode == 0 || this.sonicMode == 6)
         {
@@ -424,7 +428,7 @@ public class ItemSonicScrewdriver extends ItemDC
         }
         
         return false;
-    }*/
+    }
     
     @Override //Called when attacking an entity with screwdriver
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
