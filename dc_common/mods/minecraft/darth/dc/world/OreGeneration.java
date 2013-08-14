@@ -24,31 +24,31 @@ public class OreGeneration implements IWorldGenerator
     
     private void generateUnknownOre(World world, int i, int j)
     {
-       
-        int xCoord = i + this.random.nextInt(16);
-        int yCoord = this.random.nextInt(7);
-        int zCoord = j + this.random.nextInt(16);
-        
-        if (yCoord < 4)
+        for (int times = 0;times < 3;times++)
         {
-            int tempRand = (this.random.nextInt(3) * 4) + 1;
-            new WorldGenMinable(BlockIDs.UNKNOWN_ORE, tempRand).generate(world, random, xCoord, yCoord, zCoord);
-            //System.out.println("Big Ore ... Rand:" + tempRand + " " + xCoord + " " + yCoord + " " + zCoord);
+            int xCoord = i + this.random.nextInt(16);
+            int yCoord = this.random.nextInt(7);
+            int zCoord = j + this.random.nextInt(16);
+            
+            if (yCoord < 4)
+            {
+                int tempRand = (this.random.nextInt(4) * 4) + 1;
+                new WorldGenMinable(BlockIDs.UNKNOWN_ORE, tempRand).generate(world, random, xCoord, yCoord, zCoord);
+                //System.out.println("Big Ore ... Rand:" + tempRand + " " + xCoord + " " + yCoord + " " + zCoord);
+            }
+            
+            if (yCoord > 4)
+            {
+                int tempRand = this.random.nextInt(5) + 1;
+                new WorldGenMinable(BlockIDs.UNKNOWN_ORE, tempRand).generate(world, random, xCoord, yCoord, zCoord);
+                //System.out.println("Small Ore ... Rand:" + tempRand + " " + xCoord + " " + yCoord + " " + zCoord);
+            }
+            
+            if (yCoord == 4)
+            {
+                //System.out.println("No ore at: "  + xCoord + " " + yCoord + " " + zCoord);
+                //No ore this chunk
+            }
         }
-        
-        if (yCoord > 4)
-        {
-            int tempRand = this.random.nextInt(4) + 1;
-            new WorldGenMinable(BlockIDs.UNKNOWN_ORE, tempRand).generate(world, random, xCoord, yCoord, zCoord);
-            //System.out.println("Small Ore ... Rand:" + tempRand + " " + xCoord + " " + yCoord + " " + zCoord);
-        }
-        
-        if (yCoord == 4)
-        {
-            //System.out.println("No ore at: "  + xCoord + " " + yCoord + " " + zCoord);
-            //No ore this chunk
-        }
-    
-        
     }
 }
