@@ -34,6 +34,12 @@ public class BlockMultiFurnaceDummy extends BlockContainerDC
     }
     
     @Override
+    public int idPicked(World par1World, int par2, int par3, int par4)
+    {
+        return Block.brick.blockID;
+    }
+    
+    @Override
     public TileEntity createNewTileEntity(World world)
     {
         return new TileEntityMultiFurnaceDummy();

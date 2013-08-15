@@ -393,7 +393,6 @@ public class TileEntityMultiFurnaceCore extends TileDC implements ISidedInventor
         super.writeToNBT(tagCompound);
         
         tagCompound.setBoolean("isValidMultiblock", isValidMultiblock);
-        System.out.println("Is valid? " + (isValidMultiblock ? "Yes" : "No"));
         
         tagCompound.setShort("BurnTime", (short)furnaceBurnTime);
         tagCompound.setShort("CookTime", (short)furnaceCookTime);

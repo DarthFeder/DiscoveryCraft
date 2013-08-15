@@ -15,6 +15,9 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.lib.GuiIDs;
 import mods.minecraft.darth.dc.lib.Reference;
@@ -30,7 +33,9 @@ public class BlockMultiFurnaceCore extends BlockContainerDC
     public static final int META_DIR_EAST = 0x00000003;
     public static final int META_DIR_WEST = 0x00000000;
     
+    @SideOnly(Side.CLIENT)
     private Icon faceIconUnlit;
+    @SideOnly(Side.CLIENT)
     private Icon faceIconLit;
     
     public BlockMultiFurnaceCore(int blockId)
