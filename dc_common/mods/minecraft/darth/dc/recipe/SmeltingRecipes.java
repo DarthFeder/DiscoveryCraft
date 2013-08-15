@@ -18,8 +18,7 @@ public class SmeltingRecipes
         GameRegistry.addSmelting(BlockIDs.UNKNOWN_ORE, new ItemStack(ModItems.unknownDust), 3F);
         
         //Goron Alloy
-        GameRegistry.addSmelting(ItemIDs.RAW_GORON_ALLOY, new ItemStack(ModItems.goronIngot), 0.4F);
-        
+        GameRegistry.addSmelting(ItemIDs.RAW_GORON_ALLOY + 256, new ItemStack(ModItems.goronIngot), 0.4F);
     }
 
 }

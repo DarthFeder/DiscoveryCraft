@@ -10,8 +10,8 @@
 	<entry key="item.sonicScrewdriver.name">§2§lSonic Screwdriver</entry>
 	<entry key="item.debugTool.name">Debug Tool</entry>
 	<entry key="item.craftingUpgrade.name">Scientific Crafting Initializer Mk1</entry>
-	<entry key="item.knifeMelee.name">Primitive Knife</entry>
-	<entry key="item.knifeThrowing.name">Primitive Knife</entry>
+	<entry key="item.knifeMelee.name">Primitive §cMelee §rKnife</entry>
+	<entry key="item.knifeThrowing.name">Primitive §bThrowing §rKnife</entry>
 	<entry key="item.unknownChunks.name">§kUnknown §rChunks</entry>
 	<entry key="item.shovelFlint.name">Flint Shovel</entry>
 	<entry key="item.pickaxeFlint.name">Flint Pickaxe</entry>
@@ -23,6 +23,7 @@
 	<entry key="item.specialShovelFlint.name">Especially Flinty Flint Shovel</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
+	<entry key="tile.glowingUnknownOre.name">Glowing §kUnknown §rOre</entry>
 	<entry key="tile.sciAssembler.name">Scientific Assembler</entry>
 	
 	<entry key="container.sciAssembler">Scientific Assembler</entry>

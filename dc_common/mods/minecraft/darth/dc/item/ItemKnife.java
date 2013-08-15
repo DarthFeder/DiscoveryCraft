@@ -1,10 +1,5 @@
 package mods.minecraft.darth.dc.item;
 
-import java.util.List;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.entity.projectile.EntityKnifeProjectile;
 
@@ -69,21 +64,5 @@ public class ItemKnife extends SwordDC
     	{
     		return par1ItemStack;
     	}
-    }
-    
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    @Override
-    @SideOnly(Side.CLIENT) //Adds lore to knife
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
-    {
-    	if(melee)
-    	{
-    		par3List.add("§cMelee");
-    	}
-    	else
-    	{
-    		par3List.add("§bThrowing");
-    	}
-        
     }
 }

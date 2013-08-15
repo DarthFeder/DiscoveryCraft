@@ -65,4 +65,17 @@ public class ConfigHandler
     
     }
     
+    public static void set(String categoryName, String propertyName, String newValue)
+    {
+        configuration.load();
+        
+        if (configuration.getCategoryNames().contains(categoryName))
+        {
+            if (configuration.getCategory(categoryName).containsKey(propertyName))
+                configuration.getCategory(categoryName).get(propertyName).set(newValue);
+        }
+        
+        configuration.save();
+    }
+    
 }
