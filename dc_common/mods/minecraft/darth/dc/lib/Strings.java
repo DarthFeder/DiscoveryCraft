@@ -19,6 +19,8 @@ public class Strings
     public static final String UNKNOWN_ORE_NAME = "unknownOre";
     public static final String GLOWING_UNKNOWN_ORE_NAME = "glowingUnknownOre";
     public static final String SCIENTIFIC_ASSEMBLER_NAME = "sciAssembler";
+    public static final String MF_CORE_NAME = "mfCore";
+    public static final String MF_DUMMY_NAME = "mfDummy";
     
     
     //Item Internal Names
@@ -44,10 +46,13 @@ public class Strings
     
     //Tile Internal Names
     public static final String TE_SCI_ASSEMBLER_NAME = "tileSciAssembler";
+    public static final String TE_MF_CORE_NAME = "tilemfCore";
+    public static final String TE_MF_DUMMY_NAME = "tilemfDummy";
     
     
     //Container Internal Names
     public static final String CONTAINER_SCI_ASSEMBLER_NAME = "container." + SCIENTIFIC_ASSEMBLER_NAME;
+    public static final String CONTAINER_MF_CORE_NAME = "container." + MF_CORE_NAME;
     
     
     //NBT Related Strings

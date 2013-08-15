@@ -25,8 +25,12 @@
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
 	<entry key="tile.glowingUnknownOre.name">Glowing §kUnknown §rOre</entry>
 	<entry key="tile.sciAssembler.name">Scientific Assembler</entry>
+	<entry key="tile.mfCore.name">Multi-Furnace</entry>
+	<entry key="tile.mfDummy.name">Multi-Furnace Dummy Block</entry>
 	
 	<entry key="container.sciAssembler">Scientific Assembler</entry>
+	<entry key="container.mfCore">Multi-Furnace</entry>
+	<entry key="container.mfDummy">Multi-Furnace</entry>
 	
 	<entry key="itemGroup.DC">DiscoveryCraft</entry>
 </properties>

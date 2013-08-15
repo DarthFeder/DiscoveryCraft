@@ -33,7 +33,9 @@ public class ConfigHandler
             BlockIDs.UNKNOWN_ORE = configuration.getBlock(Strings.UNKNOWN_ORE_NAME, BlockIDs.UNKNOWN_ORE_DEFAULT).getInt(BlockIDs.UNKNOWN_ORE_DEFAULT);
             BlockIDs.GLOWING_UNKNOWN_ORE = configuration.getBlock(Strings.GLOWING_UNKNOWN_ORE_NAME, BlockIDs.GLOWING_UNKNOWN_ORE_DEFAULT).getInt(BlockIDs.GLOWING_UNKNOWN_ORE_DEFAULT);
             BlockIDs.SCIENTIFIC_ASSEMBLER = configuration.getBlock(Strings.SCIENTIFIC_ASSEMBLER_NAME, BlockIDs.SCIENTIFIC_ASSEMBLER_DEFAULT).getInt(BlockIDs.SCIENTIFIC_ASSEMBLER_DEFAULT);
-        
+            BlockIDs.MF_CORE = configuration.getBlock(Strings.MF_CORE_NAME, BlockIDs.MF_CORE_DEFAULT).getInt(BlockIDs.MF_CORE_DEFAULT);
+            BlockIDs.MF_DUMMY = configuration.getBlock(Strings.MF_DUMMY_NAME, BlockIDs.MF_DUMMY_DEFAULT).getInt(BlockIDs.MF_DUMMY_DEFAULT);
+            
             //Item Ids
             ItemIDs.SCI_NOTEBOOK = configuration.getItem(Strings.SCI_NOTEBOOK_NAME, ItemIDs.SCI_NOTEBOOK_DEFAULT).getInt(ItemIDs.SCI_NOTEBOOK_DEFAULT);
             ItemIDs.UNKNOWN_DUST = configuration.getItem(Strings.UNKNOWN_DUST_NAME, ItemIDs.UNKNOWN_DUST_DEFAULT).getInt(ItemIDs.UNKNOWN_DUST_DEFAULT);

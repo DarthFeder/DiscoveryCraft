@@ -13,6 +13,7 @@ public class Textures
     public static final ResourceLocation VANILLA_BLOCK_TEXTURE_SHEET = TextureMap.field_110575_b;
     public static final ResourceLocation VANILLA_ITEM_TEXTURE_SHEET = TextureMap.field_110576_c;
     public static final ResourceLocation VANILLA_INVENTORY = new ResourceLocation("textures/gui/container/inventory.png");
+    public static final ResourceLocation VANILLA_FURNACE = new ResourceLocation("textures/gui/container/furnace.png");
     
     public static final ResourceLocation GUI_SA1 = ResourceLocationUtil.getResourceLocation(GUI_SHEET_LOCATION + "SAInventory1.png");
 }

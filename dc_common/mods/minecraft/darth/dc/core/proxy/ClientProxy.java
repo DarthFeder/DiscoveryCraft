@@ -1,10 +1,12 @@
 package mods.minecraft.darth.dc.core.proxy;
 
 import mods.minecraft.darth.dc.client.audio.SoundHandler;
+import mods.minecraft.darth.dc.client.gui.inventory.GuiMultiFurnace;
 import mods.minecraft.darth.dc.client.gui.inventory.GuiScientificAssembler;
 import mods.minecraft.darth.dc.core.handlers.KeyBindingHandler;
 import mods.minecraft.darth.dc.event.GuiEffectBar;
 import mods.minecraft.darth.dc.lib.GuiIDs;
+import mods.minecraft.darth.dc.tileentity.TileEntityMultiFurnaceCore;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -48,10 +50,12 @@ public class ClientProxy extends CommonProxy
         
     	TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
     	
-        if(ID == GuiIDs.ASSEMBLER1)
+        if (ID == GuiIDs.ASSEMBLER1)
             return new GuiScientificAssembler(player.inventory, (TileScientificAssembler) tileEntity, world);
-        
-        return null;
+        else if (ID == GuiIDs.MULTI_FURNACE)
+            return new GuiMultiFurnace(player.inventory, (TileEntityMultiFurnaceCore) tileEntity);
+        else
+            return null;
     }
     
 }
