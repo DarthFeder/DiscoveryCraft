@@ -35,13 +35,15 @@ public class EntityKnifeProjectile extends EntityArrow
     private boolean inGround = false;
 
     /** 1 if the player can pick up the arrow */
-
+    public int canBePickedUp;
+    
     /** Seems to be some sort of timer for animating an arrow. */
-
+    public int arrowShake;
+    
     /** The owner of this arrow. */
     private int ticksInGround;
     private int ticksInAir = 0;
-    private double damage = 2.0D;
+    private double damage = 2.5D;
 
     /** The amount of knockback an arrow applies when it hits a mob. */
     private int knockbackStrength;
@@ -116,8 +118,6 @@ public class EntityKnifeProjectile extends EntityArrow
     @Override
     public void onUpdate()
     {
-        
-
         if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F)
         {
             float f = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
@@ -133,15 +133,11 @@ public class EntityKnifeProjectile extends EntityArrow
             AxisAlignedBB axisalignedbb = Block.blocksList[i].getCollisionBoundingBoxFromPool(this.worldObj, this.xTile, this.yTile, this.zTile);
 
             if (axisalignedbb != null && axisalignedbb.isVecInside(this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX, this.posY, this.posZ)))
-            {
                 this.inGround = true;
-            }
         }
 
         if (this.arrowShake > 0)
-        {
             --this.arrowShake;
-        }
 
         if (this.inGround)
         {
@@ -153,9 +149,7 @@ public class EntityKnifeProjectile extends EntityArrow
                 ++this.ticksInGround;
 
                 if (this.ticksInGround == 1200)
-                {
                     this.setDead();
-                }
             }
             else
             {
@@ -237,25 +231,17 @@ public class EntityKnifeProjectile extends EntityArrow
                     int i1 = MathHelper.ceiling_double_int((double)f2 * this.damage);
 
                     if (this.getIsCritical())
-                    {
                         i1 += this.rand.nextInt(i1 / 2 + 2);
-                    }
 
                     DamageSource damagesource = null;
 
                     if (this.shootingEntity == null)
-                    {
                         damagesource = DamageSource.causeArrowDamage(this, this);
-                    }
                     else
-                    {
                         damagesource = DamageSource.causeArrowDamage(this, this.shootingEntity);
-                    }
 
                     if (this.isBurning() && !(movingobjectposition.entityHit instanceof EntityEnderman))
-                    {
                         movingobjectposition.entityHit.setFire(5);
-                    }
 
                     if (movingobjectposition.entityHit.attackEntityFrom(damagesource, i1))
                     {
@@ -264,18 +250,14 @@ public class EntityKnifeProjectile extends EntityArrow
                             EntityLiving entityliving = (EntityLiving)movingobjectposition.entityHit;
 
                             if (!this.worldObj.isRemote)
-                            {
                                 entityliving.setArrowCountInEntity(entityliving.getArrowCountInEntity() + 1);
-                            }
 
                             if (this.knockbackStrength > 0)
                             {
                                 f3 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
 
                                 if (f3 > 0.0F)
-                                {
                                     movingobjectposition.entityHit.addVelocity(this.motionX * (double)this.knockbackStrength * 0.6000000238418579D / (double)f3, 0.1D, this.motionZ * (double)this.knockbackStrength * 0.6000000238418579D / (double)f3);
-                                }
                             }
 
                             if (this.shootingEntity != null)
@@ -293,9 +275,7 @@ public class EntityKnifeProjectile extends EntityArrow
                         this.playSound(Sounds.SOUND_KNIFE, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
 
                         if (!(movingobjectposition.entityHit instanceof EntityEnderman))
-                        {
                             this.setDead();
-                        }
                     }
                     else
                     {
@@ -424,18 +404,12 @@ public class EntityKnifeProjectile extends EntityArrow
         this.inGround = par1NBTTagCompound.getByte("inGround") == 1;
 
         if (par1NBTTagCompound.hasKey("damage"))
-        {
             this.damage = par1NBTTagCompound.getDouble("damage");
-        }
 
         if (par1NBTTagCompound.hasKey("pickup"))
-        {
             this.canBePickedUp = par1NBTTagCompound.getByte("pickup");
-        }
         else if (par1NBTTagCompound.hasKey("player"))
-        {
             this.canBePickedUp = par1NBTTagCompound.getBoolean("player") ? 1 : 0;
-        }
     }
 
     /**
@@ -456,8 +430,8 @@ public class EntityKnifeProjectile extends EntityArrow
             if (flag)
             {
                 this.playSound("random.pop", 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
-	                par1EntityPlayer.onItemPickup(this, 1);
-	                this.setDead();
+	            par1EntityPlayer.onItemPickup(this, 1);
+	            this.setDead();
 	        }
 	    }
      }
