@@ -3,4 +3,34 @@
 <properties version="1.0">
 	<comment>Simplified Chinese (zh_CN) Localization File</comment>
 	
+	<entry key="item.scienceNotebook.name">科研笔记本</entry>
+	<entry key="item.unknownDust.name">§k未知§r粉尘</entry>
+	<entry key="item.monocleLens.name">单片眼镜透镜</entry>
+	<entry key="item.notebookLock.name">笔记本锁</entry>
+	<entry key="item.sonicScrewdriver.name">§2§l音速螺丝刀</entry>
+	<entry key="item.debugTool.name">调试工具</entry>
+	<entry key="item.craftingUpgrade.name">科学合成初始化机器Mk1</entry>
+	<entry key="item.knifeMelee.name">远古§c肉搏§r战刀</entry>
+	<entry key="item.knifeThrowing.name">远古§b投掷§r飞刀</entry>
+	<entry key="item.unknownChunks.name">§k未知§r区块</entry>
+	<entry key="item.shovelFlint.name">燧石铲</entry>
+	<entry key="item.pickaxeFlint.name">燧石镐</entry>
+	<entry key="item.axeFlint.name">燧石斧</entry>
+	<entry key="item.dirtPellet.name">泥土颗粒</entry>
+	<entry key="item.goronRaw.name">生滚滚合金</entry>
+	<entry key="item.ingotGoron.name">滚滚合金锭</entry>
+	<entry key="item.scienceDye.name">科学染料</entry>
+	<entry key="item.specialShovelFlint.name">特别坚固型燧石铲</entry>
+
+	<entry key="tile.unknownOre.name">§k未知§r矿石</entry>
+	<entry key="tile.glowingUnknownOre.name">发光§k未知§r矿石</entry>
+	<entry key="tile.sciAssembler.name">科学装配器</entry>
+	<entry key="tile.mfCore.name">组合熔炉</entry>
+	<entry key="tile.mfDummy.name">组合熔炉模制方块</entry>
+
+	<entry key="container.sciAssembler">科学装配器</entry>
+	<entry key="container.mfCore">组合熔炉</entry>
+	<entry key="container.mfDummy">组合熔炉</entry>
+
+	<entry key="itemGroup.DC">研究工艺</entry>
 </properties>
