@@ -55,6 +55,7 @@ public class ConfigHandler
             ItemIDs.GORON_ALLOY_INGOT = configuration.getItem(Strings.GORON_ALLOY_INGOT_NAME, ItemIDs.GORON_ALLOY_INGOT_DEFAULT).getInt(ItemIDs.GORON_ALLOY_INGOT_DEFAULT);
             ItemIDs.SCIENCE_DYE = configuration.getItem(Strings.SCIENCE_DYE_NAME, ItemIDs.SCIENCE_DYE_DEFAULT).getInt(ItemIDs.SCIENCE_DYE_DEFAULT);
             ItemIDs.SPECIAL_FLINT_SHOVEL = configuration.getItem(Strings.SPECIAL_FLINT_SHOVEL_NAME, ItemIDs.SPECIAL_FLINT_SHOVEL_DEFAULT).getInt(ItemIDs.SPECIAL_FLINT_SHOVEL_DEFAULT);
+            ItemIDs.MONOCLE = configuration.getItem(Strings.MONOCLE_NAME, ItemIDs.MONOCLE_DEFAULT).getInt(ItemIDs.MONOCLE_DEFAULT);
         }
         catch (Exception e)
         {

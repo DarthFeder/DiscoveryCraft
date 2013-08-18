@@ -21,6 +21,7 @@
 	<entry key="item.ingotGoron.name">Goron Alloy Ingot</entry>
 	<entry key="item.scienceDye.name">Scientific Dye</entry>
 	<entry key="item.specialShovelFlint.name">Especially Flinty Flint Shovel</entry>
+	<entry key="item.monocleArmor.name">Monocle</entry>
 	
 	<entry key="tile.unknownOre.name">§kUnknown §rOre</entry>
 	<entry key="tile.glowingUnknownOre.name">Glowing §kUnknown §rOre</entry>

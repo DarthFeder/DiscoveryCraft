@@ -7,13 +7,22 @@ import net.minecraft.util.ResourceLocation;
 
 public class Textures
 {
-
-    public static final String GUI_SHEET_LOCATION = "textures/gui/";
     
+    //General locations inside the mod
+    public static final String GUI_SHEET_LOCATION = "textures/gui/";
+    public static final String ARMOR_SHEET_LOCATION = Reference.MOD_ID.toLowerCase() + ":textures/armor/";
+    
+    //Helpful Vanilla GUIs
     public static final ResourceLocation VANILLA_BLOCK_TEXTURE_SHEET = TextureMap.field_110575_b;
     public static final ResourceLocation VANILLA_ITEM_TEXTURE_SHEET = TextureMap.field_110576_c;
     public static final ResourceLocation VANILLA_INVENTORY = new ResourceLocation("textures/gui/container/inventory.png");
     public static final ResourceLocation VANILLA_FURNACE = new ResourceLocation("textures/gui/container/furnace.png");
     
+    
+    //GUIs
     public static final ResourceLocation GUI_SA1 = ResourceLocationUtil.getResourceLocation(GUI_SHEET_LOCATION + "SAInventory1.png");
+    
+    //Armor Sheets
+    public static final String ARMOR_MONOCLE = ARMOR_SHEET_LOCATION + "MonocleArmorSheet.png";
+    
 }
