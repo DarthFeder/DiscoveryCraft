@@ -119,7 +119,7 @@ public class DiscoveryCraft
         	NetworkRegistry.instance().registerGuiHandler(instance, proxy);
             
             //Register Events
-            EventRegistry.init();
+            EventRegistry.init(event);
             
             //Register Tile Entities
             proxy.registerTileEntities();
