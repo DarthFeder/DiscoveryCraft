@@ -17,7 +17,7 @@ import mods.minecraft.darth.dc.core.util.LogUtil;
 
 public class EventCloakRender
 {
-    private final String serverLocation = "https://raw.github.com/mDiyo/TinkersConstruct/16working/capes.txt";
+    private final String serverLocation = "https://raw.github.com/DarthFeder/DiscoveryCraft/master/resources/assets/dc/capes/capes.txt";
     private final int timeout = 1000;
 
     private HashMap<String, String> cloaks = new HashMap<String, String>();
@@ -115,7 +115,7 @@ public class EventCloakRender
                 BufferedImage bo = new BufferedImage(cape.getWidth(null), cape.getHeight(null), BufferedImage.TYPE_INT_ARGB);
                 
                 bo.getGraphics().drawImage(cape, 0, 0, null);
-                //TODO abstractClientPlayer.func_110310_o().field_110560_d = bo;
+                abstractClientPlayer.func_110310_o().field_110560_d = bo;
             }
             catch (MalformedURLException e)
             {
