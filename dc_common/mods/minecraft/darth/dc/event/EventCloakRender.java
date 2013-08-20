@@ -30,18 +30,18 @@ public class EventCloakRender
     @ForgeSubscribe
     public void onPreRenderSpecials(RenderPlayerEvent.Specials.Pre event)
     {
-        if(event.entityPlayer instanceof AbstractClientPlayer)
+        if (event.entityPlayer instanceof AbstractClientPlayer)
         {
             AbstractClientPlayer abstractClientPlayer = (AbstractClientPlayer)event.entityPlayer;
 
-            if (true)//TODO(abstractClientPlayer.func_110310_o().field_110560_d == null)
+            if (true)//abstractClientPlayer.func_110310_o().field_110560_d == null)
             {
                 String cloakURL = cloaks.get(event.entityPlayer.username);
 
-                if(cloakURL == null)
+                if (cloakURL == null)
                     return;
 
-                //TODO abstractClientPlayer.func_110310_o().field_110559_g = false;
+                //abstractClientPlayer.func_110310_o().field_110559_g = false;
                 
                 new Thread(new CloakThread(abstractClientPlayer, cloakURL)).start();
                 
@@ -115,7 +115,7 @@ public class EventCloakRender
                 BufferedImage bo = new BufferedImage(cape.getWidth(null), cape.getHeight(null), BufferedImage.TYPE_INT_ARGB);
                 
                 bo.getGraphics().drawImage(cape, 0, 0, null);
-                abstractClientPlayer.func_110310_o().field_110560_d = bo;
+                //abstractClientPlayer.func_110310_o().field_110560_d = bo;
             }
             catch (MalformedURLException e)
             {
