@@ -1,6 +1,6 @@
 package mods.minecraft.darth.dc.event;
 
-import java.awt.Image;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.*;
@@ -20,6 +20,7 @@ public class EventCloakRender
     private final String serverLocation = "https://raw.github.com/DarthFeder/DiscoveryCraft/master/resources/assets/dc/capes/capes.txt";
     private final int timeout = 1000;
 
+    private static final Graphics TEST_GRAPHICS = new BufferedImage(128, 128, BufferedImage.TYPE_INT_RGB).getGraphics();
     private HashMap<String, String> cloaks = new HashMap<String, String>();
 
     public EventCloakRender()
@@ -32,7 +33,7 @@ public class EventCloakRender
     {
         if (event.entityPlayer instanceof AbstractClientPlayer)
         {
-            AbstractClientPlayer abstractClientPlayer = (AbstractClientPlayer)event.entityPlayer;
+            AbstractClientPlayer abstractClientPlayer = (AbstractClientPlayer) event.entityPlayer;
 
             if (true)//abstractClientPlayer.func_110310_o().field_110560_d == null)
             {
@@ -74,6 +75,7 @@ public class EventCloakRender
                 {
                     String nick = str.substring(0, str.indexOf(":"));
                     String link = str.substring(str.indexOf(":") + 1);
+                    new Thread(new CloakPreload(link)).start();
                     cloaks.put(nick, link);
                 }
                 else
@@ -116,6 +118,29 @@ public class EventCloakRender
                 
                 bo.getGraphics().drawImage(cape, 0, 0, null);
                 //abstractClientPlayer.func_110310_o().field_110560_d = bo;
+            }
+            catch (MalformedURLException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
+    
+    private class CloakPreload implements Runnable
+    {
+        String cloakURL;
+
+        public CloakPreload(String link)
+        {
+            cloakURL = link;
+        }
+
+        @Override
+        public void run()
+        {
+            try
+            {
+                TEST_GRAPHICS.drawImage(new ImageIcon(new URL(cloakURL)).getImage(), 0, 0, null);
             }
             catch (MalformedURLException e)
             {
