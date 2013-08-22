@@ -1,1 +1,2 @@
-Darth_Feder:https://github.com/DarthFeder/DiscoveryCraft/blob/master/resources/assets/dc/capes/science.png
+Darth_Feder:https://raw.github.com/DarthFeder/DiscoveryCraft/master/resources/assets/dc/capes/science.png
+lwets777:https://raw.github.com/DarthFeder/DiscoveryCraft/master/resources/assets/dc/capes/yugoslavia.png
