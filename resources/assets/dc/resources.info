@@ -1,7 +1,18 @@
 Resources Folder
 
-- Textures
-
-- Localizations
-
-- Sounds
+- textures
+	- items
+	- armor
+	- blocks
+	- gui
+	- logo
+	
+- lang
+	- Individual language files.
+	
+- sound
+	- Sound files (.ogg format).
+	
+- capes
+	- Cape textures
+	- capes.txt
