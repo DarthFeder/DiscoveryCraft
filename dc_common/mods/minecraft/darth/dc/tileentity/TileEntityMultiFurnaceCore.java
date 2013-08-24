@@ -197,7 +197,6 @@ public class TileEntityMultiFurnaceCore extends TileDC implements ISidedInventor
         if(!isValidMultiblock)
             return;
         
-        boolean flag = furnaceBurnTime > 0;
         boolean flag1 = false;
         int metadata = getBlockMetadata();
         int isActive = (metadata >> 3);
@@ -367,7 +366,7 @@ public class TileEntityMultiFurnaceCore extends TileDC implements ISidedInventor
     {
         super.readFromNBT(tagCompound);
         
-        int md = tagCompound.getInteger("BlockMeta");
+        tagCompound.getInteger("BlockMeta");
         isValidMultiblock = tagCompound.getBoolean("isValidMultiblock");
         
         NBTTagList itemsTag = tagCompound.getTagList("Items");
