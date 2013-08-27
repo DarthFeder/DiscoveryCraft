@@ -1,71 +1,109 @@
 package mods.minecraft.darth.dc.tileentity;
 
+import mods.minecraft.darth.dc.DiscoveryCraft;
+import mods.minecraft.darth.dc.core.util.*;
+import mods.minecraft.darth.dc.inventory.*;
+import mods.minecraft.darth.dc.inventory.InventoryIterator.IInvSlot;
 import mods.minecraft.darth.dc.lib.Strings;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.inventory.InventoryCraftResult;
+import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.ChatMessageComponent;
+import net.minecraft.util.ChunkCoordinates;
 
-public class TileScientificAssembler extends TileDC implements IInventory
+import net.minecraftforge.common.ForgeDirection;
+
+public class TileScientificAssembler extends TileDC implements ISidedInventory
 {
-
-    public ItemStack[] inventory;
-    
+    public static final int SLOT_RESULT = 0;
     public static final int INVENTORY_SIZE = 9 /*Crafting Grid*/ + 1 /*Output Slot*/ + (1 * 9) /*Storage*/;
+    private static final int[] SLOTS = GeneralUtil.createSlotArray(0, INVENTORY_SIZE);
     
-    public TileScientificAssembler()
+    private SimpleInventory resultInv = new SimpleInventory(1, "Sci Assembler Output", 64);
+    private SimpleInventory storageInv = new SimpleInventory(9, "Sci Assembler Storage", 64);
+    public InventoryCrafting craftMatrix = new LocalInventoryCrafting();
+    private SlotCrafting craftSlot;
+    private InventoryCraftResult craftResult = new InventoryCraftResult();
+    private EntityPlayer internalPlayer;
+    
+    private IInventory inv = InventoryConcatenator.make().add(resultInv).add(craftMatrix).add(storageInv);
+    
+    
+    private class LocalInventoryCrafting extends InventoryCrafting
     {
-        inventory = new ItemStack[INVENTORY_SIZE];
+
+        public LocalInventoryCrafting()
+        {
+            super(new Container(){ @Override public boolean canInteractWith(EntityPlayer entityplayer) { return false; }}
+            , 3, 3);
+        }
+    }
+    
+    private final class InternalPlayer extends EntityPlayer
+    {
+
+        public InternalPlayer()
+        {
+            super(TileScientificAssembler.this.worldObj, "[DiscoveryCraft]");
+            posX = TileScientificAssembler.this.xCoord;
+            posY = TileScientificAssembler.this.yCoord + 1;
+            posZ = TileScientificAssembler.this.zCoord;
+        }
+
+        @Override
+        public void sendChatToPlayer(ChatMessageComponent var1)
+        {
+        }
+
+        @Override
+        public boolean canCommandSenderUseCommand(int var1, String var2)
+        {
+            return false;
+        }
+
+        @Override
+        public ChunkCoordinates getPlayerCoordinates()
+        {
+            return null;
+        }
     }
     
     @Override
     public int getSizeInventory()
     {
-        return inventory.length;
+        return INVENTORY_SIZE;
     }
 
     @Override
     public ItemStack getStackInSlot(int slot)
     {
-        return inventory[slot];
+        return inv.getStackInSlot(slot);
     }
 
     @Override
     public ItemStack decrStackSize(int slot, int amt)
     {
-        ItemStack stack = getStackInSlot(slot);
-        if (stack != null)
-        {
-            if (stack.stackSize <= amt)
-                setInventorySlotContents(slot, null);
-            else
-            {
-                stack = stack.splitStack(amt);
-                if (stack.stackSize == 0)
-                    setInventorySlotContents(slot, null);
-            }
-        }
-        return stack;
+        return inv.decrStackSize(slot, amt);
     }
 
     @Override
     public ItemStack getStackInSlotOnClosing(int slot)
     {
-        ItemStack itemStack = getStackInSlot(slot);
-        
-        if (itemStack != null)
-            setInventorySlotContents(slot, null);
-        
-        return itemStack;
+        return inv.getStackInSlotOnClosing(slot);
     }
 
     @Override
     public void setInventorySlotContents(int slot, ItemStack itemStack)
     {
-        inventory[slot] = itemStack;
-        
-        if (itemStack != null && itemStack.stackSize > getInventoryStackLimit())
-            itemStack.stackSize = getInventoryStackLimit();
+        inv.setInventorySlotContents(slot, itemStack);
     }
 
     @Override
@@ -107,53 +145,136 @@ public class TileScientificAssembler extends TileDC implements IInventory
     }
     
     @Override
-    public void readFromNBT(NBTTagCompound tagCompound) {
-        
+    public void readFromNBT(NBTTagCompound tagCompound)
+    {
         super.readFromNBT(tagCompound);
-            
-        NBTTagList tagList = tagCompound.getTagList("Inventory");
-        for (int i = 0; i < tagList.tagCount(); i++)
+        resultInv.readFromNBT(tagCompound);
+        NBTUtil.readInvFromNBT(craftMatrix, "matrix", tagCompound);
+
+        // Legacy Code
+        if (tagCompound.hasKey("stackList"))
         {
-            NBTTagCompound tag = (NBTTagCompound) tagList.tagAt(i);
-            byte slot = tag.getByte("Slot");
-            if (slot >= 0 && slot < inventory.length)
-            {
-                inventory[slot] = ItemStack.loadItemStackFromNBT(tag);
-            }
+            ItemStack[] stacks = new ItemStack[9];
+            NBTUtil.readStacksFromNBT(tagCompound, "stackList", stacks);
+            
+            for (int i = 0; i < 9; i++)
+                craftMatrix.setInventorySlotContents(i, stacks[i]);
         }
-        
-        //orientation = ForgeDirection.getOrientation(tagCompound.getInteger("Orientation"));
     }
     
     @Override
     public void writeToNBT(NBTTagCompound tagCompound)
     {
         super.writeToNBT(tagCompound);
-                        
-        NBTTagList itemList = new NBTTagList();
+        resultInv.writeToNBT(tagCompound);
+        NBTUtil.writeInvToNBT(craftMatrix, "matrix", tagCompound);
+    }
+
+    public ItemStack findRecipeOutput()
+    {
+        IRecipe recipe = findRecipe();
         
-        for (int i = 0; i < inventory.length; i++)
+        if (recipe == null)
+            return null;
+
+        ItemStack result = recipe.getCraftingResult(craftMatrix);
+        
+        if (result != null)
+            result = result.copy();
+
+        return result;
+    }
+
+    public IRecipe findRecipe()
+    {
+        for (IInvSlot slot : InventoryIterator.getIterable(craftMatrix, ForgeDirection.UP))
         {
-            ItemStack stack = inventory[i];
-            if (stack != null)
-            {
-                NBTTagCompound tag = new NBTTagCompound();
-                tag.setByte("Slot", (byte) i);
-                stack.writeToNBT(tag);
-                itemList.appendTag(tag);
-            }
+            ItemStack stack = slot.getStackInSlot();
+            
+            if (stack == null)
+                continue;
         }
-        
-        tagCompound.setTag("Inventory", itemList);
-        
-        //tagCompound.setInteger("Orientation", orientation.ordinal());
+
+        return CraftingUtil.findMatchingRecipe(craftMatrix, worldObj);
     }
 
     @Override
-    public boolean isItemValidForSlot(int i, ItemStack itemstack)
+    public boolean isItemValidForSlot(int slot, ItemStack stack)
     {
-            return true;
+        if (slot == SLOT_RESULT)
+            return false;
+        if (stack == null)
+            return false;
+        if (getStackInSlot(slot) == null)
+            return false;
+        
+        return true;
+    }
+    
+    @Override
+    public boolean canInsertItem(int slot, ItemStack stack, int side)
+    {
+        return isItemValidForSlot(slot, stack);
     }
 
+    @Override
+    public boolean canExtractItem(int slot, ItemStack stack, int side)
+    {
+        return slot == SLOT_RESULT;
+    }
 
+    @Override
+    public int[] getAccessibleSlotsFromSide(int var1)
+    {
+        return SLOTS;
+    }
+    
+    @Override
+    public void updateEntity()
+    {
+        super.updateEntity();
+        
+        if (DiscoveryCraft.proxy.isRenderWorld(worldObj))
+            return;
+
+        if (craftSlot == null)
+        {
+            internalPlayer = new InternalPlayer();
+            craftSlot = new SlotCrafting(internalPlayer, craftMatrix, craftResult, 0, 0, 0);
+        }
+        
+        if (resultInv.getStackInSlot(SLOT_RESULT) != null)
+            return;
+
+        updateCrafting();
+    }
+    
+    private void updateCrafting()
+    {
+        IRecipe recipe = findRecipe();
+        
+        if (recipe == null)
+            return;
+        
+        ItemStack result = recipe.getCraftingResult(craftMatrix);
+        
+        if (result == null)
+            return;
+
+        result = result.copy();
+        craftSlot.onPickupFromSlot(internalPlayer, result); //TODO
+        resultInv.setInventorySlotContents(SLOT_RESULT, result);
+
+        //clean fake player inventory (crafting handler support)
+        for (IInvSlot slot : InventoryIterator.getIterable(internalPlayer.inventory, ForgeDirection.UP))
+        {
+            ItemStack stack = slot.getStackInSlot();
+            
+            if (stack != null)
+            {
+                slot.setStackInSlot(null);
+                ItemUtil.dropItems(worldObj, stack, xCoord, yCoord + 1, zCoord);
+            }
+        }
+    }
 }

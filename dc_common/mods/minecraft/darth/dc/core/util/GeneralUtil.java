@@ -45,10 +45,16 @@ public class GeneralUtil
     
     public static void sendChat(EntityPlayer player, ChatMessageComponent s)
     {
-        
         player.sendChatToPlayer(s);
-        
     }
 
-    
+    public static int[] createSlotArray(int first, int count)
+    {
+        int[] slots = new int[count];
+        
+        for (int k = first; k < first + count; k++)
+            slots[k - first] = k;
+
+        return slots;
+    }
 }

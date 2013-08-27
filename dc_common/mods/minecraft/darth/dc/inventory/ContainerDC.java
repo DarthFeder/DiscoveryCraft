@@ -25,13 +25,15 @@ public abstract class ContainerDC extends Container
     public ItemStack slotClick(int slotNum, int mouseButton, int modifier, EntityPlayer player)
     {
         Slot slot = slotNum < 0 ? null : (Slot) this.inventorySlots.get(slotNum);
+        
         if (slot instanceof IPhantomSlot)
             return slotClickPhantom(slot, mouseButton, modifier, player);
 
         return super.slotClick(slotNum, mouseButton, modifier, player);
     }
 
-    private ItemStack slotClickPhantom(Slot slot, int mouseButton, int modifier, EntityPlayer player) {
+    private ItemStack slotClickPhantom(Slot slot, int mouseButton, int modifier, EntityPlayer player)
+    {
         ItemStack stack = null;
 
         if (mouseButton == 2)

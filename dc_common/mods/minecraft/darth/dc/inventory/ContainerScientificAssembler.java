@@ -1,35 +1,32 @@
 package mods.minecraft.darth.dc.inventory;
 
+import mods.minecraft.darth.dc.client.gui.slots.SlotOutput;
+import mods.minecraft.darth.dc.client.gui.slots.SlotWorkbench;
 import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryCrafting;
+import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
 
 public class ContainerScientificAssembler extends ContainerDC
 {
     protected TileScientificAssembler tileEntity;
     private World worldObj;
+    public IInventory craftResult;
     
-    /** The crafting matrix inventory (3x3). */
-    public InventoryCraftingDC craftMatrix = new InventoryCraftingDC(this, 3, 3);
-    public IInventory craftResult = new InventoryCraftingResultDC();
-
-    
-    public ContainerScientificAssembler (InventoryPlayer inventoryPlayer, TileScientificAssembler te, World world)
+    public ContainerScientificAssembler(InventoryPlayer inventoryPlayer, TileScientificAssembler te, World world)
     {
         super(te.getSizeInventory());
         
-        tileEntity = te;
+        craftResult = new InventoryCraftResult();
+        this.tileEntity = te;
         this.worldObj = world;
         
-        this.addSlotToContainer(new SlotCrafting(inventoryPlayer.player, this.craftMatrix, this.craftResult, 0, 124, 35));
+        this.addSlotToContainer(new SlotOutput(tileEntity, TileScientificAssembler.SLOT_RESULT, 124, 35));
         
         //the Slot constructor takes the IInventory and the slot number in that it binds to
         //and the x-y coordinates it resides on-screen
@@ -41,22 +38,17 @@ public class ContainerScientificAssembler extends ContainerDC
         for (x = 0; x < 3; x++)
         {
             for (y = 0; y < 3; y++)
-                this.addSlotToContainer(new Slot(this.craftMatrix, y + x * 3, 30 + y * 18, 17 + x * 18));
+                this.addSlotToContainer(new SlotWorkbench(tileEntity.craftMatrix, y + x * 3, 30 + y * 18, 17 + x * 18));
         }
         
         
         //bottom inventory
         for(x = 0; x < 9; x++)
-        {
-            this.addSlotToContainer(new Slot(tileEntity, 8 + x, 8 + x * 18, 82));
-        }
+            this.addSlotToContainer(new Slot(tileEntity, 10 + x, 8 + x * 18, 82));
         
-
-        //commonly used vanilla code that adds the player's inventory
-            
         this.bindPlayerInventory(inventoryPlayer);
         
-        this.onCraftMatrixChanged(this.craftMatrix);
+        this.onCraftMatrixChanged(tileEntity);
     }
     
     protected void bindPlayerInventory(InventoryPlayer inventoryPlayer)
@@ -77,12 +69,6 @@ public class ContainerScientificAssembler extends ContainerDC
     }
     
     @Override
-    public boolean canInteractWith(EntityPlayer entityplayer)
-    {
-        return true;
-    }
-    
-    @Override
     public ItemStack transferStackInSlot(EntityPlayer player, int slot)
     {
         ItemStack stack = null;
@@ -97,9 +83,7 @@ public class ContainerScientificAssembler extends ContainerDC
             if (slot == 0)
             {
                 if (!this.mergeItemStack(stackInSlot, 10, 46, true))
-                {
                     return null;
-                }
 
                 slotObject.onSlotChange(stackInSlot, stack);
             }
@@ -111,7 +95,7 @@ public class ContainerScientificAssembler extends ContainerDC
                     return null;
             }
             //places it into the tileEntity is possible since its in the player inventory
-            else if (!this.mergeItemStack(stackInSlot, 0, TileScientificAssembler.INVENTORY_SIZE, false))
+            else if (slot != 0 && !this.mergeItemStack(stackInSlot, 10, TileScientificAssembler.INVENTORY_SIZE - 1, false))
                 return null;
 
             
@@ -136,13 +120,17 @@ public class ContainerScientificAssembler extends ContainerDC
     /**
      * Callback for when the crafting matrix is changed.
      */
-    public void onCraftMatrixChanged(IInventory par1IInventory)
+    public void onCraftMatrixChanged(IInventory inv)
     {
-        this.craftResult.setInventorySlotContents(0, CraftingManager.getInstance().findMatchingRecipe((InventoryCrafting) this.craftMatrix, this.worldObj));
+        super.onCraftMatrixChanged(inv);
+        ItemStack output = tileEntity.findRecipeOutput();
+        craftResult.setInventorySlotContents(0, output);
     }
     
-    
+    @Override
+    public boolean canInteractWith(EntityPlayer entityplayer)
+    {
+        return tileEntity.isUseableByPlayer(entityplayer);
+    }
 
-
-   
 }

@@ -24,7 +24,6 @@ public class BlockMultiFurnaceDummy extends BlockContainerDC
         setUnlocalizedName(Strings.MF_DUMMY_NAME);
         setStepSound(Block.soundStoneFootstep);
         setHardness(3.5f);
-        setCreativeTab(DiscoveryCraft.tabDC);
     }
     
     @Override

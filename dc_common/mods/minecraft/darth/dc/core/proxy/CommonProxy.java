@@ -61,5 +61,10 @@ public class CommonProxy implements IGuiHandler
         else
             return null;
     }
+
+    public boolean isRenderWorld(World world)
+    {
+        return world.isRemote;
+    }
     
 }

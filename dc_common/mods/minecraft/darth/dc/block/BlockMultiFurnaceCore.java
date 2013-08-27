@@ -45,7 +45,6 @@ public class BlockMultiFurnaceCore extends BlockContainerDC
         setUnlocalizedName(Strings.MF_CORE_NAME);
         setStepSound(Block.soundStoneFootstep);
         setHardness(3.5f);
-        setCreativeTab(DiscoveryCraft.tabDC);
     }
     
     @Override
