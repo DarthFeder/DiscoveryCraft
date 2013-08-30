@@ -2,5 +2,36 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties version="1.0">
 	<comment>German (de_DE) Localization File</comment>
+	<entry key="item.scienceNotebook.name">Wissenschafts-Notizbuch</entry>
+	<entry key="item.unknownDust.name">§kUnbekannter §rStaub</entry>
+	<entry key="item.monocleLens.name">Monokellinse</entry>
+	<entry key="item.notebookLock.name">Notizbuchschloss</entry>
+	<entry key="item.sonicScrewdriver.name">§2§lSonic Screwdriver</entry>
+	<entry key="item.debugTool.name">Debug-Werkzeug</entry>
+	<entry key="item.craftingUpgrade.name">Wissenschaftlicher Herstell-Initialisierer Mk1</entry>
+	<entry key="item.knifeMelee.name">Primitives §cNahkampf§rmesser</entry>
+	<entry key="item.knifeThrowing.name">Primitives §bWurf§rmesser</entry>
+	<entry key="item.unknownChunks.name">§kUnbekannte §rKlumpen</entry>
+	<entry key="item.shovelFlint.name">Feuersteinschaufel</entry>
+	<entry key="item.pickaxeFlint.name">Feuersteinspitzhacke</entry>
+	<entry key="item.axeFlint.name">Feuersteinaxt</entry>
+	<entry key="item.dirtPellet.name">Erd-Pellets</entry>
+	<entry key="item.goronRaw.name">Rohe Goronenlegierung</entry>
+	<entry key="item.ingotGoron.name">Goronenlegierungsbarren</entry>
+	<entry key="item.scienceDye.name">Wissenschaftlicher Farbstoff</entry>
+	<entry key="item.specialShovelFlint.name">Besonders feuersteinhaltige Feuersteinschaufel</entry>
+	<entry key="item.monocleArmor.name">Monokel</entry>
+
+	<entry key="tile.unknownOre.name">§kUnbekanntes §rErz</entry>
+	<entry key="tile.glowingUnknownOre.name">Leuchtendes §kUnbekanntes §rErz</entry>
+	<entry key="tile.sciAssembler.name">Wissenschaftlicher Assembler</entry>
+	<entry key="tile.mfCore.name">Multi-Ofen</entry>
+	<entry key="tile.mfDummy.name">Multi-Ofen Dummy-Block</entry>
+
+	<entry key="container.sciAssembler">Wissenschaftl. Assembler</entry>
+	<entry key="container.mfCore">Multi-Ofen</entry>
+	<entry key="container.mfDummy">Multi-Ofen</entry>
+
+	<entry key="itemGroup.DC">DiscoveryCraft</entry>
 	
 </properties>
