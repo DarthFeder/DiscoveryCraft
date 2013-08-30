@@ -4,9 +4,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 
-public class InventoryCraftingResultDC implements IInventory
+public class InventoryCraftResultAssembler implements IInventory
 {
-
     /** A list of one item containing the result of the crafting formula */
     private ItemStack[] stackResult = new ItemStack[1];
 
@@ -118,6 +117,6 @@ public class InventoryCraftingResultDC implements IInventory
      */
     public boolean isItemValidForSlot(int par1, ItemStack par2ItemStack)
     {
-        return true;
+        return false;
     }
 }

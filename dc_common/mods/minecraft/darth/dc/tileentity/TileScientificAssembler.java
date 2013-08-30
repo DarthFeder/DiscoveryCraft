@@ -2,15 +2,16 @@ package mods.minecraft.darth.dc.tileentity;
 
 import mods.minecraft.darth.dc.DiscoveryCraft;
 import mods.minecraft.darth.dc.core.util.*;
-import mods.minecraft.darth.dc.inventory.*;
-import mods.minecraft.darth.dc.inventory.InventoryIterator.IInvSlot;
+import mods.minecraft.darth.dc.inventory.InventoryCraftResultAssembler;
+import mods.minecraft.darth.dc.inventory.InventoryOutputAssembler;
+import mods.minecraft.darth.dc.inventory.sample.*;
+import mods.minecraft.darth.dc.inventory.sample.InventoryIterator.IInvSlot;
 import mods.minecraft.darth.dc.lib.Strings;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
@@ -27,11 +28,11 @@ public class TileScientificAssembler extends TileDC implements ISidedInventory
     public static final int INVENTORY_SIZE = 9 /*Crafting Grid*/ + 1 /*Output Slot*/ + (1 * 9) /*Storage*/;
     private static final int[] SLOTS = GeneralUtil.createSlotArray(0, INVENTORY_SIZE);
     
-    private SimpleInventory resultInv = new SimpleInventory(1, "Sci Assembler Output", 64);
+    private InventoryOutputAssembler resultInv = new InventoryOutputAssembler(1, "Sci Assembler Output", 64);
     private SimpleInventory storageInv = new SimpleInventory(9, "Sci Assembler Storage", 64);
     public InventoryCrafting craftMatrix = new LocalInventoryCrafting();
-    private SlotCrafting craftSlot;
-    private InventoryCraftResult craftResult = new InventoryCraftResult();
+    public SlotCrafting craftSlot;
+    private InventoryCraftResultAssembler craftResult = new InventoryCraftResultAssembler();
     private EntityPlayer internalPlayer;
     
     private IInventory inv = InventoryConcatenator.make().add(resultInv).add(craftMatrix).add(storageInv);
@@ -39,7 +40,6 @@ public class TileScientificAssembler extends TileDC implements ISidedInventory
     
     private class LocalInventoryCrafting extends InventoryCrafting
     {
-
         public LocalInventoryCrafting()
         {
             super(new Container(){ @Override public boolean canInteractWith(EntityPlayer entityplayer) { return false; }}
@@ -201,11 +201,9 @@ public class TileScientificAssembler extends TileDC implements ISidedInventory
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack stack)
     {
-        if (slot == SLOT_RESULT)
+        if (slot == SLOT_RESULT || slot < 10)
             return false;
         if (stack == null)
-            return false;
-        if (getStackInSlot(slot) == null)
             return false;
         
         return true;
@@ -262,7 +260,7 @@ public class TileScientificAssembler extends TileDC implements ISidedInventory
             return;
 
         result = result.copy();
-        craftSlot.onPickupFromSlot(internalPlayer, result); //TODO
+        //craftSlot.onPickupFromSlot(internalPlayer, result); //TODO
         resultInv.setInventorySlotContents(SLOT_RESULT, result);
 
         //clean fake player inventory (crafting handler support)

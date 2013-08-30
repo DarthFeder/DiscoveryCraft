@@ -7,7 +7,6 @@ import mods.minecraft.darth.dc.tileentity.TileScientificAssembler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryCraftResult;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -15,16 +14,16 @@ import net.minecraft.world.World;
 public class ContainerScientificAssembler extends ContainerDC
 {
     protected TileScientificAssembler tileEntity;
-    private World worldObj;
+    //private World worldObj;
     public IInventory craftResult;
     
     public ContainerScientificAssembler(InventoryPlayer inventoryPlayer, TileScientificAssembler te, World world)
     {
         super(te.getSizeInventory());
         
-        craftResult = new InventoryCraftResult();
+        craftResult = new InventoryCraftResultAssembler();
         this.tileEntity = te;
-        this.worldObj = world;
+        //this.worldObj = world;
         
         this.addSlotToContainer(new SlotOutput(tileEntity, TileScientificAssembler.SLOT_RESULT, 124, 35));
         
@@ -73,13 +72,13 @@ public class ContainerScientificAssembler extends ContainerDC
     {
         ItemStack stack = null;
         Slot slotObject = (Slot) inventorySlots.get(slot);
-
+        
         //null checks and checks if the item can be stacked (maxStackSize > 1)
         if (slotObject != null && slotObject.getHasStack())
         {
             ItemStack stackInSlot = slotObject.getStack();
             stack = stackInSlot.copy();
-            
+
             if (slot == 0)
             {
                 if (!this.mergeItemStack(stackInSlot, 10, 46, true))

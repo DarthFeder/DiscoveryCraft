@@ -1,19 +1,25 @@
-package mods.minecraft.darth.dc.inventory;
+package mods.minecraft.darth.dc.inventory.sample;
 
 import java.util.Iterator;
 
-import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 
-import mods.minecraft.darth.dc.inventory.InventoryIterator.IInvSlot;
+import net.minecraftforge.common.ForgeDirection;
 
-public class InventoryIteratorSimple implements Iterable<IInvSlot>
+import mods.minecraft.darth.dc.inventory.sample.InventoryIterator.IInvSlot;
+
+
+public class InventoryIteratorSided implements Iterable<IInvSlot>
 {
-    private final IInventory inv;
 
-    InventoryIteratorSimple(IInventory inv)
+    private final ISidedInventory inv;
+    private final int side;
+
+    InventoryIteratorSided(ISidedInventory inv, ForgeDirection side)
     {
         this.inv = inv;
+        this.side = side.ordinal();
     }
 
     @Override
@@ -21,18 +27,19 @@ public class InventoryIteratorSimple implements Iterable<IInvSlot>
     {
         return new Iterator<IInvSlot>()
         {
-            int slot = 0;
+            int[] slots = inv.getAccessibleSlotsFromSide(side);
+            int index = 0;
 
             @Override
             public boolean hasNext()
             {
-                return slot < inv.getSizeInventory();
+                return index < slots.length;
             }
 
             @Override
             public IInvSlot next()
             {
-                return new InvSlot(slot++);
+                return new InvSlot(slots[index++]);
             }
 
             @Override
@@ -40,6 +47,7 @@ public class InventoryIteratorSimple implements Iterable<IInvSlot>
             {
                 throw new UnsupportedOperationException("Remove not supported.");
             }
+
         };
     }
 
@@ -68,25 +76,27 @@ public class InventoryIteratorSimple implements Iterable<IInvSlot>
         @Override
         public boolean canPutStackInSlot(ItemStack stack)
         {
-            return inv.isItemValidForSlot(slot, stack);
+            return inv.canInsertItem(slot, stack, side);
         }
 
         @Override
         public boolean canTakeStackFromSlot(ItemStack stack)
         {
-            return true;
+            return inv.canExtractItem(slot, stack, side);
         }
 
         @Override
-        public ItemStack decreaseStackInSlot()
+        public ItemStack decreaseStackInSlot() 
         {
             return inv.decrStackSize(slot, 1);
         }
 
         @Override
-        public int getIndex()
+        public int getIndex() 
         {
             return slot;
         }
+
     }
+
 }

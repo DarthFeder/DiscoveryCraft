@@ -1,4 +1,4 @@
-package mods.minecraft.darth.dc.inventory;
+package mods.minecraft.darth.dc.inventory.sample;
 
 import java.util.LinkedList;
 
@@ -13,7 +13,7 @@ import mods.minecraft.darth.dc.core.util.INBTTagable;
 
 public class SimpleInventory implements IInventory, INBTTagable
 {
-    private final ItemStack[] _contents;
+    protected final ItemStack[] _contents;
     private final String _name;
     private final int _stackLimit;
     private final LinkedList<TileEntity> _listener = new LinkedList<TileEntity>();
@@ -52,6 +52,7 @@ public class SimpleInventory implements IInventory, INBTTagable
             ItemStack stack = _contents[slotId];
             _contents[slotId] = null;
             onInventoryChanged();
+            
             return stack;
         }
         

@@ -1,4 +1,4 @@
-package mods.minecraft.darth.dc.inventory;
+package mods.minecraft.darth.dc.inventory.sample;
 
 import java.util.ArrayList;
 import java.util.List;
