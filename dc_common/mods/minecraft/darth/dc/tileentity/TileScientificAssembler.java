@@ -260,9 +260,9 @@ public class TileScientificAssembler extends TileDC implements ISidedInventory
             return;
 
         result = result.copy();
-        //craftSlot.onPickupFromSlot(internalPlayer, result); //TODO
+        
         resultInv.setInventorySlotContents(SLOT_RESULT, result);
-
+        pickup(result);
         //clean fake player inventory (crafting handler support)
         for (IInvSlot slot : InventoryIterator.getIterable(internalPlayer.inventory, ForgeDirection.UP))
         {
@@ -274,5 +274,10 @@ public class TileScientificAssembler extends TileDC implements ISidedInventory
                 ItemUtil.dropItems(worldObj, stack, xCoord, yCoord + 1, zCoord);
             }
         }
+    }
+    
+    public void pickup(ItemStack out)
+    {
+        craftSlot.onPickupFromSlot(internalPlayer, out); //TODO
     }
 }

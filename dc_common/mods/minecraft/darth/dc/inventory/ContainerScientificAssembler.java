@@ -90,7 +90,7 @@ public class ContainerScientificAssembler extends ContainerDC
             //merges the item into player inventory since its in the tileEntity
             if (slot < TileScientificAssembler.INVENTORY_SIZE)
             {
-                if (!this.mergeItemStack(stackInSlot, 0, 35, true))
+                if (!this.mergeItemStack(stackInSlot, 19, 55, true))
                     return null;
             }
             //places it into the tileEntity is possible since its in the player inventory
