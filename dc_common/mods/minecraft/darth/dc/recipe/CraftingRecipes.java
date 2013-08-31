@@ -25,13 +25,13 @@ public class CraftingRecipes
         GameRegistry.addRecipe(new ItemStack(ModItems.monocleArmor), "ls ", "  s", "  s", 'l', ModItems.monocleLens, 's', Item.silk);
         
         //Throwing Knife
-        GameRegistry.addRecipe(new ItemStack(ModItems.knifeThrowing), " f ", " s ", 'f', Item.flint, 's', Item.stick);
+        GameRegistry.addRecipe(new ItemStack(ModItems.knifeThrowing), "f", "s", 'f', Item.flint, 's', Item.stick);
     
         //Melee Knife
         GameRegistry.addShapelessRecipe(new ItemStack(ModItems.knifeMelee), new Object[] {ModItems.knifeThrowing});
         
         //Flint Shovel
-        GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint), " f ", " s ", " s ", 'f', Item.flint, 's', Item.stick);
+        GameRegistry.addRecipe(new ItemStack(ModItems.shovelFlint), "f", "s", "s", 'f', Item.flint, 's', Item.stick);
         
         //Flint Pickaxe
         GameRegistry.addRecipe(new ItemStack(ModItems.pickaxeFlint), "fff", " s ", " s ", 'f', Item.flint, 's', Item.stick);

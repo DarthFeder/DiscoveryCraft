@@ -9,7 +9,7 @@
 	<entry key="item.notebookLock.name">Notebook Lock</entry>
 	<entry key="item.sonicScrewdriver.name">§2§lSonic Screwdriver</entry>
 	<entry key="item.debugTool.name">Debug Tool</entry>
-	<entry key="item.craftingUpgrade.name">Scientific Crafting Initializer Mk1</entry>
+	<entry key="item.craftingUpgrade.name">Scientific Crafting Initializer</entry>
 	<entry key="item.knifeMelee.name">Primitive §cMelee §rKnife</entry>
 	<entry key="item.knifeThrowing.name">Primitive §bThrowing §rKnife</entry>
 	<entry key="item.unknownChunks.name">§kUnknown §rChunks</entry>
