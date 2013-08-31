@@ -13,6 +13,8 @@ import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.ForgeSubscribe;
 
+import cpw.mods.fml.common.Loader;
+
 import mods.minecraft.darth.dc.core.util.LogUtil;
 
 public class EventCloakRender
@@ -35,6 +37,9 @@ public class EventCloakRender
     @ForgeSubscribe
     public void onPreRenderSpecials(RenderPlayerEvent.Specials.Pre event)
     {
+        if(Loader.isModLoaded("shadersmod"))
+            return;
+        
         if (event.entityPlayer instanceof AbstractClientPlayer)
         {
             AbstractClientPlayer abstractClientPlayer = (AbstractClientPlayer) event.entityPlayer;

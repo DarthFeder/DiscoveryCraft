@@ -105,10 +105,6 @@ public class ContainerScientificAssembler extends ContainerDC
 
             if (stackInSlot.stackSize == stack.stackSize)
                 return null;
-            
-            
-            if (stackInSlot.stackSize == stack.stackSize)
-                return null;
 
             slotObject.onPickupFromSlot(player, stackInSlot);
         }
