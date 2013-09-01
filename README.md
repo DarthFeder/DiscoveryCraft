@@ -5,16 +5,16 @@ DiscoveryCraft is a mod for Minecraft, a game made by Mojang AB.
 
 
 This mod is published under the Minecraft Mod Public License.
-It says basically you are allowed to see, download, use, and edit my source code, but you are NOT allowed to disribute my mod without my expresssed permission.
+In a nutshell: You are allowed to see, download, use, and edit both my source code and the compiled mod, but you are NOT allowed to distribute my mod without my expressed permission.
 
-This mod is made by Darth_Feder. It is avaliable to see on github: https://github.com/DarthFeder/DiscoveryCraft.
+This mod is made by Darth_Feder. It is available to see on Github: https://github.com/DarthFeder/DiscoveryCraft.
 
 I have a YouTube channel where I will be posting updates and videos relating to my mod, as well as my usual stuff.
 Check it out here: http://www.youtube.com/user/MinecraftTechz.
 
 DC is currently in version pre1 (I just started working on it). Remember, it is not yet a fully-functioning mod, so things may be very broken!
 If you have any ideas, please feel free to message me. If you have something to fix or update, submit a pull request, and fix it! :D
-If you are a good artist (unlike me) and would like to help with wither my textures or my modeling, I am devoted to your help! Please contact me.
+If you are a good artist (unlike me) and would like to help with wither my textures or my modelling, I am devoted to your help! Please contact me.
 I am frequently on IRC, on channels such as #direwolf20 and #minecraftforge, both on esper.net.
 
 Thanks to Pahimar for his Let's Mod series! It really helped to make this mod possible.
@@ -23,7 +23,7 @@ Thanks to Pahimar for his Let's Mod series! It really helped to make this mod po
 #WHAT IS DISCOVERYCRAFT?
 
 DiscoveryCraft is a mod for Minecraft currently in the works. Its main function is to add more scientific discovery
-to your minecraft world. This is broken down into several main sectors of science:
+to your Minecraft world. This is broken down into several main sectors of science:
 
 - Astronomy
 
@@ -53,6 +53,10 @@ Things coming up soon:
 
 - A special, upgradable crafting table!
 
+- Modular machines!
+
+- A vanilla hopper sorting machine
+
 - Armor sets
 
 - Liquid Bedrock
@@ -69,7 +73,7 @@ In the future:
 
 - A way of liquidizing bedrock to get to the ore underneath.
 
-- Tiers of teloscopes for star-gazing.
+- Tiers of telescopes for star-gazing.
 
 - Tiers of microscopes for bacteria-gazing.
 
@@ -77,7 +81,7 @@ In the future:
 
 - With these components (or elements), you can store them or create other blocks/items with them.
 
-- A discovery bar that works similarly to the experiance bar, only you don't lose it to death. The more you discover, the better at discovery you will be. You will lose some if you do stupid things, like walking into cactus, blowing yourself up, jumping out of the world, destroying your science mechanisms, etc.
+- A discovery bar that works similarly to the experience bar, only you don't lose it to death. The more you discover, the better at discovery you will be. You will lose some if you do stupid things, like walking into cactus, blowing yourself up, jumping out of the world, destroying your science mechanisms, etc.
   
 - Temporary gravity manipulators (you can guess what that does).
 
@@ -91,11 +95,11 @@ In the future:
 
 - To go along with the gentleman vs. mad scientist approach, a tracking system to see what side your science is leaning towards.
 
-- Two different armour sets: a gentleman one with a tophat, monacle, and a cloak; and a mad scientist one with a labcoat and goggles.
+- Two different armour sets: a gentleman one with a top hat, monocle, and a cloak; and a mad scientist one with a lab coat and goggles.
 
-- A lightning atraction rod. Put it on top of your castle, and watch as a small lightning vortex hovers over it! Will look awesome for all your evil needs. Probably will require some fuel source, though.
+- A lightning attraction rod. Put it on top of your castle, and watch as a small lightning vortex hovers over it! Will look awesome for all your evil needs. Probably will require some fuel source, though.
 
-- Different kinds of lasers! Mining lasers, defense lasers, laser fenses, laser turrets, laser etc.
+- Different kinds of lasers! Mining lasers, defence lasers, laser fences, laser turrets, laser etc.
 
 - Control blocks with your mi-y-in-y-ind!
 
