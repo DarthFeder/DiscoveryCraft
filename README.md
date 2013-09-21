@@ -3,6 +3,8 @@
 
 DiscoveryCraft is a mod for Minecraft, a game made by Mojang AB.
 
+Current Release: N/A, for Minecraft 1.6.2
+
 
 This mod is published under the Minecraft Mod Public License.
 In a nutshell: You are allowed to see, download, use, and edit both my source code and the compiled mod, but you are NOT allowed to distribute my mod without my expressed permission.
@@ -19,8 +21,8 @@ I am frequently on IRC, on channels such as #direwolf20 and #minecraftforge, bot
 
 Thanks to Pahimar for his Let's Mod series! It really helped to make this mod possible.
 
-=============================================================================================================
-#WHAT IS DISCOVERYCRAFT?
+
+#What is DiscoveryCraft?
 
 DiscoveryCraft is a mod for Minecraft currently in the works. Its main function is to add more scientific discovery
 to your Minecraft world. This is broken down into several main sectors of science:
