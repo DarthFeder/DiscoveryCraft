@@ -3,7 +3,7 @@
 
 DiscoveryCraft is a mod for Minecraft, a game made by Mojang AB.
 
-Current Release: N/A, for Minecraft 1.6.2
+Current Release: N/A, for Minecraft 1.6.4
 
 
 This mod is published under the Minecraft Mod Public License.

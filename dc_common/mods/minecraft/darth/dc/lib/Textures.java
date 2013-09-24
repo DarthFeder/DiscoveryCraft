@@ -13,8 +13,8 @@ public class Textures
     public static final String ARMOR_SHEET_LOCATION = Reference.MOD_ID.toLowerCase() + ":textures/armor/";
     
     //Helpful Vanilla GUIs
-    public static final ResourceLocation VANILLA_BLOCK_TEXTURE_SHEET = TextureMap.field_110575_b;
-    public static final ResourceLocation VANILLA_ITEM_TEXTURE_SHEET = TextureMap.field_110576_c;
+    public static final ResourceLocation VANILLA_BLOCK_TEXTURE_SHEET = TextureMap.locationBlocksTexture;
+    public static final ResourceLocation VANILLA_ITEM_TEXTURE_SHEET = TextureMap.locationItemsTexture;
     public static final ResourceLocation VANILLA_INVENTORY = new ResourceLocation("textures/gui/container/inventory.png");
     public static final ResourceLocation VANILLA_FURNACE = new ResourceLocation("textures/gui/container/furnace.png");
     

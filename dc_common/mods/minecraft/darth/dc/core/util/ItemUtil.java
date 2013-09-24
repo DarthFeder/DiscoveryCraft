@@ -79,7 +79,7 @@ public class ItemUtil
     {
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append(String.format("itemID: %d, metaData: %d, stackSize: %d, itemName: %s, className: %s", itemStack.itemID, itemStack.getItemDamage(), itemStack.stackSize, itemStack.getItemName(), itemStack.getItem().getClass().toString()));
+        stringBuilder.append(String.format("itemID: %d, metaData: %d, stackSize: %d, itemName: %s, className: %s", itemStack.itemID, itemStack.getItemDamage(), itemStack.stackSize, itemStack.getUnlocalizedName(), itemStack.getItem().getClass().toString()));
 
         return stringBuilder.toString();
     }

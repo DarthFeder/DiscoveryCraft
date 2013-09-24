@@ -391,7 +391,7 @@ public class ItemSonicScrewdriver extends ItemDC
             break;
         case 10:
             if (cooldown == 0)
-                GeneralUtil.sendChat(par2EntityPlayer,ChatMessageComponent.func_111077_e("Screwdriver is disabled."));
+                GeneralUtil.sendChat(par2EntityPlayer,ChatMessageComponent.createFromText("Screwdriver is disabled."));
             return true;
         default:
             //Should not happen, just in case
@@ -407,7 +407,7 @@ public class ItemSonicScrewdriver extends ItemDC
     }
     
     @Override //Called when right clicking entity, seems to be only for EntityLiving
-    public boolean func_111207_a(ItemStack par1ItemStack, EntityPlayer player, EntityLivingBase par2EntityLiving)
+    public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase player, EntityLivingBase par2EntityLiving)
     {
         if (this.sonicMode == 0 || this.sonicMode == 6)
         {

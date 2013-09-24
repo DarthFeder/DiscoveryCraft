@@ -128,7 +128,7 @@ public class EventCloakRender
                 BufferedImage bo = new BufferedImage(cape.getWidth(null), cape.getHeight(null), BufferedImage.TYPE_INT_ARGB);
                 
                 bo.getGraphics().drawImage(cape, 0, 0, null);
-                abstractClientPlayer.func_110310_o().func_110556_a(bo);
+                abstractClientPlayer.getTextureCape().getBufferedImage(bo);
             }
             catch (MalformedURLException e)
             {

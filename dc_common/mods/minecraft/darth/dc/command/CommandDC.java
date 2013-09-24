@@ -51,17 +51,17 @@ public class CommandDC extends CommandBase
             {
                 for (int x = 0;x < 10000;x++)
                 {
-                    Entity entity = commandSender.func_130014_f_().getEntityByID(x);
+                    Entity entity = commandSender.getEntityWorld().getEntityByID(x);
                     
                     if (entity != null)
-                        commandSender.func_130014_f_().removeEntity(entity);
+                        commandSender.getEntityWorld().removeEntity(entity);
                 }
             }
             else
                 throw new WrongUsageException(Commands.COMMAND_MAIN_ERROR, new Object[0]);
         }
         else
-            commandSender.sendChatToPlayer(ChatMessageComponent.func_111077_e(Commands.COMMAND_MAIN));
+            commandSender.sendChatToPlayer(ChatMessageComponent.createFromText(Commands.COMMAND_MAIN));
         
     }
 

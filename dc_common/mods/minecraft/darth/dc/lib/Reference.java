@@ -7,8 +7,8 @@ public class Reference
     public static final String MOD_ID = "DC";
     public static final String MOD_NAME = "DiscoveryCraft";
     public static final String VERSION = "pre1";
-    public static final String DEPENDENCIES = "required-after:Forge@[9.10.0.804,)";
-    public static final String MC_VERSIONS = "";
+    public static final String DEPENDENCIES = "required-after:Forge@[9.10.1.884,)";
+    public static final String MC_VERSIONS = "1.6.4";
     public static final String EXCLUSION_MODS = "+f,-FlatBedrock";
     public static final int DC_CREATIVE_TAB_ICON = ItemIDs.SCI_NOTEBOOK;
     public static final String SERVER_PROXY_CLASS = "mods.minecraft.darth.dc.core.proxy.CommonProxy";

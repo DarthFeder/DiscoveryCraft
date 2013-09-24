@@ -33,7 +33,7 @@ public class GuiMultiFurnace extends GuiContainer
     {
         GL11.glColor4f(1f, 1f, 1f, 1f);
         
-        this.mc.func_110434_K().func_110577_a(Textures.VANILLA_FURNACE);
+        this.mc.renderEngine.bindTexture(Textures.VANILLA_FURNACE);
         
         int x = (width - xSize) / 2;
         int y = (height - ySize) / 2;

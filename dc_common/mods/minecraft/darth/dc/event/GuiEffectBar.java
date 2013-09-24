@@ -61,7 +61,7 @@ public class GuiEffectBar extends Gui
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glDisable(GL11.GL_LIGHTING);
                 
-                this.mc.func_110434_K().func_110577_a(Textures.VANILLA_INVENTORY);
+                this.mc.renderEngine.bindTexture(Textures.VANILLA_INVENTORY);
         
                 for (Iterator iterator = this.mc.thePlayer.getActivePotionEffects().iterator(); iterator.hasNext(); xPos += BUFF_ICON_SPACING)
                 {

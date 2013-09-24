@@ -27,18 +27,18 @@ public class ItemDebug extends ItemDC
        if (!par3World.isRemote)
        {
            if (par3World.getBlockId(par4, par5, par6) == ModBlocks.scientificAssembler.blockID)
-               GeneralUtil.sendChat(player, ChatMessageComponent.func_111077_e(par3World.getBlockTileEntity(par4, par5, par6).toString()));
+               GeneralUtil.sendChat(player, ChatMessageComponent.createFromText(par3World.getBlockTileEntity(par4, par5, par6).toString()));
        }
         
         return false;
     }
     
     @Override
-    public boolean func_111207_a(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, EntityLivingBase par3EntityLivingBase)
+    public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityPlayer, EntityLivingBase par3EntityLivingBase)
     {
         if (!par2EntityPlayer.worldObj.isRemote)
         {
-            GeneralUtil.sendChat(par2EntityPlayer, ChatMessageComponent.func_111077_e(Integer.toString(par3EntityLivingBase.entityId)));
+            GeneralUtil.sendChat((EntityPlayer) par2EntityPlayer, ChatMessageComponent.createFromText(Integer.toString(par3EntityLivingBase.entityId)));
         }
 
         return false;
